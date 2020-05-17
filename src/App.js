@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { gsap } from 'gsap';
@@ -63,8 +63,10 @@ const App = () => {
     return (
         <ThemeProvider theme={themeMode}>
             <GlobalStyles />
-            <Header />
-            <Toggle theme={theme} toggleTheme={themeToggler} />
+            <header>
+                <Header />
+                <Toggle theme={theme} toggleTheme={themeToggler} />
+            </header>
             <main>
                 {routes.map(({ path, Component }) => (
                     <Route key={path} exact path={path}>
