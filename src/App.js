@@ -2,13 +2,13 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { gsap } from 'gsap';
-import './App.scss';
+import './shared/styles/main.scss';
 
-import { useDarkMode } from './components/useDarkMode';
+import { useDarkMode } from './components/dark-mode/useDarkMode';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from './components/globalStyles';
-import { lightTheme, darkTheme } from './components/Themes';
-import Toggle from './components/Toggler';
+import { GlobalStyles } from './components/dark-mode/globalStyles';
+import { lightTheme, darkTheme } from './components/dark-mode/Themes';
+import Toggle from './components/dark-mode/Toggler';
 
 import About from './pages/about';
 import Header from './components/Header';

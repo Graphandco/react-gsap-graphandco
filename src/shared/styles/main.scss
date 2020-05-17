@@ -1,0 +1,87 @@
+@import './variables';
+@import './global';
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s linear;
+    position: fixed;
+    height: 50px;
+
+    nav {
+        display: flex;
+        height: 100%;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Poppins';
+            text-decoration: none;
+
+            &.active {
+                color: red;
+            }
+        }
+    }
+}
+
+main {
+    position: relative;
+    .page {
+        position: absolute;
+        top: 50px;
+        .inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .content-block {
+                padding: 2rem;
+            }
+            h1 {
+                font-family: 'Bebas Neue';
+                font-size: 52px;
+                letter-spacing: 0.1rem;
+                .line-wrap {
+                    overflow: hidden;
+                }
+            }
+            p {
+                font-family: 'Poppins';
+                font-weight: 300;
+                line-height: 24px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.page-enter {
+    opacity: 0;
+}
+.page-enter-active {
+    opacity: 1;
+    transition: opacity 400ms;
+    transition-delay: 600ms;
+}
+.page-exit {
+    opacity: 1;
+}
+.page-exit-active {
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+@media (max-width: 979px) {
+    main {
+        .page {
+            .inner {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

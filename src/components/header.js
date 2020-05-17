@@ -4,25 +4,11 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <nav>
-            <NavLink
-                to='/'
-                exact
-                activeStyle={{
-                    fontWeight: 'bold',
-                    color: 'red',
-                }}
-            >
+            <NavLink to='/' exact activeStyle={{}}>
                 Home
             </NavLink>
-            <NavLink
-                to='/about'
-                exact
-                activeStyle={{
-                    fontWeight: 'bold',
-                    color: 'red',
-                }}
-            >
-                About
+            <NavLink to='/about' exact activeStyle={{}}>
+                A propos
             </NavLink>
         </nav>
     );

@@ -16,10 +16,14 @@ const Textblock = (props) => {
         });
     }, [bloc]);
     return (
-        <div className='text-blok'>
-            <div ref={(el) => (bloc = el)} className='line'>
-                TextBlock Lorem ipsum dolor sit amet.
-            </div>
+        <div className='text-block'>
+            <div
+                ref={(el) => (bloc = el)}
+                className='line'
+                dangerouslySetInnerHTML={{
+                    __html: props.content,
+                }}
+            ></div>
         </div>
     );
 };
