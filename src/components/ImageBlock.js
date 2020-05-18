@@ -6,7 +6,7 @@ const ImageBlock = (props) => {
 
     useEffect(() => {
         gsap.from([image], 0.8, {
-            delay: 1.6,
+            delay: 1.5,
             ease: 'power3.out',
             x: 64,
             opacity: 0,

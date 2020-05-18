@@ -31,7 +31,7 @@ const About = () => {
 
     return (
         <section className='inner'>
-            <div className='content-block'>
+            <div className='block block-content'>
                 <Title lineContent={titleLine1} lineContent2={titleLine2} />
                 <TextBlock content={textBlock} />
             </div>

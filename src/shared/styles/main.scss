@@ -31,31 +31,35 @@ header {
 }
 
 main {
-    position: relative;
-    .page {
-        position: absolute;
-        top: 50px;
-        .inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 50px;
 
-            .content-block {
-                padding: 2rem;
-            }
-            h1 {
-                font-family: 'Bebas Neue';
-                font-size: 52px;
-                letter-spacing: 0.1rem;
-                .line-wrap {
-                    overflow: hidden;
+    .inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .block {
+            padding: 2rem;
+
+            &-image {
+                img {
+                    border-radius: 59% 41% 61% 39% / 34% 58% 42% 66%;
                 }
             }
-            p {
-                font-family: 'Poppins';
-                font-weight: 300;
-                line-height: 24px;
-                font-size: 14px;
+        }
+        h1 {
+            font-family: 'Bebas Neue';
+            font-size: 52px;
+            letter-spacing: 0.1rem;
+            .line-wrap {
+                overflow: hidden;
             }
+        }
+        p {
+            font-family: 'Poppins';
+            font-weight: 300;
+            line-height: 24px;
+            font-size: 14px;
         }
     }
 }
