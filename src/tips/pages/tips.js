@@ -3,6 +3,8 @@ import { useTrail, animated } from 'react-spring';
 //import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+import TipCard from '../components/TipCard';
+
 import './Tips.scss';
 
 const Tips = () => {
@@ -55,11 +57,10 @@ const Tips = () => {
                         <animated.div
                             key={tips[index].id}
                             style={props}
-                            dangerouslySetInnerHTML={{
-                                __html: tips[index].title.rendered,
-                            }}
                             className='card tips-card'
-                        ></animated.div>
+                        >
+                            <TipCard tip={tips[index]} />
+                        </animated.div>
                     );
                 })}
             </div>
