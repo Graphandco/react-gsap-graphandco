@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+// import { AnimatePresence, motion } from 'framer-motion';
 import './shared/styles/main.scss';
 
 import { useDarkMode } from './components/dark-mode/useDarkMode';

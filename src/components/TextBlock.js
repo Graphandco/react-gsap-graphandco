@@ -6,7 +6,7 @@ const Textblock = (props) => {
 
     useEffect(() => {
         gsap.from([bloc], 0.8, {
-            delay: 1.2,
+            delay: 0.5,
             ease: 'power3.out',
             y: 64,
             opacity: 0,

@@ -15,4 +15,8 @@ export const GlobalStyles = createGlobalStyle`
   header a {
     color: ${({ theme }) => theme.text};
   }
+
+  .card {
+    background: ${({ theme }) => theme.headerBG};
+  }
   `;
