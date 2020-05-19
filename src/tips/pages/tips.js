@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useTrail, animated } from 'react-spring';
 //import { Link } from 'react-router-dom';
 import Axios from 'axios';
-import TipsList from '../components/tips/TipsList';
+
+import './Tips.scss';
 
 const Tips = () => {
     const [tips, setTips] = useState([]);
@@ -25,9 +26,16 @@ const Tips = () => {
         handleTipListing();
     }, []);
 
+    const config = {
+        //duration: 1500,
+        type: 'spring',
+        ease: 'in-out',
+    };
+
     const trail = useTrail(tips.length, {
+        config,
         from: {
-            marginTop: -20,
+            marginTop: -30,
             opacity: 0,
             //transform: 'translate3d(0,-40px,0)',
         },
@@ -36,8 +44,6 @@ const Tips = () => {
             opacity: 1,
             //transform: 'translate3d(0,0px,0)'
         },
-        delay: 0,
-        mass: 10,
     });
 
     return (

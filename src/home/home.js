@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Title from '../components/Title';
-import TextBlock from '../components/TextBlock';
+import Title from '../shared/components/Title';
+import TextBlock from '../shared/components/TextBlock';
 
 const Home = () => {
     return (

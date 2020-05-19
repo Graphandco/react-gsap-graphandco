@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Title from '../components/Title';
-import TextBlock from '../components/TextBlock';
-import ImageBlock from '../components/ImageBlock';
+import Title from '../shared/components/Title';
+import TextBlock from '../shared/components/TextBlock';
+import ImageBlock from '../shared/components/ImageBlock';
 import Axios from 'axios';
 
 const About = () => {

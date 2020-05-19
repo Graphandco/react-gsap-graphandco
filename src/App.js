@@ -3,16 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 // import { AnimatePresence, motion } from 'framer-motion';
 import './shared/styles/main.scss';
 
-import { useDarkMode } from './components/dark-mode/useDarkMode';
+import { useDarkMode } from './shared/dark-mode/useDarkMode';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from './components/dark-mode/globalStyles';
-import { lightTheme, darkTheme } from './components/dark-mode/Themes';
-import Toggle from './components/dark-mode/Toggler';
+import { GlobalStyles } from './shared/dark-mode/globalStyles';
+import { lightTheme, darkTheme } from './shared/dark-mode/Themes';
+import Toggle from './shared/dark-mode/Toggler';
 
-import About from './pages/about';
-import Header from './components/Header';
-import Home from './pages/home';
-import Tips from './pages/tips';
+import About from './about/about';
+import Header from './shared/components/Header';
+import Home from './home/home';
+import Tips from './tips/pages/tips';
 
 const App = () => {
     const [theme, themeToggler, mountedComponent] = useDarkMode();
