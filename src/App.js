@@ -14,6 +14,7 @@ import Header from './shared/components/Header';
 import Home from './home/Home';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
+import TipsStrapi from './tips/pages/TipsStrapi';
 
 const App = () => {
     const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -37,6 +38,11 @@ const App = () => {
                 <Switch>
                     <Route path='/tips' exact>
                         <Tips />
+                    </Route>
+                </Switch>
+                <Switch>
+                    <Route path='/tips-strapi' exact>
+                        <TipsStrapi />
                     </Route>
                 </Switch>
                 <Switch>

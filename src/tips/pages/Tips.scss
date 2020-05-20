@@ -6,7 +6,25 @@
         grid-column-gap: 2rem;
         grid-row-gap: 2rem;
     }
-    &-card {
-        padding: 2rem;
+}
+
+.tips-card {
+    border-radius: 0 0 5px 5px;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        //background-color: #090909;
+
+        .tip-title {
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px 5px 0 0;
+            flex-grow: 1;
+        }
+        .tip-image {
+            border-radius: 0 0 5px 5px;
+        }
     }
 }

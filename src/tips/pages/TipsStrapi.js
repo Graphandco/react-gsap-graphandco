@@ -3,11 +3,9 @@ import { useTrail, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
-import TipCard from '../components/TipCard';
+import TipCardStrapi from '../components/TipCardStrapi';
 
-import './Tips.scss';
-
-const Tips = () => {
+const TipsStrapi = () => {
     const [tips, setTips] = useState([]);
 
     //GETTING ALL TIPS
@@ -15,7 +13,7 @@ const Tips = () => {
         const handleTipListing = async () => {
             //setIsLoading(true);
             try {
-                const response = await Axios.get('/coding-tips?per_page=100');
+                const response = await Axios.get('http://localhost:1337/tips');
                 console.log(response.data);
                 setTips(response.data);
                 //setIsLoading(false);
@@ -60,7 +58,7 @@ const Tips = () => {
                             className='card tips-card'
                         >
                             <Link to={`/tips/${tips[index].id}`}>
-                                <TipCard
+                                <TipCardStrapi
                                     key={tips[index].id}
                                     tip={tips[index]}
                                 />
@@ -73,4 +71,4 @@ const Tips = () => {
     );
 };
 
-export default Tips;
+export default TipsStrapi;
