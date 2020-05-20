@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTrail, animated } from 'react-spring';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 import TipCard from '../components/TipCard';
@@ -59,7 +59,12 @@ const Tips = () => {
                             style={props}
                             className='card tips-card'
                         >
-                            <TipCard tip={tips[index]} />
+                            <Link to={`/tips/${tips[index].id}`}>
+                                <TipCard
+                                    key={tips[index].id}
+                                    tip={tips[index]}
+                                />
+                            </Link>
                         </animated.div>
                     );
                 })}

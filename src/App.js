@@ -9,10 +9,11 @@ import { GlobalStyles } from './shared/dark-mode/globalStyles';
 import { lightTheme, darkTheme } from './shared/dark-mode/Themes';
 import Toggle from './shared/dark-mode/Toggler';
 
-import About from './about/about';
+import About from './about/About';
 import Header from './shared/components/Header';
-import Home from './home/home';
-import Tips from './tips/pages/tips';
+import Home from './home/Home';
+import Tips from './tips/pages/Tips';
+import TipSingle from './tips/pages/TipSingle';
 
 const App = () => {
     const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -36,6 +37,11 @@ const App = () => {
                 <Switch>
                     <Route path='/tips' exact>
                         <Tips />
+                    </Route>
+                </Switch>
+                <Switch>
+                    <Route path='/tips/:id' exact>
+                        <TipSingle />
                     </Route>
                 </Switch>
                 <Switch>
