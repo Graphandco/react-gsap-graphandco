@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Axios from 'axios';
 
+import Loader from '../../shared/components/Loader';
+
 import './TipSingle.scss';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -40,7 +42,7 @@ const TipSingle = () => {
     return (
         <div className='tip-single'>
             {isLoading ? (
-                <p>Loading...</p>
+                <Loader />
             ) : (
                 <>
                     <h1

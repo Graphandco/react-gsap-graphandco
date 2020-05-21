@@ -3,22 +3,24 @@ import { useTrail, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+import Loader from '../../shared/components/Loader';
 import TipCard from '../components/TipCard';
 
 import './Tips.scss';
 
 const Tips = () => {
     const [tips, setTips] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     //GETTING ALL TIPS
     useEffect(() => {
         const handleTipListing = async () => {
-            //setIsLoading(true);
+            setIsLoading(true);
             try {
                 const response = await Axios.get('/coding-tips?per_page=100');
                 console.log(response.data);
                 setTips(response.data);
-                //setIsLoading(false);
+                setIsLoading(false);
             } catch (e) {
                 console.log(
                     'Une erreur est survenue lors de la récupération des Tips'
@@ -50,25 +52,31 @@ const Tips = () => {
 
     return (
         <section className='tips'>
-            <h1>Liste de tips</h1>
-            <div className='tips-list'>
-                {trail.map((props, index) => {
-                    return (
-                        <animated.div
-                            key={tips[index].id}
-                            style={props}
-                            className='card tips-card'
-                        >
-                            <Link to={`/tips/${tips[index].id}`}>
-                                <TipCard
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <>
+                    <h1>Liste de tips</h1>
+                    <div className='tips-list'>
+                        {trail.map((props, index) => {
+                            return (
+                                <animated.div
                                     key={tips[index].id}
-                                    tip={tips[index]}
-                                />
-                            </Link>
-                        </animated.div>
-                    );
-                })}
-            </div>
+                                    style={props}
+                                    className='card tips-card'
+                                >
+                                    <Link to={`/tips/${tips[index].id}`}>
+                                        <TipCard
+                                            key={tips[index].id}
+                                            tip={tips[index]}
+                                        />
+                                    </Link>
+                                </animated.div>
+                            );
+                        })}
+                    </div>
+                </>
+            )}
         </section>
     );
 };

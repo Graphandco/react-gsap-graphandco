@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TipCardStrapi = (props) => {
-    //const langage = props.tip.acf.langage;
+    const langage = props.tip.categories[0].Name;
 
     return (
         <>
@@ -11,11 +11,12 @@ const TipCardStrapi = (props) => {
                     __html: props.tip.Title,
                 }}
             ></div>
-            {/* <img
+            {/* <div>{props.tip.Code}</div> */}
+            <img
                 className='tip-image'
                 src={`/images/langages/${langage}.jpg`}
                 alt=''
-            /> */}
+            />
         </>
     );
 };

@@ -4,19 +4,21 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 import TipCardStrapi from '../components/TipCardStrapi';
+import Loader from '../../shared/components/Loader';
 
 const TipsStrapi = () => {
     const [tips, setTips] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     //GETTING ALL TIPS
     useEffect(() => {
         const handleTipListing = async () => {
-            //setIsLoading(true);
+            setIsLoading(true);
             try {
                 const response = await Axios.get('http://localhost:1337/tips');
                 console.log(response.data);
                 setTips(response.data);
-                //setIsLoading(false);
+                setIsLoading(false);
             } catch (e) {
                 console.log(
                     'Une erreur est survenue lors de la récupération des Tips'
@@ -27,20 +29,22 @@ const TipsStrapi = () => {
     }, []);
 
     const config = {
-        //duration: 1500,
-        type: 'spring',
+        duration: 1500,
+        //type: 'spring',
         ease: 'in-out',
+        friction: 50,
+        mass: 50,
     };
 
     const trail = useTrail(tips.length, {
         config,
         from: {
-            marginTop: -30,
+            //marginLeft: -30,
             opacity: 0,
             //transform: 'translate3d(0,-40px,0)',
         },
         to: {
-            marginTop: 0,
+            //marginLeft: 0,
             opacity: 1,
             //transform: 'translate3d(0,0px,0)'
         },
@@ -48,25 +52,28 @@ const TipsStrapi = () => {
 
     return (
         <section className='tips'>
-            <h1>Liste de tips</h1>
-            <div className='tips-list'>
-                {trail.map((props, index) => {
-                    return (
-                        <animated.div
-                            key={tips[index].id}
-                            style={props}
-                            className='card tips-card'
-                        >
-                            <Link to={`/tips/${tips[index].id}`}>
-                                <TipCardStrapi
-                                    key={tips[index].id}
-                                    tip={tips[index]}
-                                />
-                            </Link>
-                        </animated.div>
-                    );
-                })}
-            </div>
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <div className='tips-list'>
+                    {trail.map((props, index) => {
+                        return (
+                            <animated.div
+                                key={tips[index].id}
+                                style={props}
+                                className='card tips-card'
+                            >
+                                <Link to={`/tips/${tips[index].id}`}>
+                                    <TipCardStrapi
+                                        key={tips[index].id}
+                                        tip={tips[index]}
+                                    />
+                                </Link>
+                            </animated.div>
+                        );
+                    })}
+                </div>
+            )}
         </section>
     );
 };
