@@ -1,13 +1,14 @@
 import React from 'react';
 
-const TipCard = (props) => {
-    const langage = props.tip.acf.langage;
+const TipCard = ({ tip }) => {
+    const langage = tip.acf.langage;
+    const title = tip.title.rendered;
 
     return (
         <>
             <div
                 dangerouslySetInnerHTML={{
-                    __html: props.tip.title.rendered,
+                    __html: title,
                 }}
             ></div>
             <img

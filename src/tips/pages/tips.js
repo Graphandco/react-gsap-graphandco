@@ -6,11 +6,43 @@ import Axios from 'axios';
 import Loader from '../../shared/components/Loader';
 import TipCard from '../components/TipCard';
 
+import {
+    TextField,
+    Radio,
+    RadioGroup,
+    FormControlLabel,
+    FormControl,
+    FormLabel,
+} from '@material-ui/core';
+
+import SearchIcon from '@material-ui/icons/Search';
+
 import './Tips.scss';
 
 const Tips = () => {
     const [tips, setTips] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [searchText, setSearchText] = useState('');
+    const [radioValue, setRadioValue] = useState('');
+
+    //EVENT HANDLERS
+    const handleSearchInputChange = (event) => {
+        setSearchText(event.target.value);
+    };
+
+    const handleRadioValueChange = (event) => {
+        setRadioValue(event.target.value);
+    };
+
+    //SETTING FILTERED TIPS
+    const filteredTips = tips.filter((tip) => {
+        return (
+            tip.title.rendered
+                .toLowerCase()
+                .includes(searchText.toLowerCase()) &&
+            tip.acf.langage.includes(radioValue)
+        );
+    });
 
     //GETTING ALL TIPS
     useEffect(() => {
@@ -30,13 +62,14 @@ const Tips = () => {
         handleTipListing();
     }, []);
 
+    //ANIM CONFIG
     const config = {
         //duration: 1500,
         type: 'spring',
         ease: 'in-out',
     };
 
-    const trail = useTrail(tips.length, {
+    const trail = useTrail(filteredTips.length, {
         config,
         from: {
             marginTop: -30,
@@ -57,18 +90,66 @@ const Tips = () => {
             ) : (
                 <>
                     <h1>Liste de tips</h1>
+                    <TextField
+                        label='Rechercher'
+                        InputProps={{
+                            startAdornment: (
+                                <SearchIcon position='start'></SearchIcon>
+                            ),
+                        }}
+                        //variant='outlined'
+                        size='small'
+                        className='search-input'
+                        inputProps={{ 'aria-label': 'description' }}
+                        id='searchInput'
+                        type='text'
+                        onChange={handleSearchInputChange}
+                    />
+
+                    <FormControl component='fieldset'>
+                        <FormLabel component='legend'>Langage</FormLabel>
+                        <RadioGroup
+                            aria-label='gender'
+                            name='gender1'
+                            value={radioValue}
+                            onChange={handleRadioValueChange}
+                        >
+                            <FormControlLabel
+                                value=''
+                                control={<Radio />}
+                                label='Tous'
+                            />
+                            <FormControlLabel
+                                value='php'
+                                control={<Radio />}
+                                label='PHP'
+                            />
+                            <FormControlLabel
+                                value='css'
+                                control={<Radio />}
+                                label='CSS'
+                            />
+                            {/* <FormControlLabel
+                                value='disabled'
+                                disabled
+                                control={<Radio />}
+                                label='(Disabled option)'
+                            /> */}
+                        </RadioGroup>
+                    </FormControl>
+
                     <div className='tips-list'>
                         {trail.map((props, index) => {
                             return (
                                 <animated.div
-                                    key={tips[index].id}
+                                    key={filteredTips[index].id}
                                     style={props}
                                     className='card tips-card'
                                 >
                                     <Link to={`/tips/${tips[index].id}`}>
                                         <TipCard
-                                            key={tips[index].id}
-                                            tip={tips[index]}
+                                            key={filteredTips[index].id}
+                                            tip={filteredTips[index]}
                                         />
                                     </Link>
                                 </animated.div>

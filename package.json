@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.9.14",
+        "@material-ui/icons": "^4.9.1",
         "axios": "^0.19.2",
         "framer-motion": "^1.11.0",
         "gsap": "^3.0.1",
