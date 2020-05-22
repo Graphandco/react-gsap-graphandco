@@ -4,16 +4,8 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 import Loader from '../../shared/components/Loader';
+import TipSearch from '../components/TipSearch';
 import TipCard from '../components/TipCard';
-
-import {
-    TextField,
-    Radio,
-    RadioGroup,
-    FormControlLabel,
-    FormControl,
-    FormLabel,
-} from '@material-ui/core';
 
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -60,7 +52,7 @@ const Tips = () => {
             }
         };
         handleTipListing();
-    }, []);
+    }, [setTips]);
 
     //ANIM CONFIG
     const config = {
@@ -90,53 +82,11 @@ const Tips = () => {
             ) : (
                 <>
                     <h1>Liste de tips</h1>
-                    <TextField
-                        label='Rechercher'
-                        InputProps={{
-                            startAdornment: (
-                                <SearchIcon position='start'></SearchIcon>
-                            ),
-                        }}
-                        //variant='outlined'
-                        size='small'
-                        className='search-input'
-                        inputProps={{ 'aria-label': 'description' }}
-                        id='searchInput'
-                        type='text'
-                        onChange={handleSearchInputChange}
+                    <TipSearch
+                        searchHandle={handleSearchInputChange}
+                        filterHandle={handleRadioValueChange}
+                        value={radioValue}
                     />
-
-                    <FormControl component='fieldset'>
-                        <FormLabel component='legend'>Langage</FormLabel>
-                        <RadioGroup
-                            aria-label='gender'
-                            name='gender1'
-                            value={radioValue}
-                            onChange={handleRadioValueChange}
-                        >
-                            <FormControlLabel
-                                value=''
-                                control={<Radio />}
-                                label='Tous'
-                            />
-                            <FormControlLabel
-                                value='php'
-                                control={<Radio />}
-                                label='PHP'
-                            />
-                            <FormControlLabel
-                                value='css'
-                                control={<Radio />}
-                                label='CSS'
-                            />
-                            {/* <FormControlLabel
-                                value='disabled'
-                                disabled
-                                control={<Radio />}
-                                label='(Disabled option)'
-                            /> */}
-                        </RadioGroup>
-                    </FormControl>
 
                     <div className='tips-list'>
                         {trail.map((props, index) => {
