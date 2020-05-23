@@ -14,6 +14,7 @@ import Header from './shared/components/Header';
 // import Home from './home/Home';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
+import Contact from './contact/Contact';
 
 const App = () => {
     const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -42,6 +43,11 @@ const App = () => {
                 <Switch>
                     <Route path='/tips/:id' exact>
                         <TipSingle />
+                    </Route>
+                </Switch>
+                <Switch>
+                    <Route path='/contact' exact>
+                        <Contact />
                     </Route>
                 </Switch>
                 {/* <Switch>
