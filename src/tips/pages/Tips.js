@@ -39,7 +39,9 @@ const Tips = () => {
         const handleTipListing = async () => {
             setIsLoading(true);
             try {
-                const response = await Axios.get('/coding-tips?per_page=100');
+                const response = await Axios.get(
+                    'https://www.graphandco.com/wp-json/wp/v2/coding-tips?per_page=100'
+                );
                 console.log(response.data);
                 setTips(response.data);
                 setIsLoading(false);

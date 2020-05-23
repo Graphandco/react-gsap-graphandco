@@ -23,7 +23,9 @@ const TipSingle = () => {
         const handleTipListing = async () => {
             setIsLoading(true);
             try {
-                const response = await Axios.get(`/coding-tips/${id}`);
+                const response = await Axios.get(
+                    `https://www.graphandco.com/wp-json/wp/v2/coding-tips/${id}`
+                );
                 console.log(response.data);
                 setTipTitle(response.data.title.rendered);
                 setTipContent(response.data.content.rendered);
