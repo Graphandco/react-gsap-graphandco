@@ -13,9 +13,6 @@ const Header = () => {
             <NavLink to='/tips' exact activeStyle={{}}>
                 Tips
             </NavLink>
-            <NavLink to='/tips-strapi' exact activeStyle={{}}>
-                Tips Strapi
-            </NavLink>
         </nav>
     );
 };

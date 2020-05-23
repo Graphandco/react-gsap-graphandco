@@ -14,9 +14,16 @@ export const GlobalStyles = createGlobalStyle`
 
   header a {
     color: ${({ theme }) => theme.text};
+    &.active{
+      color: ${({ theme }) => theme.headerLinkActive};
+    } 
   }
 
   .card {
     background: ${({ theme }) => theme.headerBG};
+  }
+
+  .MuiInput-underline:after {
+    border-bottom: 2px solid #FFFFFF !important;
   }
   `;

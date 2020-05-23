@@ -7,8 +7,19 @@ header {
     align-items: center;
     transition: all 0.5s linear;
     position: fixed;
+    z-index: 9999;
     top: 0;
-    height: 50px;
+    height: 60px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-image: url('/images/color-line.png');
+    }
 
     nav {
         display: flex;
@@ -23,10 +34,6 @@ header {
             font-weight: 600;
             font-family: 'Poppins';
             text-decoration: none;
-
-            &.active {
-                color: red;
-            }
         }
     }
 }

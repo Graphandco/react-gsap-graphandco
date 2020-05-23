@@ -9,12 +9,11 @@ import { GlobalStyles } from './shared/dark-mode/globalStyles';
 import { lightTheme, darkTheme } from './shared/dark-mode/Themes';
 import Toggle from './shared/dark-mode/Toggler';
 
-import About from './about/About';
+// import About from './about/About';
 import Header from './shared/components/Header';
-import Home from './home/Home';
+// import Home from './home/Home';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
-import TipsStrapi from './tips/pages/TipsStrapi';
 
 const App = () => {
     const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -30,19 +29,14 @@ const App = () => {
                 <Toggle theme={theme} toggleTheme={themeToggler} />
             </header>
             <main>
-                <Switch>
+                {/* <Switch>
                     <Route path='/' exact>
                         <Home />
                     </Route>
-                </Switch>
+                </Switch> */}
                 <Switch>
                     <Route path='/tips' exact>
                         <Tips />
-                    </Route>
-                </Switch>
-                <Switch>
-                    <Route path='/tips-strapi' exact>
-                        <TipsStrapi />
                     </Route>
                 </Switch>
                 <Switch>
@@ -50,11 +44,11 @@ const App = () => {
                         <TipSingle />
                     </Route>
                 </Switch>
-                <Switch>
+                {/* <Switch>
                     <Route path='/about' exact>
                         <About />
                     </Route>
-                </Switch>
+                </Switch> */}
             </main>
         </ThemeProvider>
     );

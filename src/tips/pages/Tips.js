@@ -7,8 +7,6 @@ import Loader from '../../shared/components/Loader';
 import TipSearch from '../components/TipSearch';
 import TipCard from '../components/TipCard';
 
-import SearchIcon from '@material-ui/icons/Search';
-
 import './Tips.scss';
 
 const Tips = () => {

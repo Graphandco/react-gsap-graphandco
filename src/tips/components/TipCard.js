@@ -7,6 +7,7 @@ const TipCard = ({ tip }) => {
     return (
         <>
             <div
+                className='tip-title'
                 dangerouslySetInnerHTML={{
                     __html: title,
                 }}

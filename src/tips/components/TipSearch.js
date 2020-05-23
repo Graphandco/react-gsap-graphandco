@@ -6,30 +6,51 @@ import {
     RadioGroup,
     FormControlLabel,
     FormControl,
-    FormLabel,
+    //FormLabel,
 } from '@material-ui/core';
 
 import SearchIcon from '@material-ui/icons/Search';
 
 const TipSearch = (props) => {
     return (
-        <>
+        <div className='tips-search'>
             <TextField
-                label='Rechercher'
+                //label='Rechercher'
                 InputProps={{
                     startAdornment: <SearchIcon position='start'></SearchIcon>,
                 }}
                 //variant='outlined'
                 size='small'
-                className='search-input'
+                className='tips-search-input'
                 inputProps={{ 'aria-label': 'description' }}
                 id='searchInput'
                 type='text'
                 onChange={props.searchHandle}
             />
-            <FormControl component='fieldset'>
-                <FormLabel component='legend'>Langage</FormLabel>
+
+            {/* <FormControl className='tips-search-radio'>
+                <InputLabel>Trier</InputLabel>
+                <Select
+                    MenuProps={{
+                        disableScrollLock: true,
+                    }}
+                    labelId='demo-simple-select-label'
+                    id='demo-simple-select'
+                    value=''
+                    onChange={props.filterHandle}
+                >
+                    <MenuItem value={''}>Tous</MenuItem>
+                    <MenuItem value={'javascript'} input={'Javascript'}>
+                        Javascript
+                    </MenuItem>
+                    <MenuItem value={'php'}>PHP</MenuItem>
+                    <MenuItem value={'css'}>CSS</MenuItem>
+                    <MenuItem value={'prestashop'}>Prestashop</MenuItem>
+                </Select>
+            </FormControl> */}
+            <FormControl component='fieldset' className='tips-search-radio'>
                 <RadioGroup
+                    row
                     aria-label='langage'
                     name='langage'
                     value={props.radioValue}
@@ -39,6 +60,7 @@ const TipSearch = (props) => {
                         value=''
                         control={<Radio />}
                         label='Tous'
+                        size='small'
                     />
                     <FormControlLabel
                         value='php'
@@ -56,15 +78,9 @@ const TipSearch = (props) => {
                         control={<Radio />}
                         label='CSS'
                     />
-                    {/* <FormControlLabel
-                                value='disabled'
-                                disabled
-                                control={<Radio />}
-                                label='(Disabled option)'
-                            /> */}
                 </RadioGroup>
             </FormControl>
-        </>
+        </div>
     );
 };
 
