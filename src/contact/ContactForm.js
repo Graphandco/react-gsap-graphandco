@@ -1,64 +1,69 @@
 import React from 'react';
-import Input from '@material-ui/core/Input';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import Button from '@material-ui/core/Button';
 
-const ContactFrom = () => {
-    return (
-        <>
-            <p>Contact Form</p>
+class ContactForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { name: '', email: '', message: '' };
+    }
 
-            <form
-                action='/success'
-                name='react-playground-contact-form'
-                method='POST'
-                data-netlify='true'
-            >
-                <input
-                    type='hidden'
-                    name='form-name'
-                    value='react-playground-contact-form'
-                />
+    /* Here’s the juicy bit for posting the form submission */
 
-                <Input
-                    defaultValue='Nom'
-                    inputProps={{ 'aria-label': 'description' }}
-                    type='name'
-                    name='name'
-                    placeholder='Nom'
-                />
+    handleSubmit = (e) => {
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: { 'form-name': 'contact', ...this.state },
+        })
+            .then(() => alert('Success!'))
+            .catch((error) => alert(error));
 
-                <Input
-                    defaultValue='Email'
-                    inputProps={{ 'aria-label': 'description' }}
-                    type='email'
-                    name='email'
-                    placeholder='email@example.com'
-                />
+        e.preventDefault();
+    };
 
-                <TextareaAutosize
-                    aria-label='minimum height'
-                    name='message'
-                    rowsMin={3}
-                    placeholder='Message'
-                />
+    handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-                <div className='field'>
-                    <div data-netlify-recaptcha='true'></div>
-                </div>
-
-                <Button
-                    className='actions'
-                    variant='outlined'
-                    type='submit'
-                    value='Send Message'
-                    id='submit-btn'
-                >
-                    Envoyer
-                </Button>
+    render() {
+        const { name, email, message } = this.state;
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <p>
+                    <label>
+                        Your Name:{' '}
+                        <input
+                            type='text'
+                            name='name'
+                            value={name}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Your Email:{' '}
+                        <input
+                            type='email'
+                            name='email'
+                            value={email}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Message:{' '}
+                        <textarea
+                            name='message'
+                            value={message}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                </p>
+                <p>
+                    <button type='submit'>Send</button>
+                </p>
             </form>
-        </>
-    );
-};
+        );
+    }
+}
 
-export default ContactFrom;
+export default ContactForm;
