@@ -3,75 +3,54 @@ import { Switch, Route } from 'react-router-dom';
 // import { AnimatePresence, motion } from 'framer-motion';
 import './shared/styles/main.scss';
 
-// import { useDarkMode } from './shared/dark-mode/useDarkMode';
-// import { ThemeProvider } from 'styled-components';
-// import { GlobalStyles } from './shared/dark-mode/globalStyles';
-// import { lightTheme, darkTheme } from './shared/dark-mode/Themes';
-// import Toggle from './shared/dark-mode/Toggler';
-
 import Header from './shared/components/Header';
 import Home from './home/Home';
 import About from './about/About';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
+import Footer from './shared/components/Footer';
 
-import {
-    Switch as MaterialSwitch,
-    FormControlLabel,
-    Paper,
-} from '@material-ui/core';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { Switch as MaterialSwitch, Paper } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
 
-const themeObject = {
+const darkTheme = createMuiTheme({
     palette: {
-        primary: { main: '#053fb5' },
-        secondary: { main: '#5e3c6f' },
         type: 'dark',
+        primary: blue,
+        secondary: blue,
+        background: {
+            paper: '#272727',
+        },
+        typography: {
+            color: '"CACACA"',
+        },
     },
-    themeName: 'Graph and Co 2020',
-    typography: {
-        //fontFamily: 'Bitter',
-    },
-};
+});
 
-const useDarkMode = () => {
-    const [theme, setTheme] = useState(themeObject);
-    const {
-        palette: { type },
-    } = theme;
-    const toggleDarkMode = () => {
-        const updatedTheme = {
-            ...theme,
-            palette: {
-                ...theme.palette,
-                type: type === 'light' ? 'dark' : 'light',
-            },
-        };
-        setTheme(updatedTheme);
-    };
-    return [theme, toggleDarkMode];
-};
+const lightTheme = createMuiTheme({
+    palette: {
+        type: 'light',
+    },
+});
 
 const App = () => {
-    // const [theme, themeToggler, mountedComponent] = useDarkMode();
-    // const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
-    // if (!mountedComponent) return <div />;
-
-    const [theme, toggleDarkMode] = useDarkMode();
-    const themeConfig = createMuiTheme(theme);
-    console.log(themeConfig);
+    const [darkMode, setDarkMode] = useState(false);
 
     return (
-        <MuiThemeProvider theme={themeConfig}>
-            <header>
-                <Header />
-                <FormControlLabel
-                    control={<MaterialSwitch onClick={toggleDarkMode} />}
-                />
-            </header>
-            <Paper elevation={0}>
+        <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+            <Paper
+                elevation={0}
+                className={'main-wrapper ' + (darkMode ? 'dark' : 'light')}
+            >
+                <header>
+                    <Header />
+                    <MaterialSwitch
+                        checked={darkMode}
+                        onChange={() => setDarkMode(!darkMode)}
+                    />
+                </header>
                 <main>
                     <Switch>
                         <Route path='/' exact>
@@ -99,42 +78,9 @@ const App = () => {
                         </Route>
                     </Switch>
                 </main>
+                <Footer />
             </Paper>
-        </MuiThemeProvider>
-        // <ThemeProvider theme={themeMode}>
-        //     <GlobalStyles />
-        // <header>
-        //     <Header />
-        //     <Toggle theme={theme} toggleTheme={themeToggler} />
-        // </header>
-        // <main>
-        //     <Switch>
-        //         <Route path='/' exact>
-        //             <Home />
-        //         </Route>
-        //     </Switch>
-        //     <Switch>
-        //         <Route path='/tips' exact>
-        //             <Tips />
-        //         </Route>
-        //     </Switch>
-        //     <Switch>
-        //         <Route path='/tips/:id' exact>
-        //             <TipSingle />
-        //         </Route>
-        //     </Switch>
-        //     <Switch>
-        //         <Route path='/contact' exact>
-        //             <Contact />
-        //         </Route>
-        //     </Switch>
-        //     <Switch>
-        //         <Route path='/about' exact>
-        //             <About />
-        //         </Route>
-        //     </Switch>
-        // </main>
-        // </ThemeProvider>
+        </ThemeProvider>
     );
 };
 

@@ -4,11 +4,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh;
     font-family: $mainfont;
     line-height: 1.2;
     color: $lightgrey;
-    //background-color: #121212;
+
+    .main-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 h1,

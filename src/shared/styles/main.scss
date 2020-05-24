@@ -10,6 +10,7 @@ header {
     z-index: 9999;
     top: 0;
     height: 60px;
+    background-color: $header-bg;
 
     &:after {
         content: '';
@@ -39,8 +40,8 @@ header {
 }
 
 main {
-    position: relative;
-    top: 50px;
+    padding-top: 60px;
+    flex-grow: 1;
 
     .inner {
         display: grid;
@@ -72,28 +73,9 @@ main {
     }
 }
 
-.page-enter {
-    opacity: 0;
-}
-.page-enter-active {
-    opacity: 1;
-    transition: opacity 400ms;
-    transition-delay: 600ms;
-}
-.page-exit {
-    opacity: 1;
-}
-.page-exit-active {
-    opacity: 0;
-    transition: opacity 400ms;
+footer {
+    background-color: $footer-bg;
 }
 
 @media (max-width: 979px) {
-    main {
-        .page {
-            .inner {
-                grid-template-columns: 1fr;
-            }
-        }
-    }
 }

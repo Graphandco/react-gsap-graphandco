@@ -1,5 +1,4 @@
 import React from 'react';
-import Axios from 'axios';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -77,6 +76,7 @@ class ContactForm extends React.Component {
                         value={message}
                         onChange={this.handleChange}
                         fullWidth
+                        className='textfield'
                     />
                     <Button type='submit' variant='contained' color='primary'>
                         Envoyer

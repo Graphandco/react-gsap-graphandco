@@ -1,0 +1,25 @@
+@import '../shared/styles/variables';
+
+.contact-header {
+    -webkit-clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+    clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+    height: 50vh;
+}
+
+#contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0 2rem;
+
+    form {
+        padding: 2rem;
+
+        & > div {
+            margin: 0.5rem 0;
+        }
+
+        .textfield {
+            margin: 2rem 0;
+        }
+    }
+}
