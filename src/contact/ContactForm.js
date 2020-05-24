@@ -26,16 +26,13 @@ class ContactForm extends React.Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await Axios.post(
-                'http://localhost:8080/coding-tips',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: encode({ 'form-name': 'contact', ...this.state }),
-                }
-            );
+            const response = await Axios.post('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: encode({ 'form-name': 'contact', ...this.state }),
+            });
             const notify = () => {
                 toast.success('Votre message a bien été envoyé !', {
                     position: toast.POSITION.TOP_CENTER,
