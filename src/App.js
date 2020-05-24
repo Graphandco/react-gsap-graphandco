@@ -12,6 +12,7 @@ import Toggle from './shared/dark-mode/Toggler';
 // import About from './about/About';
 import Header from './shared/components/Header';
 import Home from './home/Home';
+import About from './about/About';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
@@ -50,11 +51,11 @@ const App = () => {
                         <Contact />
                     </Route>
                 </Switch>
-                {/* <Switch>
+                <Switch>
                     <Route path='/about' exact>
                         <About />
                     </Route>
-                </Switch> */}
+                </Switch>
             </main>
         </ThemeProvider>
     );
