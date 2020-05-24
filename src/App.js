@@ -27,7 +27,7 @@ const themeObject = {
     },
     themeName: 'Graph and Co 2020',
     typography: {
-        fontFamily: 'Bitter',
+        //fontFamily: 'Bitter',
     },
 };
 

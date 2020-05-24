@@ -26,8 +26,7 @@ class ContactForm extends React.Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await Axios.post('/', {
-                method: 'POST',
+            await Axios.post('/', {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
