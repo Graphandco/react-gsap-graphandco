@@ -25,7 +25,8 @@ class ContactForm extends React.Component {
     render() {
         const { name, email, message } = this.state;
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form name='contact' method='post' onSubmit={this.handleSubmit}>
+                <input type='hidden' name='form-name' value='contact' />
                 <p>
                     <label>
                         Your Name:{' '}

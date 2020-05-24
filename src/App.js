@@ -11,7 +11,7 @@ import Toggle from './shared/dark-mode/Toggler';
 
 // import About from './about/About';
 import Header from './shared/components/Header';
-// import Home from './home/Home';
+import Home from './home/Home';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
@@ -30,11 +30,11 @@ const App = () => {
                 <Toggle theme={theme} toggleTheme={themeToggler} />
             </header>
             <main>
-                {/* <Switch>
+                <Switch>
                     <Route path='/' exact>
                         <Home />
                     </Route>
-                </Switch> */}
+                </Switch>
                 <Switch>
                     <Route path='/tips' exact>
                         <Tips />
