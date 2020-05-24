@@ -23,53 +23,25 @@ class ContactForm extends React.Component {
 
     /* Here’s the juicy bit for posting the form submission */
 
-    handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await Axios.post('/', {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: encode({ 'form-name': 'contact', ...this.state }),
-            });
-            const notify = () => {
-                toast.success('Votre message a bien été envoyé !', {
-                    position: toast.POSITION.TOP_CENTER,
-                    autoClose: 3000,
-                });
-            };
-            notify();
-            //setWasSuccessful(response.data);
-            //console.log(response);
-        } catch (e) {
-            const notify = () => {
-                toast.error("Une erreur est survenue lors de l'envoi", {
-                    position: toast.POSITION.TOP_CENTER,
-                    autoClose: 3000,
-                });
-            };
-            notify();
-        }
-    };
-    // handleSubmit = (e) => {
-    //     fetch('/', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //         body: encode({ 'form-name': 'contact', ...this.state }),
-    //     })
-    //         .then(() => {
-    //             const notify = () => {
-    //                 toast.success('Votre message a bien été envoyé !', {
-    //                     position: toast.POSITION.TOP_CENTER,
-    //                     autoClose: 3000,
-    //                 });
-    //             };
-    //             notify();
-    //         })
-    //         .catch((error) => alert(error));
+    handleSubmit = (e) => {
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({ 'form-name': 'contact', ...this.state }),
+        })
+            .then(() => {
+                const notify = () => {
+                    toast.success('Votre message a bien été envoyé !', {
+                        position: toast.POSITION.TOP_CENTER,
+                        autoClose: 3000,
+                    });
+                };
+                notify();
+            })
+            .catch((error) => alert(error));
 
-    //     e.preventDefault();
-    // };
+        e.preventDefault();
+    };
 
     handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
@@ -86,6 +58,7 @@ class ContactForm extends React.Component {
                         name='name'
                         value={name}
                         onChange={this.handleChange}
+                        fullWidth
                     />
                     <TextField
                         label='Email'
@@ -93,6 +66,7 @@ class ContactForm extends React.Component {
                         name='email'
                         value={email}
                         onChange={this.handleChange}
+                        fullWidth
                     />
                     <TextField
                         label='Message'
@@ -102,6 +76,7 @@ class ContactForm extends React.Component {
                         name='message'
                         value={message}
                         onChange={this.handleChange}
+                        fullWidth
                     />
                     <Button type='submit' variant='contained' color='primary'>
                         Envoyer

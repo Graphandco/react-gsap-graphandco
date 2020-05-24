@@ -16,7 +16,11 @@ import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
 
-import { Switch as MaterialSwitch, FormControlLabel } from '@material-ui/core';
+import {
+    Switch as MaterialSwitch,
+    FormControlLabel,
+    Paper,
+} from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 const themeObject = {
@@ -67,33 +71,35 @@ const App = () => {
                     control={<MaterialSwitch onClick={toggleDarkMode} />}
                 />
             </header>
-            <main>
-                <Switch>
-                    <Route path='/' exact>
-                        <Home />
-                    </Route>
-                </Switch>
-                <Switch>
-                    <Route path='/tips' exact>
-                        <Tips />
-                    </Route>
-                </Switch>
-                <Switch>
-                    <Route path='/tips/:id' exact>
-                        <TipSingle />
-                    </Route>
-                </Switch>
-                <Switch>
-                    <Route path='/contact' exact>
-                        <Contact />
-                    </Route>
-                </Switch>
-                <Switch>
-                    <Route path='/about' exact>
-                        <About />
-                    </Route>
-                </Switch>
-            </main>
+            <Paper elevation={0}>
+                <main>
+                    <Switch>
+                        <Route path='/' exact>
+                            <Home />
+                        </Route>
+                    </Switch>
+                    <Switch>
+                        <Route path='/tips' exact>
+                            <Tips />
+                        </Route>
+                    </Switch>
+                    <Switch>
+                        <Route path='/tips/:id' exact>
+                            <TipSingle />
+                        </Route>
+                    </Switch>
+                    <Switch>
+                        <Route path='/contact' exact>
+                            <Contact />
+                        </Route>
+                    </Switch>
+                    <Switch>
+                        <Route path='/about' exact>
+                            <About />
+                        </Route>
+                    </Switch>
+                </main>
+            </Paper>
         </MuiThemeProvider>
         // <ThemeProvider theme={themeMode}>
         //     <GlobalStyles />
