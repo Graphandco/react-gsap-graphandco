@@ -1,5 +1,10 @@
 import React from 'react';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { Button, TextField } from '@material-ui/core';
+
 const encode = (data) => {
     return Object.keys(data)
         .map(
@@ -33,45 +38,54 @@ class ContactForm extends React.Component {
 
     render() {
         const { name, email, message } = this.state;
+        toast.configure();
+        const notify = () => toast('Wow so easy !');
         return (
-            <form name='contact' method='post' onSubmit={this.handleSubmit}>
-                <input type='hidden' name='form-name' value='contact' />
-                <p>
-                    <label>
-                        Your Name:{' '}
-                        <input
+            <>
+                <button onClick={notify}>Notify !</button>
+                <form name='contact' method='post' onSubmit={this.handleSubmit}>
+                    <input type='hidden' name='form-name' value='contact' />
+                    <p>
+                        <TextField
+                            label='Nom'
                             type='text'
                             name='name'
                             value={name}
                             onChange={this.handleChange}
                         />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Your Email:{' '}
-                        <input
+                    </p>
+                    <p>
+                        <TextField
+                            label='Email'
                             type='email'
                             name='email'
                             value={email}
                             onChange={this.handleChange}
                         />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Message:{' '}
-                        <textarea
+                    </p>
+                    <p>
+                        <TextField
+                            label='Message'
+                            multiline
+                            rows={4}
+                            defaultValue='Default Value'
+                            variant='outlined'
                             name='message'
                             value={message}
                             onChange={this.handleChange}
                         />
-                    </label>
-                </p>
-                <p>
-                    <button type='submit'>Send</button>
-                </p>
-            </form>
+                    </p>
+                    <p>
+                        <Button
+                            type='submit'
+                            variant='contained'
+                            color='primary'
+                        >
+                            Envoyer
+                        </Button>
+                    </p>
+                </form>
+            </>
         );
     }
 }
