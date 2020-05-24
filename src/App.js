@@ -36,7 +36,7 @@ const lightTheme = createMuiTheme({
 });
 
 const App = () => {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(true);
 
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>

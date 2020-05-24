@@ -11,6 +11,11 @@
     grid-template-columns: 1fr 1fr;
     padding-top: 0 2rem;
 
+    .infos {
+        padding: 2rem;
+        justify-self: center;
+    }
+
     form {
         padding: 2rem;
 

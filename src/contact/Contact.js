@@ -3,6 +3,9 @@ import ContactForm from './ContactForm';
 import './Contact.scss';
 import HeaderImage from '../shared/images/bg-contact.jpg';
 
+import SmartphoneIcon from '@material-ui/icons/Smartphone';
+import RoomIcon from '@material-ui/icons/Room';
+
 const Contact = () => {
     return (
         <>
@@ -16,11 +19,12 @@ const Contact = () => {
                         <strong>Graph and Co</strong>
                     </p>
                     <p>
+                        <RoomIcon />
                         1, rue de la Lucelle
                         <br />
                         68127 Sainte-Croix-en-Plaine
                     </p>
-                    <p>06 61 61 99 98</p>
+                    <SmartphoneIcon fontSize='small' /> 06 61 61 99 98
                 </div>
                 <ContactForm />
             </div>

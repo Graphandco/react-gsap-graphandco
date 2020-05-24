@@ -75,6 +75,9 @@ main {
 
 footer {
     background-color: $footer-bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 1rem;
 }
 
 @media (max-width: 979px) {
