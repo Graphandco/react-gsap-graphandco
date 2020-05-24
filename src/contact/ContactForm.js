@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,68 +23,93 @@ class ContactForm extends React.Component {
 
     /* Here’s the juicy bit for posting the form submission */
 
-    handleSubmit = (e) => {
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({ 'form-name': 'contact', ...this.state }),
-        })
-            .then(() => alert('Success!'))
-            .catch((error) => alert(error));
-
+    handleSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const response = await Axios.post(
+                'http://localhost:8080/coding-tips',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: encode({ 'form-name': 'contact', ...this.state }),
+                }
+            );
+            const notify = () => {
+                toast.success('Votre message a bien été envoyé !', {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 3000,
+                });
+            };
+            notify();
+            //setWasSuccessful(response.data);
+            //console.log(response);
+        } catch (e) {
+            const notify = () => {
+                toast.error("Une erreur est survenue lors de l'envoi", {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 3000,
+                });
+            };
+            notify();
+        }
     };
+    // handleSubmit = (e) => {
+    //     fetch('/', {
+    //         method: 'POST',
+    //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    //         body: encode({ 'form-name': 'contact', ...this.state }),
+    //     })
+    //         .then(() => {
+    //             const notify = () => {
+    //                 toast.success('Votre message a bien été envoyé !', {
+    //                     position: toast.POSITION.TOP_CENTER,
+    //                     autoClose: 3000,
+    //                 });
+    //             };
+    //             notify();
+    //         })
+    //         .catch((error) => alert(error));
+
+    //     e.preventDefault();
+    // };
 
     handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
     render() {
         const { name, email, message } = this.state;
         toast.configure();
-        const notify = () => toast('Wow so easy !');
         return (
             <>
-                <button onClick={notify}>Notify !</button>
                 <form name='contact' method='post' onSubmit={this.handleSubmit}>
                     <input type='hidden' name='form-name' value='contact' />
-                    <p>
-                        <TextField
-                            label='Nom'
-                            type='text'
-                            name='name'
-                            value={name}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <p>
-                        <TextField
-                            label='Email'
-                            type='email'
-                            name='email'
-                            value={email}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <p>
-                        <TextField
-                            label='Message'
-                            multiline
-                            rows={4}
-                            defaultValue='Default Value'
-                            variant='outlined'
-                            name='message'
-                            value={message}
-                            onChange={this.handleChange}
-                        />
-                    </p>
-                    <p>
-                        <Button
-                            type='submit'
-                            variant='contained'
-                            color='primary'
-                        >
-                            Envoyer
-                        </Button>
-                    </p>
+                    <TextField
+                        label='Nom'
+                        type='text'
+                        name='name'
+                        value={name}
+                        onChange={this.handleChange}
+                    />
+                    <TextField
+                        label='Email'
+                        type='email'
+                        name='email'
+                        value={email}
+                        onChange={this.handleChange}
+                    />
+                    <TextField
+                        label='Message'
+                        multiline
+                        rows={4}
+                        variant='outlined'
+                        name='message'
+                        value={message}
+                        onChange={this.handleChange}
+                    />
+                    <Button type='submit' variant='contained' color='primary'>
+                        Envoyer
+                    </Button>
                 </form>
             </>
         );
