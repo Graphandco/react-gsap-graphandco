@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useTrail, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
+import { TipContext } from '../components/TipContext';
 import { motion } from 'framer-motion';
 
-import Loader from '../../shared/components/Loader';
+//import Loader from '../../shared/components/Loader';
 import TipSearch from '../components/TipSearch';
 import TipCard from '../components/TipCard';
 
 import './Tips.scss';
 
 const Tips = ({ variant, transition }) => {
-    const [tips, setTips] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [tips, setTips] = useContext(TipContext);
+    //const [isLoading, setIsLoading] = useContext(TipContext);
     const [searchText, setSearchText] = useState('');
     const [radioValue, setRadioValue] = useState('');
 
@@ -34,26 +34,6 @@ const Tips = ({ variant, transition }) => {
             tip.acf.langage.includes(radioValue)
         );
     });
-
-    //GETTING ALL TIPS
-    useEffect(() => {
-        const handleTipListing = async () => {
-            setIsLoading(true);
-            try {
-                const response = await Axios.get(
-                    'https://www.graphandco.com/wp-json/wp/v2/coding-tips?per_page=100'
-                );
-                console.log(response.data);
-                setTips(response.data);
-                setIsLoading(false);
-            } catch (e) {
-                console.log(
-                    'Une erreur est survenue lors de la récupération des Tips'
-                );
-            }
-        };
-        handleTipListing();
-    }, [setTips]);
 
     //ANIM CONFIG
     const config = {
@@ -85,37 +65,37 @@ const Tips = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
         >
-            {isLoading ? (
+            {/* {isLoading ? (
                 <Loader />
-            ) : (
-                <>
-                    <h1>Liste de tips</h1>
-                    <TipSearch
-                        searchHandle={handleSearchInputChange}
-                        filterHandle={handleRadioValueChange}
-                        value={radioValue}
-                    />
+            ) : ( */}
+            <>
+                <h1>Liste de tips</h1>
+                <TipSearch
+                    searchHandle={handleSearchInputChange}
+                    filterHandle={handleRadioValueChange}
+                    value={radioValue}
+                />
 
-                    <div className='tips-list'>
-                        {trail.map((props, index) => {
-                            return (
-                                <animated.div
-                                    key={filteredTips[index].id}
-                                    style={props}
-                                    className='card tips-card'
-                                >
-                                    <Link to={`/tips/${tips[index].id}`}>
-                                        <TipCard
-                                            key={filteredTips[index].id}
-                                            tip={filteredTips[index]}
-                                        />
-                                    </Link>
-                                </animated.div>
-                            );
-                        })}
-                    </div>
-                </>
-            )}
+                <div className='tips-list'>
+                    {trail.map((props, index) => {
+                        return (
+                            <animated.div
+                                key={filteredTips[index].id}
+                                style={props}
+                                className='card tips-card'
+                            >
+                                <Link to={`/tips/${tips[index].id}`}>
+                                    <TipCard
+                                        key={filteredTips[index].id}
+                                        tip={filteredTips[index]}
+                                    />
+                                </Link>
+                            </animated.div>
+                        );
+                    })}
+                </div>
+            </>
+            {/* )} */}
         </motion.section>
     );
 };

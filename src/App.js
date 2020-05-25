@@ -6,6 +6,7 @@ import './shared/styles/main.scss';
 import Header from './shared/components/Header';
 import Home from './home/Home';
 import About from './about/About';
+import { TipProvider } from './tips/components/TipContext';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
@@ -69,62 +70,64 @@ const App = () => {
 
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-            <Paper
-                elevation={0}
-                className={'main-wrapper ' + (darkMode ? 'dark' : 'light')}
-            >
-                <header>
-                    <Header />
-                    {darkMode ? (
-                        <WbSunnyIcon
-                            onClick={toggleDarkMode}
-                            className={'sun'}
-                        />
-                    ) : (
-                        <NightsStayIcon
-                            onClick={toggleDarkMode}
-                            className={'moon'}
-                        />
-                    )}
-                </header>
-                <main>
-                    <AnimatePresence exitBeforeEnter>
-                        <Switch location={location} key={location.pathname}>
-                            <Route path='/' exact>
-                                <Home
-                                    variant={pageVariants}
-                                    transition={pageTransition}
-                                />
-                            </Route>
-                            <Route path='/tips' exact>
-                                <Tips
-                                    variant={pageVariants}
-                                    transition={pageTransition}
-                                />
-                            </Route>
-                            <Route path='/tips/:id' exact>
-                                <TipSingle
-                                    variant={pageVariants}
-                                    transition={pageTransition}
-                                />
-                            </Route>
-                            <Route path='/contact' exact>
-                                <Contact
-                                    variant={pageVariants}
-                                    transition={pageTransition}
-                                />
-                            </Route>
-                            <Route path='/about' exact>
-                                <About
-                                    variant={pageVariants}
-                                    transition={pageTransition}
-                                />
-                            </Route>
-                        </Switch>
-                    </AnimatePresence>
-                </main>
-                <Footer />
-            </Paper>
+            <TipProvider>
+                <Paper
+                    elevation={0}
+                    className={'main-wrapper ' + (darkMode ? 'dark' : 'light')}
+                >
+                    <header>
+                        <Header />
+                        {darkMode ? (
+                            <WbSunnyIcon
+                                onClick={toggleDarkMode}
+                                className={'sun'}
+                            />
+                        ) : (
+                            <NightsStayIcon
+                                onClick={toggleDarkMode}
+                                className={'moon'}
+                            />
+                        )}
+                    </header>
+                    <main>
+                        <AnimatePresence exitBeforeEnter>
+                            <Switch location={location} key={location.pathname}>
+                                <Route path='/' exact>
+                                    <Home
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/tips' exact>
+                                    <Tips
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/tips/:id' exact>
+                                    <TipSingle
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/contact' exact>
+                                    <Contact
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/about' exact>
+                                    <About
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                            </Switch>
+                        </AnimatePresence>
+                    </main>
+                    <Footer />
+                </Paper>
+            </TipProvider>
         </ThemeProvider>
     );
 };
