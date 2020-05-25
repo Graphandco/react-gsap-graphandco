@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useTrail, animated } from 'react-spring';
+//import { useTrail, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import { TipContext } from '../components/TipContext';
 import { motion } from 'framer-motion';
@@ -11,7 +11,7 @@ import TipCard from '../components/TipCard';
 import './Tips.scss';
 
 const Tips = ({ variant, transition }) => {
-    const [tips, setTips] = useContext(TipContext);
+    const [tips] = useContext(TipContext);
     //const [isLoading, setIsLoading] = useContext(TipContext);
     const [searchText, setSearchText] = useState('');
     const [radioValue, setRadioValue] = useState('');
@@ -35,26 +35,26 @@ const Tips = ({ variant, transition }) => {
         );
     });
 
-    //ANIM CONFIG
-    const config = {
-        //duration: 1500,
-        type: 'spring',
-        ease: 'in-out',
-    };
+    // //ANIM CONFIG
+    // const config = {
+    //     //duration: 1500,
+    //     type: 'spring',
+    //     ease: 'in-out',
+    // };
 
-    const trail = useTrail(filteredTips.length, {
-        config,
-        from: {
-            marginTop: -30,
-            opacity: 0,
-            //transform: 'translate3d(0,-40px,0)',
-        },
-        to: {
-            marginTop: 0,
-            opacity: 1,
-            //transform: 'translate3d(0,0px,0)'
-        },
-    });
+    // const trail = useTrail(filteredTips.length, {
+    //     config,
+    //     from: {
+    //         marginTop: -30,
+    //         opacity: 0,
+    //         //transform: 'translate3d(0,-40px,0)',
+    //     },
+    //     to: {
+    //         marginTop: 0,
+    //         opacity: 1,
+    //         //transform: 'translate3d(0,0px,0)'
+    //     },
+    // });
 
     return (
         <motion.section
@@ -77,20 +77,13 @@ const Tips = ({ variant, transition }) => {
                 />
 
                 <div className='tips-list'>
-                    {trail.map((props, index) => {
+                    {filteredTips.map((tip) => {
                         return (
-                            <animated.div
-                                key={filteredTips[index].id}
-                                style={props}
-                                className='card tips-card'
-                            >
-                                <Link to={`/tips/${tips[index].id}`}>
-                                    <TipCard
-                                        key={filteredTips[index].id}
-                                        tip={filteredTips[index]}
-                                    />
+                            <motion.div className='card tips-card' key={tip.id}>
+                                <Link to={`/tips/${tip.id}`}>
+                                    <TipCard tip={tip} />
                                 </Link>
-                            </animated.div>
+                            </motion.div>
                         );
                     })}
                 </div>

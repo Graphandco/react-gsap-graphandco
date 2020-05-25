@@ -17,6 +17,8 @@
 
 .tips-card {
     border-radius: 0 0 5px 5px;
+    max-width: 250px;
+    justify-self: center;
 
     a {
         display: flex;

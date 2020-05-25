@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useParams } from 'react-router';
 import Axios from 'axios';
 
@@ -9,7 +10,7 @@ import './TipSingle.scss';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-const TipSingle = () => {
+const TipSingle = ({ variant, transition }) => {
     const { id } = useParams();
 
     const [tipTitle, setTipTitle] = useState('');
@@ -26,7 +27,7 @@ const TipSingle = () => {
                 const response = await Axios.get(
                     `https://www.graphandco.com/wp-json/wp/v2/coding-tips/${id}`
                 );
-                console.log(response.data);
+                //console.log(response.data);
                 setTipTitle(response.data.title.rendered);
                 setTipContent(response.data.content.rendered);
                 setTipCode(response.data.acf.code);
@@ -42,7 +43,15 @@ const TipSingle = () => {
     }, [id]);
 
     return (
-        <div className='tip-single'>
+        <motion.div
+            //style={pageStyle}
+            initial='initial'
+            animate='in'
+            exit='out'
+            variants={variant}
+            transition={transition}
+            className='tip-single'
+        >
             {isLoading ? (
                 <Loader />
             ) : (
@@ -68,7 +77,7 @@ const TipSingle = () => {
                     </div>
                 </>
             )}
-        </div>
+        </motion.div>
     );
 };
 
