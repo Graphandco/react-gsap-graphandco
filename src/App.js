@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './shared/styles/main.scss';
 
@@ -44,21 +44,20 @@ const App = () => {
         setDarkMode(!darkMode);
     };
 
+    const location = useLocation();
+
     const pageVariants = {
         initial: {
             opacity: 0,
             x: '-100vw',
-            scale: 0.8,
         },
         in: {
             opacity: 1,
             x: 0,
-            scale: 1,
         },
         out: {
             opacity: 0,
             x: '100vw',
-            scale: 1.2,
         },
     };
 
@@ -89,8 +88,8 @@ const App = () => {
                     )}
                 </header>
                 <main>
-                    <AnimatePresence>
-                        <Switch>
+                    <AnimatePresence exitBeforeEnter>
+                        <Switch location={location} key={location.pathname}>
                             <Route path='/' exact>
                                 <Home
                                     variant={pageVariants}
