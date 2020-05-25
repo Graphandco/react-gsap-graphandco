@@ -56,6 +56,22 @@ const Tips = ({ variant, transition }) => {
     //     },
     // });
 
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.5,
+                delayChildren: 0.5,
+            },
+        },
+    };
+
+    const item = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1 },
+    };
+
     return (
         <motion.section
             className='tips'
@@ -76,17 +92,28 @@ const Tips = ({ variant, transition }) => {
                     value={radioValue}
                 />
 
-                <div className='tips-list'>
+                <motion.div
+                    className='tips-list'
+                    variants={container}
+                    initial='hidden'
+                    animate='show'
+                >
                     {filteredTips.map((tip) => {
                         return (
-                            <motion.div className='card tips-card' key={tip.id}>
+                            <motion.div
+                                className='card tips-card'
+                                key={tip.id}
+                                variants={item}
+                                initial='hidden'
+                                animate='show'
+                            >
                                 <Link to={`/tips/${tip.id}`}>
                                     <TipCard tip={tip} />
                                 </Link>
                             </motion.div>
                         );
                     })}
-                </div>
+                </motion.div>
             </>
             {/* )} */}
         </motion.section>
