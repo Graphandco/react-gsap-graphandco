@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-// import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import './shared/styles/main.scss';
 
 import Header from './shared/components/Header';
@@ -11,9 +11,11 @@ import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
 import Footer from './shared/components/Footer';
 
-import { Switch as MaterialSwitch, Paper } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { blue } from '@material-ui/core/colors';
+import NightsStayIcon from '@material-ui/icons/NightsStay';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
 const darkTheme = createMuiTheme({
     palette: {
@@ -38,6 +40,34 @@ const lightTheme = createMuiTheme({
 const App = () => {
     const [darkMode, setDarkMode] = useState(true);
 
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            x: '-100vw',
+            scale: 0.8,
+        },
+        in: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+        },
+        out: {
+            opacity: 0,
+            x: '100vw',
+            scale: 1.2,
+        },
+    };
+
+    const pageTransition = {
+        type: 'tween',
+        ease: 'anticipate',
+        duration: 0.5,
+    };
+
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
             <Paper
@@ -46,37 +76,53 @@ const App = () => {
             >
                 <header>
                     <Header />
-                    <MaterialSwitch
-                        checked={darkMode}
-                        onChange={() => setDarkMode(!darkMode)}
-                    />
+                    {darkMode ? (
+                        <WbSunnyIcon
+                            onClick={toggleDarkMode}
+                            className={'sun'}
+                        />
+                    ) : (
+                        <NightsStayIcon
+                            onClick={toggleDarkMode}
+                            className={'moon'}
+                        />
+                    )}
                 </header>
                 <main>
-                    <Switch>
-                        <Route path='/' exact>
-                            <Home />
-                        </Route>
-                    </Switch>
-                    <Switch>
-                        <Route path='/tips' exact>
-                            <Tips />
-                        </Route>
-                    </Switch>
-                    <Switch>
-                        <Route path='/tips/:id' exact>
-                            <TipSingle />
-                        </Route>
-                    </Switch>
-                    <Switch>
-                        <Route path='/contact' exact>
-                            <Contact />
-                        </Route>
-                    </Switch>
-                    <Switch>
-                        <Route path='/about' exact>
-                            <About />
-                        </Route>
-                    </Switch>
+                    <AnimatePresence>
+                        <Switch>
+                            <Route path='/' exact>
+                                <Home
+                                    variant={pageVariants}
+                                    transition={pageTransition}
+                                />
+                            </Route>
+                            <Route path='/tips' exact>
+                                <Tips
+                                    variant={pageVariants}
+                                    transition={pageTransition}
+                                />
+                            </Route>
+                            <Route path='/tips/:id' exact>
+                                <TipSingle
+                                    variant={pageVariants}
+                                    transition={pageTransition}
+                                />
+                            </Route>
+                            <Route path='/contact' exact>
+                                <Contact
+                                    variant={pageVariants}
+                                    transition={pageTransition}
+                                />
+                            </Route>
+                            <Route path='/about' exact>
+                                <About
+                                    variant={pageVariants}
+                                    transition={pageTransition}
+                                />
+                            </Route>
+                        </Switch>
+                    </AnimatePresence>
                 </main>
                 <Footer />
             </Paper>

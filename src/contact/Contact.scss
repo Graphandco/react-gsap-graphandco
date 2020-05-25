@@ -7,7 +7,7 @@
 
     img {
         min-height: 100%;
-        min-height: 100%;
+        min-width: 100%;
     }
 }
 
@@ -19,6 +19,21 @@
     .infos {
         padding: 2rem;
         justify-self: center;
+
+        p {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+
+            svg {
+                margin-right: 0.5rem;
+                fill: #aac6f1;
+            }
+
+            &.links a {
+                margin-right: 0.5rem;
+            }
+        }
     }
 
     form {
@@ -36,6 +51,11 @@
 
 //@media (max-width: 979px) {
 @media (max-width: 768px) {
+    .contact-header {
+        img {
+            height: 300px;
+        }
+    }
     #contact-wrapper {
         grid-template-columns: 1fr;
 

@@ -4,6 +4,7 @@
 header {
     width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     transition: all 0.5s linear;
     position: fixed;
@@ -36,6 +37,22 @@ header {
             font-family: 'Poppins';
             text-decoration: none;
         }
+    }
+
+    .sun,
+    .moon {
+        cursor: pointer;
+        margin-right: 2rem;
+        transform: scale(1);
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .sun {
+        fill: rgb(243, 200, 9);
     }
 }
 

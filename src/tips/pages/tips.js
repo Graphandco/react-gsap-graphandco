@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTrail, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
+import { motion } from 'framer-motion';
 
 import Loader from '../../shared/components/Loader';
 import TipSearch from '../components/TipSearch';
@@ -9,7 +10,7 @@ import TipCard from '../components/TipCard';
 
 import './Tips.scss';
 
-const Tips = () => {
+const Tips = ({ variant, transition }) => {
     const [tips, setTips] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [searchText, setSearchText] = useState('');
@@ -76,7 +77,14 @@ const Tips = () => {
     });
 
     return (
-        <section className='tips'>
+        <motion.section
+            className='tips'
+            initial='initial'
+            animate='in'
+            exit='out'
+            variants={variant}
+            transition={transition}
+        >
             {isLoading ? (
                 <Loader />
             ) : (
@@ -108,7 +116,7 @@ const Tips = () => {
                     </div>
                 </>
             )}
-        </section>
+        </motion.section>
     );
 };
 
