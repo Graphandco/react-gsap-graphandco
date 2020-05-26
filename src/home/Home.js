@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Typewriter } from 'react-typewriting-effect';
+import 'react-typewriting-effect/dist/index.css';
 
 import './Home.scss';
 
@@ -14,7 +16,9 @@ const Home = ({ variant, transition }) => {
             transition={transition}
             className='home'
         >
-            <h1>Home</h1>
+            <h1>
+                <Typewriter string='Un métier, une passion' />
+            </h1>
         </motion.section>
     );
 };

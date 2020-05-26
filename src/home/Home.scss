@@ -3,6 +3,10 @@ section.home {
     background-image: url('../shared/images/bg-home.jpg');
     background-size: cover;
     background-position-x: left;
+
+    h1 {
+        color: white;
+    }
 }
 
 @media (max-width: 768px) {
