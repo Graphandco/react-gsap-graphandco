@@ -38,22 +38,32 @@ header {
             text-decoration: none;
         }
 
-        // &.responsive {
-        //     position: fixed;
-        //     top: 0;
-        //     right: 0;
-        //     bottom: 0;
-        //     left: 0;
-        //     flex-direction: column;
-        //     justify-content: center;
-        //     align-items: center;
-        //     background-color: $header-bg;
+        &.responsive {
+            position: fixed;
+            top: 60px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: $header-bg;
+            transform: translateX(-100%);
+            transition: 0.3s;
 
-        //     a {
-        //         font-size: 2rem;
-        //         padding: 1rem;
-        //     }
-        // }
+            &.open {
+                transform: translateX(0);
+            }
+
+            a {
+                font-size: 2rem;
+                padding: 1rem;
+            }
+        }
+    }
+    .menu-toggle {
+        cursor: pointer;
+        padding-left: 2rem;
     }
 
     .sun,

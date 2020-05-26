@@ -1,5 +1,9 @@
 @import '../shared/styles/variables';
 
+h1.contact {
+    margin: 1rem 0 2rem 0;
+}
+
 .contact-header {
     -webkit-clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
     clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
