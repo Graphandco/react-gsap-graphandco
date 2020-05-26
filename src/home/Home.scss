@@ -4,3 +4,9 @@ section.home {
     background-size: cover;
     background-position-x: left;
 }
+
+@media (max-width: 768px) {
+    section.home {
+        background-position-x: -135px;
+    }
+}

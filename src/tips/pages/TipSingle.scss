@@ -1,5 +1,22 @@
-.tip-content {
-    .code-embed-wrapper {
-        display: none;
+#return {
+    margin-left: 2rem;
+    opacity: 0.6;
+    transition: 0.3s;
+
+    span {
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+}
+.tip-singlecontent {
+    padding: 2rem;
+
+    .tip-desc {
+        margin-bottom: 2rem;
+
+        .code-embed-wrapper {
+            display: none;
+        }
     }
 }

@@ -1,3 +1,5 @@
+@import '../../shared/styles/variables';
+
 .tips {
     &-search {
         padding: 2rem;
@@ -5,6 +7,16 @@
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
         justify-content: space-between;
+
+        .tips-search-input {
+            max-width: 400px;
+        }
+
+        .tips-length {
+            margin: 0 1rem 0 -15px;
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
     }
     &-list {
         padding: 2rem 2rem 2rem calc(2rem + 30px);
@@ -34,7 +46,8 @@
             border-radius: 3px;
             position: absolute;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: $tip-title-bg;
+            opacity: 0.95;
             color: black;
             height: 100%;
             display: flex;
@@ -63,5 +76,11 @@
             top: -20px;
             left: -30px;
         }
+    }
+}
+
+@media (max-width: 979px) {
+    .tips-search {
+        grid-template-columns: 1fr;
     }
 }

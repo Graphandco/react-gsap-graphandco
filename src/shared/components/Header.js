@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import Logo from '../images/logo.png';
 
 const Header = () => {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
@@ -24,13 +25,16 @@ const Header = () => {
                         onClick={toggleOpenMenu}
                     />
                 ))}
+            <NavLink to='/' exact activeStyle={{}} id='logo'>
+                <img src={Logo} alt='Logo' />
+            </NavLink>
             <nav
                 className={
                     (isTabletOrMobile ? 'responsive ' : '') +
                     (open ? 'open' : '')
                 }
             >
-                <NavLink to='/' exact activeStyle={{}} onClick={toggleOpenMenu}>
+                <NavLink to='/' exact activeStyle={{}}>
                     Home
                 </NavLink>
                 <NavLink

@@ -35,27 +35,6 @@ const Tips = ({ variant, transition }) => {
         );
     });
 
-    // //ANIM CONFIG
-    // const config = {
-    //     //duration: 1500,
-    //     type: 'spring',
-    //     ease: 'in-out',
-    // };
-
-    // const trail = useTrail(filteredTips.length, {
-    //     config,
-    //     from: {
-    //         marginTop: -30,
-    //         opacity: 0,
-    //         //transform: 'translate3d(0,-40px,0)',
-    //     },
-    //     to: {
-    //         marginTop: 0,
-    //         opacity: 1,
-    //         //transform: 'translate3d(0,0px,0)'
-    //     },
-    // });
-
     const container = {
         hidden: { opacity: 0 },
         show: {
@@ -81,41 +60,35 @@ const Tips = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
         >
-            {/* {isLoading ? (
-                <Loader />
-            ) : ( */}
-            <>
-                <h1>Liste de tips</h1>
-                <TipSearch
-                    searchHandle={handleSearchInputChange}
-                    filterHandle={handleRadioValueChange}
-                    value={radioValue}
-                />
+            <h1>Liste de tips</h1>
+            <TipSearch
+                searchHandle={handleSearchInputChange}
+                filterHandle={handleRadioValueChange}
+                value={radioValue}
+            />
 
-                <motion.div
-                    className='tips-list'
-                    variants={container}
-                    initial='hidden'
-                    animate='show'
-                >
-                    {filteredTips.map((tip) => {
-                        return (
-                            <motion.div
-                                className='card tips-card'
-                                key={tip.id}
-                                variants={item}
-                                initial='hidden'
-                                animate='show'
-                            >
-                                <Link to={`/tips/${tip.id}`}>
-                                    <TipCard tip={tip} />
-                                </Link>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
-            </>
-            {/* )} */}
+            <motion.div
+                className='tips-list'
+                variants={container}
+                initial='hidden'
+                animate='show'
+            >
+                {filteredTips.map((tip) => {
+                    return (
+                        <motion.div
+                            className='card tips-card'
+                            key={tip.id}
+                            variants={item}
+                            initial='hidden'
+                            animate='show'
+                        >
+                            <Link to={`/tips/${tip.id}`}>
+                                <TipCard tip={tip} />
+                            </Link>
+                        </motion.div>
+                    );
+                })}
+            </motion.div>
         </motion.section>
     );
 };
