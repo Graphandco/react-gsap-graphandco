@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Logo from '../images/logo.png';
 
 const Header = () => {
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 768px)' });
+    const isTabletOrMobile = useMediaQuery('(max-width: 768px)');
     const [open, setIsOpen] = useState(false);
     const toggleOpenMenu = () => {
         setIsOpen(!open);
