@@ -7,6 +7,7 @@ import Header from './shared/components/Header';
 import Home from './home/Home';
 import About from './about/About';
 import { TipProvider } from './tips/components/TipContext';
+import { AboutProvider } from './about/components/AboutContext';
 import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
@@ -116,12 +117,14 @@ const App = () => {
                                         transition={pageTransition}
                                     />
                                 </Route>
-                                <Route path='/about' exact>
-                                    <About
-                                        variant={pageVariants}
-                                        transition={pageTransition}
-                                    />
-                                </Route>
+                                <AboutProvider>
+                                    <Route path='/about' exact>
+                                        <About
+                                            variant={pageVariants}
+                                            transition={pageTransition}
+                                        />
+                                    </Route>
+                                </AboutProvider>
                             </Switch>
                         </AnimatePresence>
                     </main>

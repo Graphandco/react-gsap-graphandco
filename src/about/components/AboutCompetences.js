@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AboutContext } from './AboutContext';
 
 import AboutCompetencesGroup from './AboutCompetencesGroup';
 
 const AboutCompetences = () => {
+    const [competences] = useContext(AboutContext);
     return (
         <section className='about-competences'>
             <h2>Compétences</h2>
-
-            <AboutCompetencesGroup name='Langages' />
-            <AboutCompetencesGroup name='Langages' />
+            {competences.map((competence, index) => (
+                <AboutCompetencesGroup key={index} competence={competence} />
+            ))}
         </section>
     );
 };
