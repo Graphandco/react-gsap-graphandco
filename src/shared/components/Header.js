@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
+import HomeIcon from '@material-ui/icons/Home';
 import Logo from '../images/logo.png';
 
 const Header = () => {
@@ -35,7 +36,7 @@ const Header = () => {
                 }
             >
                 <NavLink to='/' exact activeStyle={{}}>
-                    Home
+                    <HomeIcon fontSize={'small'} />
                 </NavLink>
                 <NavLink
                     to='/about'
