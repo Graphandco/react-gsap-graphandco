@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { AboutContext } from './AboutContext';
+import React from 'react';
 import styled from 'styled-components';
 
 const Power = styled.div`
@@ -8,7 +7,14 @@ const Power = styled.div`
 const AboutCompetencesItem = ({ competences }) => {
     return (
         <div className='competences-item'>
-            <div className='competences-name'>{competences.name}</div>
+            <div className='competences__title'>
+                <img
+                    src={competences.image}
+                    alt={competences.name}
+                    className='competence__svg'
+                />
+                <span className='competences-name'>{competences.name}</span>
+            </div>
             <div className='competences__power'>
                 <Power
                     width={competences.power}
