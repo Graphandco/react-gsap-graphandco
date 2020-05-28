@@ -117,14 +117,14 @@ const App = () => {
                                         transition={pageTransition}
                                     />
                                 </Route>
-                                <AboutProvider>
-                                    <Route path='/about' exact>
+                                <Route path='/about' exact>
+                                    <AboutProvider>
                                         <About
                                             variant={pageVariants}
                                             transition={pageTransition}
                                         />
-                                    </Route>
-                                </AboutProvider>
+                                    </AboutProvider>
+                                </Route>
                             </Switch>
                         </AnimatePresence>
                     </main>

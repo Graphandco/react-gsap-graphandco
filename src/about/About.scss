@@ -17,6 +17,9 @@
     }
 
     .about-competences {
+        h3 {
+            margin-top: 3rem;
+        }
         .competences-group {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -44,10 +47,12 @@
 }
 
 @media (max-width: 768px) {
-    .about-desc {
-        grid-template-columns: 1fr;
-        img {
-            max-height: 300px;
+    #about {
+        .about-desc {
+            grid-template-columns: 1fr;
+            img {
+                max-height: 300px;
+            }
         }
     }
 }
