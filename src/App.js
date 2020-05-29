@@ -12,6 +12,7 @@ import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
 import Footer from './shared/components/Footer';
+import CookiesBanner from './shared/components/CookiesBanner';
 
 import { Paper } from '@material-ui/core';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -27,8 +28,8 @@ const darkTheme = createMuiTheme({
         background: {
             paper: '#272727',
         },
-        typography: {
-            color: '"CACACA"',
+        text: {
+            primary: '#e2e2e2',
         },
     },
 });
@@ -36,6 +37,9 @@ const darkTheme = createMuiTheme({
 const lightTheme = createMuiTheme({
     palette: {
         type: 'light',
+        text: {
+            primary: 'rgba(0, 0, 0, 0.87);',
+        },
     },
 });
 
@@ -128,7 +132,9 @@ const App = () => {
                             </Switch>
                         </AnimatePresence>
                     </main>
-                    <Footer />
+                    {location.pathname !== '/' && <Footer />}
+
+                    <CookiesBanner />
                 </Paper>
             </TipProvider>
         </ThemeProvider>

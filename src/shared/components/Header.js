@@ -36,7 +36,11 @@ const Header = () => {
                 }
             >
                 <NavLink to='/' exact activeStyle={{}}>
-                    <HomeIcon fontSize={'small'} />
+                    {isTabletOrMobile ? (
+                        'Accueil'
+                    ) : (
+                        <HomeIcon fontSize={'small'} />
+                    )}
                 </NavLink>
                 <NavLink
                     to='/about'

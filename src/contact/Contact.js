@@ -26,7 +26,7 @@ const Contact = ({ variant, transition }) => {
             <div id='contact-wrapper'>
                 <div className='infos'>
                     <h1 className='contact'>Contact</h1>
-                    <p>
+                    <p className='name'>
                         <strong>Graph and Co</strong>
                     </p>
                     <p className='address'>
