@@ -17,7 +17,6 @@ export const TipProvider = (props) => {
                 //console.log(response.data);
                 setTips(response.data);
                 //setIsLoading(false);
-                tips.reverse();
             } catch (e) {
                 console.log(
                     'Une erreur est survenue lors de la récupération des Tips'
