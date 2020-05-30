@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
 
 .main-wrapper.light {
-    --header-bg: #bbb;
+    --header-bg: #fff;
+    --title-bg: rgba(0, 0, 0, 0.1);
     --tip-title-bg: #bbb;
     --tip-card-overlay: rgba(0, 0, 0, 0.3);
     --default-text-color: rgba(0, 0, 0, 0.87);
@@ -10,6 +11,7 @@
 
 .main-wrapper.dark {
     --header-bg: #151515;
+    --title-bg: rgba(255, 255, 255, 0.1);
     --tip-title-bg: #fff;
     --tip-card-overlay: rgba(255, 255, 255, 0.3);
     --default-text-color: #e2e2e2;
@@ -17,6 +19,7 @@
 
 $default-text-color: var(--default-text-color);
 $header-bg: var(--header-bg);
+$title-bg: var(--title-bg);
 $tip-title-bg: var(--tip-title-bg);
 $tip-card-overlay: var(--tip-card-overlay);
 $footer-bg: $header-bg;

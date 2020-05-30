@@ -64,7 +64,7 @@ const TipSearch = (props) => {
                     <FormControlLabel
                         value='php'
                         control={<Radio />}
-                        label='php'
+                        label='PHP'
                     />
                     <span className='tips-length'>({phpTips.length})</span>
 
