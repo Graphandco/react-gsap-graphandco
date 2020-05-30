@@ -96,40 +96,43 @@ const App = () => {
                     </header>
                     <main>
                         <AnimatePresence exitBeforeEnter>
-                            <Switch location={location} key={location.pathname}>
-                                <Route path='/' exact>
-                                    <Home
-                                        variant={pageVariants}
-                                        transition={pageTransition}
-                                    />
-                                </Route>
-                                <Route path='/tips' exact>
-                                    <Tips
-                                        variant={pageVariants}
-                                        transition={pageTransition}
-                                    />
-                                </Route>
-                                <Route path='/tips/:id' exact>
-                                    <TipSingle
-                                        variant={pageVariants}
-                                        transition={pageTransition}
-                                    />
-                                </Route>
-                                <Route path='/contact' exact>
-                                    <Contact
-                                        variant={pageVariants}
-                                        transition={pageTransition}
-                                    />
-                                </Route>
-                                <Route path='/about' exact>
-                                    <AboutProvider>
+                            <AboutProvider>
+                                <Switch
+                                    location={location}
+                                    key={location.pathname}
+                                >
+                                    <Route path='/' exact>
+                                        <Home
+                                            variant={pageVariants}
+                                            transition={pageTransition}
+                                        />
+                                    </Route>
+                                    <Route path='/tips' exact>
+                                        <Tips
+                                            variant={pageVariants}
+                                            transition={pageTransition}
+                                        />
+                                    </Route>
+                                    <Route path='/tips/:id' exact>
+                                        <TipSingle
+                                            variant={pageVariants}
+                                            transition={pageTransition}
+                                        />
+                                    </Route>
+                                    <Route path='/contact' exact>
+                                        <Contact
+                                            variant={pageVariants}
+                                            transition={pageTransition}
+                                        />
+                                    </Route>
+                                    <Route path='/about' exact>
                                         <About
                                             variant={pageVariants}
                                             transition={pageTransition}
                                         />
-                                    </AboutProvider>
-                                </Route>
-                            </Switch>
+                                    </Route>
+                                </Switch>
+                            </AboutProvider>
                         </AnimatePresence>
                     </main>
                     {location.pathname !== '/' && <Footer />}

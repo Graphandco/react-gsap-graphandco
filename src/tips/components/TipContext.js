@@ -24,7 +24,7 @@ export const TipProvider = (props) => {
             }
         };
         handleTipListing();
-    }, [tips, setTips]);
+    }, [setTips]);
 
     return (
         <TipContext.Provider value={[tips]}>

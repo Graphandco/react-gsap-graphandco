@@ -97,11 +97,14 @@ const Tips = ({ variant, transition }) => {
                 {filteredTips.map((tip) => {
                     return (
                         <motion.div
-                            className='card tips-card'
+                            className='card tips__card'
                             key={tip.id}
                             variants={item}
                             initial='hidden'
                             animate='show'
+                            style={{
+                                backgroundImage: `url(https://picsum.photos/500/800/?random&rnd82407${tip.id})`,
+                            }}
                         >
                             <Link to={`/tips/${tip.id}`}>
                                 <TipCard tip={tip} />
