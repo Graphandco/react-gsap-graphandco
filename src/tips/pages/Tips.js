@@ -81,7 +81,7 @@ const Tips = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
         >
-            <h1>Liste de tips</h1>
+            <h1 className='overlay-title'>Liste de tips</h1>
             <TipSearch
                 searchHandle={handleSearchInputChange}
                 filterHandle={handleRadioValueChange}

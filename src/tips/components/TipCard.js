@@ -9,8 +9,8 @@ const Svg = styled.div`
     mask: url(${(props) => props.src}) no-repeat center / contain;
     webkit-mask: url(${(props) => props.src}) no-repeat center / contain;
     background-color: ${(props) => props.color};
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 `;
 
 const TipCard = ({ tip }) => {
@@ -48,6 +48,7 @@ const TipCard = ({ tip }) => {
         <>
             <div className='tips__card__title'>
                 <span
+                    //style={{ backgroundColor: color }}
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}

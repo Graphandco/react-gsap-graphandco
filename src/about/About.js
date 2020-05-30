@@ -15,7 +15,7 @@ const About = ({ variant, transition }) => {
             transition={transition}
             id='about'
         >
-            <h1>A Propos</h1>
+            <h1 className='overlay-title'>A Propos</h1>
             <AboutDesc />
             <AboutCompetences />
         </motion.div>

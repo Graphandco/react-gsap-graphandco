@@ -4,18 +4,21 @@
 .main-wrapper.light {
     --header-bg: #bbb;
     --tip-title-bg: #bbb;
+    --tip-card-overlay: rgba(0, 0, 0, 0.3);
     --default-text-color: rgba(0, 0, 0, 0.87);
 }
 
 .main-wrapper.dark {
     --header-bg: #151515;
     --tip-title-bg: #fff;
+    --tip-card-overlay: rgba(255, 255, 255, 0.3);
     --default-text-color: #e2e2e2;
 }
 
 $default-text-color: var(--default-text-color);
 $header-bg: var(--header-bg);
 $tip-title-bg: var(--tip-title-bg);
+$tip-card-overlay: var(--tip-card-overlay);
 $footer-bg: $header-bg;
 
 $primary: #2c2c2c;

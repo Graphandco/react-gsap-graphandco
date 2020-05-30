@@ -95,8 +95,8 @@ const App = () => {
                         )}
                     </header>
                     <main>
-                        <AnimatePresence exitBeforeEnter>
-                            <AboutProvider>
+                        <AboutProvider>
+                            <AnimatePresence exitBeforeEnter>
                                 <Switch
                                     location={location}
                                     key={location.pathname}
@@ -132,8 +132,8 @@ const App = () => {
                                         />
                                     </Route>
                                 </Switch>
-                            </AboutProvider>
-                        </AnimatePresence>
+                            </AnimatePresence>
+                        </AboutProvider>
                     </main>
                     {location.pathname !== '/' && <Footer />}
 
