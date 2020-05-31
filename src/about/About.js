@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import AboutDesc from './components/AboutDesc';
 import AboutCompetences from './components/AboutCompetences';
 import AboutExp from './components/AboutExp';
+import AboutEtudes from './components/AboutEtudes';
 import './About.scss';
 
 const About = ({ variant, transition }) => {
@@ -15,11 +16,13 @@ const About = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
             id='about'
+            className='about'
         >
             <h1 className='overlay-title'>A Propos</h1>
             <AboutDesc />
             <AboutCompetences />
             <AboutExp />
+            <AboutEtudes />
         </motion.div>
     );
 };

@@ -3,7 +3,7 @@ import AboutImage from '../../shared/images/about.jpg';
 
 const AboutDesc = () => {
     return (
-        <section className='about-desc'>
+        <section className='about__desc'>
             <p>
                 L’informatique, incluant le développement aussi bien que la
                 découverte de nouveaux logiciels ou procédures, occupe une place

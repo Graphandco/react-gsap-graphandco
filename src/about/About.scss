@@ -1,10 +1,18 @@
 @import '../shared/styles/variables';
 
-#about {
+.about {
     section {
         padding: 0 2rem 2rem;
     }
-    .about-desc {
+    h2 {
+        display: flex;
+        align-items: center;
+        .title-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+    }
+    &__desc {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
@@ -16,59 +24,173 @@
         }
     }
 
-    .about-competences {
+    &__competences {
         h3 {
             margin-top: 3rem;
         }
-        .competences-group {
+        &__group {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-gap: 2rem;
+        }
+        &__item {
+            &__title {
+                display: flex;
+                align-items: center;
 
-            .competences-item {
-                .competences__title {
-                    display: flex;
-                    align-items: center;
-
-                    img {
-                        height: 30px;
-                    }
-
-                    .competences-name {
-                        margin-left: 1rem;
-                    }
+                img {
+                    height: 30px;
                 }
-                .competences__power {
-                    width: 70%;
-                    height: 5px;
-                    background-color: #151515;
-                    margin-top: 1rem;
-                    position: relative;
 
-                    &-grade {
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        background-color: #aac6f1;
-                    }
+                &__name {
+                    margin-left: 1rem;
+                }
+            }
+            &__power {
+                width: 70%;
+                height: 5px;
+                background-color: #151515;
+                margin-top: 1rem;
+                position: relative;
+
+                &-grade {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #aac6f1;
                 }
             }
         }
     }
+
+    &__experience {
+        padding: 0 4rem 2rem 4rem !important;
+
+        &__item {
+            display: grid !important;
+            grid-template-columns: 1fr 6fr;
+            column-gap: 2rem;
+            align-items: center;
+
+            &__logo {
+                padding-left: 2rem;
+            }
+
+            &__title {
+                font-weight: 700;
+                font-size: 1.2rem;
+                text-decoration: underline;
+                span {
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                }
+            }
+        }
+        .slick-prev:before {
+            content: '\f053';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 600;
+        }
+        .slick-next:before {
+            content: '\f054';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 600;
+        }
+    }
+
+    &__etudes {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 2rem;
+        align-items: center;
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+                'date1 desc2'
+                'desc1 date2';
+            align-items: center;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 3px;
+                transform: translateY(-50%);
+                background-color: #fff;
+            }
+            &__date {
+                padding: 1rem;
+                text-align: center;
+                font-size: 5rem;
+                position: relative;
+                span {
+                    opacity: 0.2;
+                }
+                &1 {
+                    grid-area: date1;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                        height: 30%;
+                        width: 1px;
+                        background-color: #fff;
+                    }
+                }
+                &2 {
+                    grid-area: date2;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 0;
+                        height: 30%;
+                        width: 1px;
+                        background-color: #fff;
+                    }
+                }
+            }
+            &__desc {
+                text-align: center;
+                font-style: italic;
+                padding: 1rem;
+                &:first-child {
+                    grid-area: desc1;
+                }
+                &:last-child {
+                    grid-area: desc2;
+                }
+            }
+        }
+
+        img {
+            border-radius: 53% 47% 75% 25% / 24% 75% 25% 76%;
+        }
+    }
 }
 
-.competence__svg {
-    fill: white;
-}
+// .competence__svg {
+//     fill: white;
+// }
 
 @media (max-width: 768px) {
-    #about {
-        .about-desc {
+    .about {
+        img {
+            max-height: 300px;
+        }
+        &__desc {
             grid-template-columns: 1fr;
-            img {
-                max-height: 300px;
-            }
+        }
+        &__etudes {
+            grid-template-columns: 1fr;
         }
     }
 }
