@@ -18,7 +18,6 @@ const About = ({ variant, transition }) => {
             id='about'
             className='about'
         >
-            <h1 className='overlay-title'>A Propos</h1>
             <AboutDesc />
             <AboutCompetences />
             <AboutExp />

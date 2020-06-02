@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
 
 .main-wrapper.light {
-    --header-bg: #fff;
+    --header-bg: #d7e7fb;
     --title-bg: rgba(0, 0, 0, 0.1);
     --tip-title-bg: #bbb;
     --tip-card-overlay: rgba(0, 0, 0, 0.3);
@@ -10,7 +10,7 @@
 }
 
 .main-wrapper.dark {
-    --header-bg: #151515;
+    --header-bg: #1e242b;
     --title-bg: rgba(255, 255, 255, 0.1);
     --tip-title-bg: #fff;
     --tip-card-overlay: rgba(255, 255, 255, 0.3);

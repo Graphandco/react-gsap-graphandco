@@ -26,7 +26,7 @@ const darkTheme = createMuiTheme({
         primary: blue,
         secondary: blue,
         background: {
-            paper: '#272727',
+            paper: '#2f3945',
         },
         text: {
             primary: '#e2e2e2',
@@ -38,7 +38,7 @@ const lightTheme = createMuiTheme({
     palette: {
         type: 'light',
         background: {
-            paper: '#eaeaea',
+            paper: '#fafcff',
         },
         text: {
             primary: 'rgba(0, 0, 0, 0.87);',
