@@ -5,18 +5,18 @@ export const TipContext = createContext();
 
 export const TipProvider = (props) => {
     const [tips, setTips] = useState([]);
-    //const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const handleTipListing = async () => {
-            //setIsLoading(true);
+            setIsLoading(true);
             try {
                 const response = await Axios.get(
                     'https://www.graphandco.com/wp-json/wp/v2/coding-tips?per_page=100'
                 );
-                //console.log(response.data);
+                console.log(response.data);
                 setTips(response.data);
-                //setIsLoading(false);
+                setIsLoading(false);
             } catch (e) {
                 console.log(
                     'Une erreur est survenue lors de la récupération des Tips'
@@ -27,7 +27,7 @@ export const TipProvider = (props) => {
     }, [setTips]);
 
     return (
-        <TipContext.Provider value={[tips]}>
+        <TipContext.Provider value={[tips, isLoading, setIsLoading]}>
             {props.children}
         </TipContext.Provider>
     );
