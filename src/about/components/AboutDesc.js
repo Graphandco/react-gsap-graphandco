@@ -3,71 +3,77 @@ import { motion } from 'framer-motion';
 import AboutImage from '../../shared/images/about.jpg';
 
 const AboutDesc = () => {
-    const variantsH1 = {
-        initial: {
-            opacity: 0,
-            y: '-100vh',
-        },
-        in: {
-            opacity: 1,
-            y: 0,
-        },
-        out: {
-            opacity: 0,
-            y: '100vh',
-        },
-    };
+    // const variantsH1 = {
+    //     initial: {
+    //         opacity: 0,
+    //         y: '-100vh',
+    //     },
+    //     in: {
+    //         opacity: 1,
+    //         y: 0,
+    //     },
+    //     out: {
+    //         opacity: 0,
+    //         y: '100vh',
+    //     },
+    // };
 
-    const variantsP = {
-        initial: {
-            opacity: 0,
-            x: '-100vw',
-        },
-        in: {
-            opacity: 1,
-            x: 0,
-        },
-        out: {
-            opacity: 0,
-            x: '100vw',
-        },
-    };
+    // const variantsP = {
+    //     initial: {
+    //         opacity: 0,
+    //         x: '-100vw',
+    //     },
+    //     in: {
+    //         opacity: 1,
+    //         x: 0,
+    //     },
+    //     out: {
+    //         opacity: 0,
+    //         x: '100vw',
+    //     },
+    // };
 
-    const variantsImg = {
-        initial: {
-            opacity: 0,
-            x: '100vw',
-        },
-        in: {
-            opacity: 1,
-            x: 0,
-        },
-        out: {
-            opacity: 0,
-            x: '-100vw',
-        },
-    };
+    // const variantsImg = {
+    //     initial: {
+    //         opacity: 0,
+    //         x: '100vw',
+    //     },
+    //     in: {
+    //         opacity: 1,
+    //         x: 0,
+    //     },
+    //     out: {
+    //         opacity: 0,
+    //         x: '-100vw',
+    //     },
+    // };
 
     return (
         <>
             <motion.h1
                 className='overlay-title'
-                initial='initial'
-                animate='in'
-                exit='out'
-                variants={variantsH1}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                initial={{ y: '-100vh', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                    type: 'spring',
+                    duration: 0.5,
+                    delay: 0.5,
+                    stiffness: 80,
+                }}
                 id='about'
             >
                 A Propos
             </motion.h1>
             <section className='about__desc'>
                 <motion.p
-                    initial='initial'
-                    animate='in'
-                    exit='out'
-                    variants={variantsP}
-                    transition={{ duration: 0.5, delay: 0.8 }}
+                    initial={{ x: '-100vw', opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                        type: 'spring',
+                        duration: 0.5,
+                        delay: 0.8,
+                        stiffness: 80,
+                    }}
                     id='about'
                     className='about'
                 >
@@ -83,11 +89,14 @@ const AboutDesc = () => {
                 <motion.img
                     src={AboutImage}
                     alt='A propos'
-                    initial='initial'
-                    animate='in'
-                    exit='out'
-                    variants={variantsImg}
-                    transition={{ duration: 0.5, delay: 1.1 }}
+                    initial={{ x: '100vw', opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                        type: 'spring',
+                        duration: 0.5,
+                        delay: 1,
+                        stiffness: 80,
+                    }}
                 />
             </section>
         </>
