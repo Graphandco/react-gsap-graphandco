@@ -5,6 +5,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import HomeIcon from '@material-ui/icons/Home';
 import Logo from '../images/logo.png';
+import { motion } from 'framer-motion';
 
 const Header = () => {
     const isTabletOrMobile = useMediaQuery('(max-width: 768px)');
@@ -39,7 +40,12 @@ const Header = () => {
                     {isTabletOrMobile ? (
                         'Accueil'
                     ) : (
-                        <HomeIcon fontSize={'small'} />
+                        <motion.div
+                            whileHover={{ scale: 1.3, originX: 0 }}
+                            transition={{ type: 'spring', stifness: 250 }}
+                        >
+                            <HomeIcon fontSize={'small'} />
+                        </motion.div>
                     )}
                 </NavLink>
                 <NavLink
@@ -48,7 +54,12 @@ const Header = () => {
                     activeStyle={{}}
                     onClick={toggleOpenMenu}
                 >
-                    A propos
+                    <motion.span
+                        whileHover={{ scale: 1.3, originX: 0 }}
+                        transition={{ type: 'spring', stifness: 250 }}
+                    >
+                        A propos
+                    </motion.span>
                 </NavLink>
                 <NavLink
                     to='/tips'
@@ -56,7 +67,12 @@ const Header = () => {
                     activeStyle={{}}
                     onClick={toggleOpenMenu}
                 >
-                    Tips
+                    <motion.span
+                        whileHover={{ scale: 1.3, originX: 0 }}
+                        transition={{ type: 'spring', stifness: 250 }}
+                    >
+                        Tips
+                    </motion.span>
                 </NavLink>
                 <NavLink
                     to='/contact'
@@ -64,7 +80,12 @@ const Header = () => {
                     activeStyle={{}}
                     onClick={toggleOpenMenu}
                 >
-                    Contact
+                    <motion.span
+                        whileHover={{ scale: 1.3, originX: 0 }}
+                        transition={{ type: 'spring', stifness: 250 }}
+                    >
+                        Contact
+                    </motion.span>
                 </NavLink>
             </nav>
         </>

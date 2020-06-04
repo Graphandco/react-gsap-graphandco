@@ -50,6 +50,12 @@ header {
             font-weight: 600;
             font-family: 'Poppins';
             text-decoration: none;
+
+            span {
+                display: flex;
+                height: 100%;
+                align-items: center;
+            }
         }
 
         &.responsive {
