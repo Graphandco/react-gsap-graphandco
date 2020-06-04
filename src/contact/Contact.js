@@ -20,11 +20,31 @@ const Contact = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
         >
-            <div className='contact-header'>
+            <motion.div
+                className='contact-header'
+                initial={{ y: '-100vh', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                    type: 'spring',
+                    duration: 0.5,
+                    delay: 0.8,
+                    stiffness: 100,
+                }}
+            >
                 <img src={HeaderImage} alt='' />
-            </div>
+            </motion.div>
             <div id='contact-wrapper'>
-                <div className='infos'>
+                <motion.div
+                    className='infos'
+                    initial={{ x: '-100vw', opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                        type: 'spring',
+                        duration: 0.5,
+                        delay: 1.2,
+                        stiffness: 100,
+                    }}
+                >
                     <h1 className='contact'>Contact</h1>
                     <p className='name'>
                         <strong>Graph and Co</strong>
@@ -41,29 +61,46 @@ const Contact = ({ variant, transition }) => {
                         <SmartphoneIcon fontSize='small' /> 06 61 61 99 98
                     </p>
                     <p className='links'>
-                        <a
+                        <motion.a
                             href='mailto:contact@graphandco.com'
                             title='Contactez-moi par mail'
+                            whileHover={{ scale: 1.3, originX: 0 }}
+                            transition={{ type: 'spring', stifness: 250 }}
                         >
                             <MailIcon />
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
                             href='https://www.linkedin.com/in/regisdaum/'
                             target='blank'
                             title='Retrouvez-moi sur LinkedIn'
+                            whileHover={{ scale: 1.3, originX: 0 }}
+                            transition={{ type: 'spring', stifness: 250 }}
                         >
                             <LinkedInIcon />
-                        </a>
-                        <a
+                        </motion.a>
+                        <motion.a
                             href='https://github.com/Graphandco?tab=repositories/'
                             target='blank'
                             title='Retrouvez-moi sur GitHub'
+                            whileHover={{ scale: 1.3, originX: 0 }}
+                            transition={{ type: 'spring', stifness: 250 }}
                         >
                             <GitHubIcon />
-                        </a>
+                        </motion.a>
                     </p>
-                </div>
-                <ContactForm />
+                </motion.div>
+                <motion.div
+                    initial={{ x: '100vw', opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                        type: 'spring',
+                        duration: 0.5,
+                        delay: 1.6,
+                        stiffness: 100,
+                    }}
+                >
+                    <ContactForm />
+                </motion.div>
             </div>
         </motion.div>
     );
