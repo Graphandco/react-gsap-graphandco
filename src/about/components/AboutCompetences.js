@@ -11,8 +11,8 @@ const AboutCompetences = () => {
     return (
         <>
             <motion.h2
-                initial={{ y: '-100vh', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                initial={{ x: '-100vw', opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
                 transition={{
                     type: 'spring',
                     duration: 0.5,

@@ -36,7 +36,7 @@ const Header = () => {
                     (open ? 'open' : '')
                 }
             >
-                <NavLink to='/' exact activeStyle={{}}>
+                <NavLink to='/' exact activeStyle={{}} onClick={toggleOpenMenu}>
                     {isTabletOrMobile ? (
                         'Accueil'
                     ) : (

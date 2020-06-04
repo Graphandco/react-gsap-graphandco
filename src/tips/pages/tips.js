@@ -90,18 +90,28 @@ const Tips = ({ variant, transition }) => {
 
             <motion.div
                 className='tips-list'
-                variants={container}
-                initial='hidden'
-                animate='show'
+                initial={{ opacity: 0 }}
+                animate={{
+                    opacity: 1,
+                    transition: {
+                        staggerChildren: 0.5,
+                        staggerDirection: -1,
+                    },
+                }}
             >
                 {filteredTips.map((tip) => {
                     return (
                         <motion.div
                             className='card tips__card'
                             key={tip.id}
-                            variants={item}
-                            initial='hidden'
-                            animate='show'
+                            initial={{ x: '-100vw', opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{
+                                type: 'spring',
+                                duration: 0.5,
+                                delay: 0.8,
+                                stiffness: 150,
+                            }}
                             style={{
                                 backgroundImage: `url(https://picsum.photos/500/800/?random&rnd82407${tip.id})`,
                             }}
