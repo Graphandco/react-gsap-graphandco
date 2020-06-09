@@ -58,6 +58,7 @@ class ContactForm extends React.Component {
                         value={name}
                         onChange={this.handleChange}
                         fullWidth
+                        className='textfield'
                     />
                     <TextField
                         label='Email'
@@ -66,19 +67,18 @@ class ContactForm extends React.Component {
                         value={email}
                         onChange={this.handleChange}
                         fullWidth
+                        className='textfield'
                     />
                     <TextField
                         label='Message'
                         multiline
-                        rows={4}
-                        variant='outlined'
                         name='message'
                         value={message}
                         onChange={this.handleChange}
                         fullWidth
                         className='textfield'
                     />
-                    <Button type='submit' variant='contained' color='primary'>
+                    <Button type='submit' variant='contained'>
                         Envoyer
                     </Button>
                 </form>

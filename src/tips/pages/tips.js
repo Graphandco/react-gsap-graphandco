@@ -8,8 +8,6 @@ import { motion } from 'framer-motion';
 import TipSearch from '../components/TipSearch';
 import TipCard from '../components/TipCard';
 
-import './Tips.scss';
-
 const Tips = ({ variant, transition }) => {
     const dynamicSort = (property) => {
         let sortOrder = 1;
@@ -56,20 +54,36 @@ const Tips = ({ variant, transition }) => {
         );
     });
 
-    const container = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
+    const tipsVariants = {
+        hidden: {
+            opacity: 0,
+            //y: '100vh',
             transition: {
-                staggerChildren: 0.5,
-                delayChildren: 0.5,
+                staggerChildren: 0.1,
+            },
+        },
+        visible: {
+            opacity: 1,
+            //y: 0,
+            transition: {
+                type: 'spring',
+                mass: 0.4,
+                damping: 8,
+                staggerChildren: 0.1,
+                when: 'beforeChildren',
             },
         },
     };
 
-    const item = {
-        hidden: { opacity: 0 },
-        show: { opacity: 1 },
+    const tipVariants = {
+        hidden: {
+            opacity: 0,
+            y: -100,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+        },
     };
 
     return (
@@ -90,31 +104,20 @@ const Tips = ({ variant, transition }) => {
 
             <motion.div
                 className='tips-list'
-                initial={{ opacity: 0 }}
-                animate={{
-                    opacity: 1,
-                    transition: {
-                        staggerChildren: 0.5,
-                        staggerDirection: -1,
-                    },
-                }}
+                variants={tipsVariants}
+                initial='hidden'
+                animate='visible'
+                exit='exit'
             >
                 {filteredTips.map((tip) => {
                     return (
                         <motion.div
-                            className='card tips__card'
+                            className='tips__card'
                             key={tip.id}
-                            initial={{ x: '-100vw', opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            transition={{
-                                type: 'spring',
-                                duration: 0.5,
-                                delay: 0.8,
-                                stiffness: 150,
-                            }}
-                            style={{
-                                backgroundImage: `url(https://picsum.photos/500/800/?random&rnd82407${tip.id})`,
-                            }}
+                            variants={tipVariants}
+                            // style={{
+                            //     backgroundImage: `url(https://picsum.photos/500/800/?random&rnd82407${tip.id})`,
+                            // }}
                         >
                             <Link to={`/tips/${tip.id}`}>
                                 <TipCard tip={tip} />

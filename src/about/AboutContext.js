@@ -1,17 +1,17 @@
 import React, { createContext } from 'react';
 
-import HTML from '../../shared/images/competences/HTML.svg';
-import CSS from '../../shared/images/competences/CSS.svg';
-import PHP from '../../shared/images/competences/PHP.svg';
-import Javascript from '../../shared/images/competences/Javascript.svg';
-import Photoshop from '../../shared/images/competences/Photoshop.svg';
-import Illustrator from '../../shared/images/competences/Illustrator.svg';
-import Indesign from '../../shared/images/competences/Indesign.svg';
-import Xd from '../../shared/images/competences/Xd.svg';
-import ReactSVG from '../../shared/images/competences/ReactSVG.svg';
-import Wordpress from '../../shared/images/competences/Wordpress.svg';
-import Prestashop from '../../shared/images/competences/Prestashop.svg';
-import Bootstrap from '../../shared/images/competences/Bootstrap.svg';
+import HTML from '../shared/images/competences/HTML.svg';
+import CSS from '../shared/images/competences/CSS.svg';
+import PHP from '../shared/images/competences/PHP.svg';
+import Javascript from '../shared/images/competences/Javascript.svg';
+import Photoshop from '../shared/images/competences/Photoshop.svg';
+import Illustrator from '../shared/images/competences/Illustrator.svg';
+import Indesign from '../shared/images/competences/Indesign.svg';
+import Xd from '../shared/images/competences/Xd.svg';
+import ReactSVG from '../shared/images/competences/ReactSVG.svg';
+import Wordpress from '../shared/images/competences/Wordpress.svg';
+import Prestashop from '../shared/images/competences/Prestashop.svg';
+import Bootstrap from '../shared/images/competences/Bootstrap.svg';
 
 export const AboutContext = createContext();
 

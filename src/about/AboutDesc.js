@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AboutImage from '../../shared/images/about.jpg';
+import AboutImage from '../shared/images/about.jpg';
 
 const AboutDesc = () => {
     // const variantsH1 = {

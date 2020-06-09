@@ -6,8 +6,6 @@ import Axios from 'axios';
 
 // import Loader from '../../shared/components/Loader';
 
-import './TipSingle.scss';
-
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 

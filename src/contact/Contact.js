@@ -1,8 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 import { motion } from 'framer-motion';
-import './Contact.scss';
-import HeaderImage from '../shared/images/bg-contact.jpg';
 
 import SmartphoneIcon from '@material-ui/icons/Smartphone';
 import RoomIcon from '@material-ui/icons/Room';
@@ -20,19 +18,6 @@ const Contact = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
         >
-            <motion.div
-                className='contact-header'
-                initial={{ y: '-100vh', opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                    type: 'spring',
-                    duration: 0.5,
-                    delay: 0.8,
-                    stiffness: 100,
-                }}
-            >
-                <img src={HeaderImage} alt='' />
-            </motion.div>
             <div id='contact-wrapper'>
                 <motion.div
                     className='infos'
@@ -41,14 +26,14 @@ const Contact = ({ variant, transition }) => {
                     transition={{
                         type: 'spring',
                         duration: 0.5,
-                        delay: 1.2,
+                        delay: 0.5,
                         stiffness: 100,
                     }}
                 >
                     <h1 className='contact'>Contact</h1>
-                    <p className='name'>
+                    {/* <p className='name'>
                         <strong>Graph and Co</strong>
-                    </p>
+                    </p> */}
                     <p className='address'>
                         <RoomIcon />
                         <span>
@@ -95,9 +80,10 @@ const Contact = ({ variant, transition }) => {
                     transition={{
                         type: 'spring',
                         duration: 0.5,
-                        delay: 1.6,
+                        delay: 1,
                         stiffness: 100,
                     }}
+                    className='form'
                 >
                     <ContactForm />
                 </motion.div>

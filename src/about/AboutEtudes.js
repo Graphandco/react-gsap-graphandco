@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SchoolIcon from '@material-ui/icons/School';
-import EtudesImg from '../../shared/images/etudes.jpg';
+import EtudesImg from '../shared/images/etudes.jpg';
 
 const Etudes = () => {
     return (

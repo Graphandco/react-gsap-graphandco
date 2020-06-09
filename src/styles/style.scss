@@ -1,44 +1,44 @@
 @import './variables';
 @import './global';
+@import './about';
+@import './contact';
+@import './home';
+@import './slick';
+@import './tips';
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-height: 100vh;
+}
 
 header {
-    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: all 0.5s linear;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    height: 60px;
-    background-color: $header-bg;
+    //background-color: $header-bg;
 
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background-image: url('/images/color-line.png');
-    }
+    // &:after {
+    //     content: '';
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 4px;
+    //     background-image: url('/images/color-line.png');
+    // }
 
     #logo {
-        border-radius: 50%;
+        width: 30px;
+        height: auto;
         padding: 1rem;
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-            0 10px 10px rgba(0, 0, 0, 0.22);
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: white;
-        z-index: 1;
     }
     nav {
         display: flex;
+        align-items: center;
         height: 100%;
 
         a {
@@ -102,13 +102,18 @@ header {
     .sun {
         fill: #f3c809;
     }
+
+    .moon {
+        fill: var(--text);
+    }
 }
 
 main {
-    padding-top: 60px;
+    //padding-top: 60px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     .inner {
         display: grid;
@@ -143,9 +148,54 @@ main {
 footer {
     background-color: $footer-bg;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 10px 1rem;
     font-size: 0.8rem;
+
+    .link {
+        cursor: pointer;
+        padding: 0 0.5rem;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    overflow-y: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        max-width: 400px;
+        padding: 40px 20px;
+        background: #333333;
+        border-radius: 10px;
+        text-align: center;
+
+        h1 {
+            margin: 0 2rem 2rem 2rem;
+        }
+
+        h3 {
+            margin: 2rem 2rem 1rem 2rem;
+            padding: 0;
+        }
+
+        p {
+            margin: 0 2rem;
+        }
+
+        &.politique {
+            align-self: end;
+        }
+    }
 }
 
 .CookieConsent {

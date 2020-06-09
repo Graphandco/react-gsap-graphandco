@@ -1,12 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import '../../shared/styles/slick.scss';
-import Alsamanutention from '../../shared/images/experience/alsamanutention.jpg';
-import Creawebdesign from '../../shared/images/experience/creawebdesign.png';
-import Meosis from '../../shared/images/experience/meosis.png';
-import R2R from '../../shared/images/experience/r2r.png';
-import GraphAndCo from '../../shared/images/logo.png';
+import Alsamanutention from '../shared/images/experience/alsamanutention.jpg';
+import Creawebdesign from '../shared/images/experience/creawebdesign.png';
+import Meosis from '../shared/images/experience/meosis.png';
+import R2R from '../shared/images/experience/r2r.png';
+import GraphAndCo from '../shared/images/logo.png';
 
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 

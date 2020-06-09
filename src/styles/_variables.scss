@@ -1,5 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
+body {
+    --bg-color: #1e202a;
+    --pale-text-color: #8b97c6;
+    --main-text-color: #e2e2e2;
+    --card-bg: #252a41;
+    --card-bg-hover: #394265;
+}
+
+body.light {
+    --bg-color: #fff;
+    --main-text-color: #1e202a;
+    --card-bg: #f0f2fa;
+    --card-bg-hover: #d4d9ed;
+}
 
 .main-wrapper.light {
     --header-bg: #cecece;
@@ -25,7 +37,7 @@ $tip-card-overlay: var(--tip-card-overlay);
 $footer-bg: $header-bg;
 
 $primary: #2c2c2c;
-$lightgrey: #9a9999;
+$lightgrey: #dfdfdf;
 
 $mainfont: ' Montserrat ', sans-serif;
 $titlefont: 'Oswald', sans-serif;

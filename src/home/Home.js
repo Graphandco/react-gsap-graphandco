@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-typewriting-effect';
 import 'react-typewriting-effect/dist/index.css';
 
-import './Home.scss';
-
 const Home = ({ variant, transition }) => {
     return (
         <motion.section

@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import AboutDesc from './components/AboutDesc';
-import AboutCompetences from './components/AboutCompetences';
-import AboutExp from './components/AboutExp';
-import AboutEtudes from './components/AboutEtudes';
-import './About.scss';
+import AboutDesc from './AboutDesc';
+import AboutCompetences from './AboutCompetences';
+import AboutExp from './AboutExp';
+import AboutEtudes from './AboutEtudes';
 
 const About = ({ variant, transition }) => {
     return (

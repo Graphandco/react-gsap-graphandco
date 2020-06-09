@@ -5,6 +5,14 @@ import PHP from '../../shared/images/competences/PHP.svg';
 import Javascript from '../../shared/images/competences/Javascript.svg';
 import Prestashop from '../../shared/images/competences/Prestashop.svg';
 
+import JS from '../../shared/images/competences/js.png';
+import CSS3 from '../../shared/images/competences/css.png';
+import PHP7 from '../../shared/images/competences/php.png';
+import Presta from '../../shared/images/competences/prestashop.png';
+
+import JSIcon from '../../shared/images/competences/icons/javascript.png';
+import CSSIcon from '../../shared/images/competences/icons/css.png';
+
 const Svg = styled.div`
     mask: url(${(props) => props.src}) no-repeat center / contain;
     webkit-mask: url(${(props) => props.src}) no-repeat center / contain;
@@ -15,51 +23,103 @@ const Svg = styled.div`
 
 const TipCard = ({ tip }) => {
     const langage = tip.acf.langage;
+    const short = tip.acf.short;
     const title = tip.title.rendered;
-    let langageSvg;
-    let color;
+    let langageImage;
+    let icon;
+    //let color;
 
     //console.log(image);
 
     //console.log(langage);
 
+    // switch (langage) {
+    //     case 'css':
+    //         langageSvg = CSS;
+    //         color = '#2763ea';
+    //         break;
+    //     case 'php':
+    //         langageSvg = PHP;
+    //         color = '#7478ae';
+    //         break;
+    //     case 'javascript':
+    //         langageSvg = JS;
+    //         color = '#f0d91d';
+    //         break;
+    //     case 'prestashop':
+    //         langageSvg = Prestashop;
+    //         color = '#9fd4e4';
+    //         break;
+    //     default:
+    //         langageSvg = '../../shared/images/competences/PHP.svg';
+    // }
     switch (langage) {
         case 'css':
-            langageSvg = CSS;
-            color = '#2763ea';
+            langageImage = CSS3;
+            icon = CSSIcon;
             break;
         case 'php':
-            langageSvg = PHP;
-            color = '#7478ae';
+            langageImage = PHP7;
+            icon = JSIcon;
             break;
         case 'javascript':
-            langageSvg = Javascript;
-            color = '#f0d91d';
+            langageImage = JS;
+            icon = JSIcon;
             break;
         case 'prestashop':
-            langageSvg = Prestashop;
-            color = '#9fd4e4';
+            langageImage = Presta;
+            icon = JSIcon;
             break;
         default:
-            langageSvg = '../../shared/images/competences/PHP.svg';
+            langageImage = '../../shared/images/competences/PHP.svg';
+            icon = JSIcon;
     }
 
     return (
+        // <>
+        //     <div className='tips__card__title'>
+        //         <span
+        //             //style={{ backgroundColor: color }}
+        //             dangerouslySetInnerHTML={{
+        //                 __html: title,
+        //             }}
+        //         ></span>
+        //         <div
+        //             className='tips__card__title__langage'
+        //             //style={{ backgroundColor: color }}
+        //         >
+        //             <Svg src={langageSvg} color='#FFF' />
+        //         </div>
+        //     </div>
+        // </>
         <>
-            <div className='tips__card__title'>
-                <span
-                    //style={{ backgroundColor: color }}
+            <div className={`tips__card__line ${langage}`}></div>
+            <div className='tips__card__content'>
+                <img
+                    className='tips__card__content__icon'
+                    src={icon}
+                    alt='Langage Icon'
+                />
+                <div className='tips__card__content__lead'>
+                    <div className='tips__card__content__lead__title'>
+                        {short}
+                    </div>
+                    <div className='tips__card__content__lead__langage'>
+                        {langage}
+                    </div>
+                </div>
+                <div
+                    className='tips__card__content__desc'
                     dangerouslySetInnerHTML={{
                         __html: title,
                     }}
-                ></span>
-                <div
-                    className='tips__card__title__langage'
-                    style={{ backgroundColor: color }}
-                >
-                    <Svg src={langageSvg} color='#FFF' />
-                </div>
+                ></div>
             </div>
+            {/* <img
+                className='tips__card__image'
+                src={langageImage}
+                alt='Langage'
+            /> */}
         </>
     );
 };

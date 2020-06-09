@@ -1,7 +1,5 @@
-@import '../shared/styles/variables';
-
 h1.contact {
-    margin: 1rem 0 4rem 0;
+    margin: 1rem 0 2rem 0;
 }
 
 .contact-header {
@@ -18,8 +16,8 @@ h1.contact {
 
 #contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 0 2rem;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
 
     .infos {
         padding: 2rem;
@@ -46,16 +44,31 @@ h1.contact {
             }
         }
     }
+    .form {
+        justify-self: center;
+        form {
+            padding: 2rem;
+            max-width: 400px;
 
-    form {
-        padding: 2rem;
+            & > div {
+                margin: 0.5rem 0;
+            }
 
-        & > div {
-            margin: 0.5rem 0;
-        }
-
-        .textfield {
-            margin: 2rem 0;
+            .textfield {
+                margin: 1rem 0;
+                label {
+                    color: $lightgrey;
+                    opacity: 0.5;
+                }
+                .MuiInputBase-root {
+                    border-bottom: 1px solid $lightgrey;
+                    color: $lightgrey;
+                }
+            }
+            button {
+                margin-top: 2rem;
+                width: 100%;
+            }
         }
     }
 }

@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import HomeIcon from '@material-ui/icons/Home';
 import Logo from '../images/logo.png';
 import { motion } from 'framer-motion';
+import { ThemeContext } from '../../context/ThemeContext';
+
+import NightsStayIcon from '@material-ui/icons/NightsStay';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
 
 const Header = () => {
+    const [lightTheme, setLightTheme] = useContext(ThemeContext);
+    const handleTheme = () => {
+        setLightTheme(!lightTheme);
+        document.body.classList.toggle('light');
+    };
+
     const isTabletOrMobile = useMediaQuery('(max-width: 768px)');
     const [open, setIsOpen] = useState(false);
     const toggleOpenMenu = () => {
         setIsOpen(!open);
     };
+
     return (
         <>
             {isTabletOrMobile &&
@@ -37,16 +47,12 @@ const Header = () => {
                 }
             >
                 <NavLink to='/' exact activeStyle={{}} onClick={toggleOpenMenu}>
-                    {isTabletOrMobile ? (
-                        'Accueil'
-                    ) : (
-                        <motion.div
-                            whileHover={{ scale: 1.3, originX: 0 }}
-                            transition={{ type: 'spring', stifness: 250 }}
-                        >
-                            <HomeIcon fontSize={'small'} />
-                        </motion.div>
-                    )}
+                    <motion.div
+                        whileHover={{ scale: 1.3, originX: 0 }}
+                        transition={{ type: 'spring', stifness: 250 }}
+                    >
+                        Accueil
+                    </motion.div>
                 </NavLink>
                 <NavLink
                     to='/about'
@@ -87,6 +93,16 @@ const Header = () => {
                         Contact
                     </motion.span>
                 </NavLink>
+
+                {lightTheme ? (
+                    <NightsStayIcon
+                        onClick={handleTheme}
+                        className={'moon'}
+                        color='#1e202a'
+                    />
+                ) : (
+                    <WbSunnyIcon onClick={handleTheme} className={'sun'} />
+                )}
             </nav>
         </>
     );

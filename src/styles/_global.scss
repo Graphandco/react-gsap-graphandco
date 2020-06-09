@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Poppins:300,400&display=swap');
-@import './variables';
 
 html {
     overflow-x: hidden;
@@ -11,7 +12,11 @@ body {
     box-sizing: border-box;
     font-family: $mainfont;
     line-height: 1.5;
-    color: $lightgrey;
+    color: var(--main-text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    background-attachment: fixed;
+    transition: 0.5s;
 
     .main-wrapper {
         min-height: 100vh;
