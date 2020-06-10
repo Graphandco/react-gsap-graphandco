@@ -93,17 +93,16 @@ const Header = () => {
                         Contact
                     </motion.span>
                 </NavLink>
-
-                {lightTheme ? (
-                    <NightsStayIcon
-                        onClick={handleTheme}
-                        className={'moon'}
-                        color='#1e202a'
-                    />
-                ) : (
-                    <WbSunnyIcon onClick={handleTheme} className={'sun'} />
-                )}
             </nav>
+            {lightTheme ? (
+                <NightsStayIcon
+                    onClick={handleTheme}
+                    className={'moon'}
+                    color='#1e202a'
+                />
+            ) : (
+                <WbSunnyIcon onClick={handleTheme} className={'sun'} />
+            )}
         </>
     );
 };

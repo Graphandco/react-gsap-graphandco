@@ -1,32 +1,30 @@
 import React from 'react';
-import styled from 'styled-components';
-import CSS from '../../shared/images/competences/CSS.svg';
-import PHP from '../../shared/images/competences/PHP.svg';
-import Javascript from '../../shared/images/competences/Javascript.svg';
-import Prestashop from '../../shared/images/competences/Prestashop.svg';
+//import styled from 'styled-components';
 
-import JS from '../../shared/images/competences/js.png';
-import CSS3 from '../../shared/images/competences/css.png';
-import PHP7 from '../../shared/images/competences/php.png';
-import Presta from '../../shared/images/competences/prestashop.png';
+// import JS from '../../shared/images/competences/js.png';
+// import CSS3 from '../../shared/images/competences/css.png';
+// import PHP7 from '../../shared/images/competences/php.png';
+// import Presta from '../../shared/images/competences/prestashop.png';
 
 import JSIcon from '../../shared/images/competences/icons/javascript.png';
 import CSSIcon from '../../shared/images/competences/icons/css.png';
+import PrestaIcon from '../../shared/images/competences/icons/prestashop.png';
+import PHPIcon from '../../shared/images/competences/icons/php.png';
 
-const Svg = styled.div`
-    mask: url(${(props) => props.src}) no-repeat center / contain;
-    webkit-mask: url(${(props) => props.src}) no-repeat center / contain;
-    background-color: ${(props) => props.color};
-    width: 25px;
-    height: 25px;
-`;
+// const Svg = styled.div`
+//     mask: url(${(props) => props.src}) no-repeat center / contain;
+//     webkit-mask: url(${(props) => props.src}) no-repeat center / contain;
+//     background-color: ${(props) => props.color};
+//     width: 25px;
+//     height: 25px;
+// `;
 
 const TipCard = ({ tip }) => {
     const langage = tip.acf.langage;
     const short = tip.acf.short;
     const title = tip.title.rendered;
-    let langageImage;
     let icon;
+    //let langageImage;
     //let color;
 
     //console.log(image);
@@ -55,23 +53,23 @@ const TipCard = ({ tip }) => {
     // }
     switch (langage) {
         case 'css':
-            langageImage = CSS3;
+            //langageImage = CSS3;
             icon = CSSIcon;
             break;
         case 'php':
-            langageImage = PHP7;
-            icon = JSIcon;
+            //langageImage = PHP7;
+            icon = PHPIcon;
             break;
         case 'javascript':
-            langageImage = JS;
+            //langageImage = JS;
             icon = JSIcon;
             break;
         case 'prestashop':
-            langageImage = Presta;
-            icon = JSIcon;
+            //langageImage = Presta;
+            icon = PrestaIcon;
             break;
         default:
-            langageImage = '../../shared/images/competences/PHP.svg';
+            //langageImage = '../../shared/images/competences/PHP.svg';
             icon = JSIcon;
     }
 

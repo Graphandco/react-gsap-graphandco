@@ -10,6 +10,22 @@
 
         .tips-search-input {
             max-width: 400px;
+
+            input {
+                color: var(--main-text-color);
+            }
+
+            .MuiInput-underline:before {
+                border-bottom: 1px solid var(--main-text-color) !important;
+            }
+        }
+
+        label {
+            color: var(--main-text-color);
+        }
+
+        svg {
+            fill: var(--main-text-color);
         }
 
         .tips-length {
@@ -81,8 +97,8 @@
 
             &__icon {
                 justify-self: center;
-                width: 15px;
-                height: auto;
+                width: auto;
+                height: 18px;
             }
 
             &__lead {
@@ -103,6 +119,7 @@
 
             &__desc {
                 font-size: 0.8rem;
+                color: var(--green);
             }
         }
     }
