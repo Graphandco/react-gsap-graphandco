@@ -1,7 +1,6 @@
 import React from 'react';
 
 import SchoolIcon from '@material-ui/icons/School';
-import EtudesImg from '../shared/images/etudes.jpg';
 
 const Etudes = () => {
     return (
@@ -10,7 +9,7 @@ const Etudes = () => {
                 <SchoolIcon className='title-icon' />
                 Études et formations
             </h2>
-            <section className='about__etudes'>
+            {/* <section className='about__etudes'>
                 <img src={EtudesImg} alt='Etudes' />
                 <div className='about__etudes__content'>
                     <div className='about__etudes__content__date about__etudes__content__date1'>
@@ -29,7 +28,7 @@ const Etudes = () => {
                         </span>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </>
     );
 };

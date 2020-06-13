@@ -29,7 +29,7 @@ const Header = () => {
             transition: {
                 type: 'tween',
                 staggerChildren: 0.15,
-                delayChildren: 0.2,
+                //delayChildren: 0.2,
             },
         },
         closed: {
@@ -42,24 +42,29 @@ const Header = () => {
         },
     };
 
-    const navLinkdVariants = {
-        opened: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                type: 'spring',
-                stiffness: 80,
+    let navLinkVariants;
+    if (isTabletOrMobile) {
+        navLinkVariants = {
+            opened: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                    type: 'spring',
+                    stiffness: 80,
+                },
             },
-        },
-        closed: {
-            opacity: 0,
-            x: -100,
-            transition: {
-                type: 'spring',
-                stiffness: 80,
+            closed: {
+                opacity: 0,
+                x: -500,
+                transition: {
+                    type: 'spring',
+                    stiffness: 80,
+                },
             },
-        },
-    };
+        };
+    } else {
+        navLinkVariants = {};
+    }
 
     return (
         <>
@@ -89,18 +94,20 @@ const Header = () => {
                 onClick={toggleOpenMenu}
             >
                 <NavLink to='/' exact activeStyle={{}}>
-                    <motion.div variants={navLinkdVariants}>Accueil</motion.div>
+                    <motion.span variants={navLinkVariants}>
+                        Accueil
+                    </motion.span>
                 </NavLink>
                 <NavLink to='/about' exact activeStyle={{}}>
-                    <motion.span variants={navLinkdVariants}>
+                    <motion.span variants={navLinkVariants}>
                         A propos
                     </motion.span>
                 </NavLink>
                 <NavLink to='/tips' exact activeStyle={{}}>
-                    <motion.span variants={navLinkdVariants}>Tips</motion.span>
+                    <motion.span variants={navLinkVariants}>Tips</motion.span>
                 </NavLink>
                 <NavLink to='/contact' exact activeStyle={{}}>
-                    <motion.span variants={navLinkdVariants}>
+                    <motion.span variants={navLinkVariants}>
                         Contact
                     </motion.span>
                 </NavLink>
