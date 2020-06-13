@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
+
+import { motion, AnimatePresence } from 'framer-motion';
 
 import Alsamanutention from '../shared/images/experience/alsamanutention.jpg';
 import Creawebdesign from '../shared/images/experience/creawebdesign.png';
@@ -21,12 +23,68 @@ const AboutExp = () => {
         // autoplaySpeed: 5000,
     };
 
+    const collapseVariants = {
+        opened: {
+            scaleY: 1,
+            transition: {
+                //type: 'spring',
+                stiffness: 150,
+            },
+        },
+        closed: {
+            scaleY: 0,
+            transition: {
+                //type: 'spring',
+                stiffness: 150,
+            },
+        },
+    };
+
+    const [meosisOpen, setMeosisOpen] = useState(false);
+
     return (
         <>
             <h2>
                 <BusinessCenterIcon className='title-icon' />
                 Expérience Professionnelle
             </h2>
+
+            <div className='exp'>
+                <div
+                    className={'exp-head ' + (meosisOpen ? 'open' : '')}
+                    onClick={() => setMeosisOpen((state) => !state)}
+                >
+                    Meosis
+                </div>
+                <AnimatePresence>
+                    {meosisOpen && (
+                        <motion.div
+                            className='exp-content'
+                            variants={collapseVariants}
+                            initial={'closed'}
+                            animate={meosisOpen ? 'opened' : 'closed'}
+                            exit={'closed'}
+                        >
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Illo odit commodi delectus sed earum, adipisci
+                            obcaecati excepturi expedita culpa blanditiis
+                            aliquam provident odio impedit exercitationem
+                            laudantium officiis. Amet ullam inventore magni quam
+                            a, vero assumenda ut temporibus. Natus ipsa sint, et
+                            harum similique debitis qui cumque! Odio commodi
+                            consequuntur soluta. Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Illum veniam quasi
+                            accusamus maiores blanditiis. Harum mollitia rem
+                            fuga soluta porro laudantium ratione, at commodi
+                            illum itaque omnis qui nesciunt quaerat fugit rerum
+                            nulla nobis minus similique impedit sed?
+                            Perspiciatis officiis ex culpa dolorum explicabo
+                            illo! Incidunt assumenda autem eos dolores.
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+
             <section className='about__experience'>
                 <Slider {...settings}>
                     <div className='about__experience__item'>

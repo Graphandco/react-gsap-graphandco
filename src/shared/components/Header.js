@@ -129,25 +129,6 @@ const Header = () => {
                         )}
                     </NavLink>
                 ))}
-
-                {/* <NavLink to='/' exact activeStyle={{}}>
-                    <motion.span variants={navLinkVariants}>
-                        Accueil
-                    </motion.span>
-                </NavLink>
-                <NavLink to='/about' exact activeStyle={{}}>
-                    <motion.span variants={navLinkVariants}>
-                        A propos
-                    </motion.span>
-                </NavLink>
-                <NavLink to='/tips' exact activeStyle={{}}>
-                    <motion.span variants={navLinkVariants}>Tips</motion.span>
-                </NavLink>
-                <NavLink to='/contact' exact activeStyle={{}}>
-                    <motion.span variants={navLinkVariants}>
-                        Contact
-                    </motion.span>
-                </NavLink> */}
             </motion.nav>
             {lightTheme ? (
                 <NightsStayIcon onClick={handleTheme} className={'moon'} />
