@@ -62,22 +62,23 @@ header {
 
         &.responsive {
             position: fixed;
-            top: 60px;
+            top: 0;
             right: 0;
             bottom: 0;
-            left: 0;
+            //left: 0;
+            width: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: var(--bg-color);
-            transform: translateX(-100%);
+            //transform: translateX(-100%);
             z-index: 9;
             opacity: 0.95;
-            transition: 0.3s;
+            //transition: 0.3s;
 
-            &.open {
-                transform: translateX(0);
-            }
+            // &.open {
+            //     transform: translateX(0);
+            // }
 
             a {
                 font-size: 2rem;
@@ -88,6 +89,8 @@ header {
     .menu-toggle {
         cursor: pointer;
         padding-left: 2rem;
+        position: relative;
+        z-index: 10;
     }
 
     .sun,

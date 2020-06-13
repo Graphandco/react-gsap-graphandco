@@ -23,6 +23,36 @@ const Header = () => {
         setIsOpen(!open);
     };
 
+    const menuVariants = {
+        opened: {
+            left: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 100,
+                staggerChildren: 0.5,
+                delayChildren: 0.2,
+            },
+        },
+        closed: {
+            left: '-100vw',
+        },
+    };
+
+    const navLinkdVariants = {
+        opened: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 200,
+            },
+        },
+        closed: {
+            opacity: 0,
+            x: 100,
+        },
+    };
+
     return (
         <>
             {isTabletOrMobile &&
@@ -40,60 +70,33 @@ const Header = () => {
             <NavLink to='/' exact activeStyle={{}} id='logo'>
                 <img src={Logo} alt='Logo' />
             </NavLink>
-            <nav
+            <motion.nav
+                variants={menuVariants}
+                initial={'closed'}
+                animate={open ? 'opened' : 'closed'}
                 className={
                     (isTabletOrMobile ? 'responsive ' : '') +
                     (open ? 'open' : '')
                 }
+                onClick={toggleOpenMenu}
             >
-                <NavLink to='/' exact activeStyle={{}} onClick={toggleOpenMenu}>
-                    <motion.div
-                        whileHover={{ scale: 1.3, originX: 0 }}
-                        transition={{ type: 'spring', stifness: 250 }}
-                    >
-                        Accueil
-                    </motion.div>
+                <NavLink to='/' exact activeStyle={{}}>
+                    <motion.div variants={navLinkdVariants}>Accueil</motion.div>
                 </NavLink>
-                <NavLink
-                    to='/about'
-                    exact
-                    activeStyle={{}}
-                    onClick={toggleOpenMenu}
-                >
-                    <motion.span
-                        whileHover={{ scale: 1.3, originX: 0 }}
-                        transition={{ type: 'spring', stifness: 250 }}
-                    >
+                <NavLink to='/about' exact activeStyle={{}}>
+                    <motion.span variants={navLinkdVariants}>
                         A propos
                     </motion.span>
                 </NavLink>
-                <NavLink
-                    to='/tips'
-                    exact
-                    activeStyle={{}}
-                    onClick={toggleOpenMenu}
-                >
-                    <motion.span
-                        whileHover={{ scale: 1.3, originX: 0 }}
-                        transition={{ type: 'spring', stifness: 250 }}
-                    >
-                        Tips
-                    </motion.span>
+                <NavLink to='/tips' exact activeStyle={{}}>
+                    <motion.span variants={navLinkdVariants}>Tips</motion.span>
                 </NavLink>
-                <NavLink
-                    to='/contact'
-                    exact
-                    activeStyle={{}}
-                    onClick={toggleOpenMenu}
-                >
-                    <motion.span
-                        whileHover={{ scale: 1.3, originX: 0 }}
-                        transition={{ type: 'spring', stifness: 250 }}
-                    >
+                <NavLink to='/contact' exact activeStyle={{}}>
+                    <motion.span variants={navLinkdVariants}>
                         Contact
                     </motion.span>
                 </NavLink>
-            </nav>
+            </motion.nav>
             {lightTheme ? (
                 <NightsStayIcon
                     onClick={handleTheme}
