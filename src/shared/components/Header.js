@@ -27,14 +27,18 @@ const Header = () => {
         opened: {
             left: 0,
             transition: {
-                type: 'spring',
-                stiffness: 100,
-                staggerChildren: 0.5,
+                type: 'tween',
+                staggerChildren: 0.15,
                 delayChildren: 0.2,
             },
         },
         closed: {
-            left: '-100vw',
+            left: '-100%',
+            transition: {
+                type: 'tween',
+                staggerChildren: 0.05,
+                delay: 0.2,
+            },
         },
     };
 
@@ -44,12 +48,16 @@ const Header = () => {
             x: 0,
             transition: {
                 type: 'spring',
-                stiffness: 200,
+                stiffness: 80,
             },
         },
         closed: {
             opacity: 0,
-            x: 100,
+            x: -100,
+            transition: {
+                type: 'spring',
+                stiffness: 80,
+            },
         },
     };
 

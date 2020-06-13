@@ -1,5 +1,6 @@
 body {
     --bg-color: #1e202a;
+    --nav-bg-color: #181b2c;
     --pale-text-color: #8b97c6;
     --main-text-color: #e2e2e2;
     --card-bg: #252a41;
@@ -9,6 +10,7 @@ body {
 
 body.light {
     --bg-color: #fff;
+    --nav-bg-color: #d4d9ed;
     --main-text-color: #1e202a;
     --card-bg: #f0f2fa;
     --card-bg-hover: #d4d9ed;
