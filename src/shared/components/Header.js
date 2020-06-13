@@ -66,6 +66,25 @@ const Header = () => {
         navLinkVariants = {};
     }
 
+    const navLinks = [
+        {
+            name: 'accueil',
+            path: '/',
+        },
+        {
+            name: 'a propos',
+            path: '/about',
+        },
+        {
+            name: 'tips',
+            path: '/tips',
+        },
+        {
+            name: 'contact',
+            path: '/contact',
+        },
+    ];
+
     return (
         <>
             {isTabletOrMobile &&
@@ -80,6 +99,7 @@ const Header = () => {
                         onClick={toggleOpenMenu}
                     />
                 ))}
+
             <NavLink to='/' exact activeStyle={{}} id='logo'>
                 <img src={Logo} alt='Logo' />
             </NavLink>
@@ -93,7 +113,24 @@ const Header = () => {
                 }
                 onClick={toggleOpenMenu}
             >
-                <NavLink to='/' exact activeStyle={{}}>
+                {navLinks.map((navLink) => (
+                    <NavLink
+                        to={navLink.path}
+                        key={navLink.name}
+                        exact
+                        activeStyle={{}}
+                    >
+                        {isTabletOrMobile ? (
+                            <motion.span variants={navLinkVariants}>
+                                {navLink.name}
+                            </motion.span>
+                        ) : (
+                            <span>{navLink.name}</span>
+                        )}
+                    </NavLink>
+                ))}
+
+                {/* <NavLink to='/' exact activeStyle={{}}>
                     <motion.span variants={navLinkVariants}>
                         Accueil
                     </motion.span>
@@ -110,14 +147,10 @@ const Header = () => {
                     <motion.span variants={navLinkVariants}>
                         Contact
                     </motion.span>
-                </NavLink>
+                </NavLink> */}
             </motion.nav>
             {lightTheme ? (
-                <NightsStayIcon
-                    onClick={handleTheme}
-                    className={'moon'}
-                    color='#1e202a'
-                />
+                <NightsStayIcon onClick={handleTheme} className={'moon'} />
             ) : (
                 <WbSunnyIcon onClick={handleTheme} className={'sun'} />
             )}
