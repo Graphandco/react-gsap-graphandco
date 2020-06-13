@@ -28,14 +28,12 @@ const AboutExp = () => {
             scaleY: 1,
             transition: {
                 type: 'spring',
-                stiffness: 150,
             },
         },
         closed: {
             scaleY: 0,
             transition: {
-                type: 'spring',
-                stiffness: 150,
+                type: 'tween',
             },
         },
     };
