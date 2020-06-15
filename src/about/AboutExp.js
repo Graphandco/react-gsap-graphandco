@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 
-import { motion, AnimatePresence } from 'framer-motion';
-
+import { Collapse } from 'react-collapse';
 import Alsamanutention from '../shared/images/experience/alsamanutention.jpg';
 import Creawebdesign from '../shared/images/experience/creawebdesign.png';
 import Meosis from '../shared/images/experience/meosis.png';
@@ -10,8 +9,10 @@ import R2R from '../shared/images/experience/r2r.png';
 import GraphAndCo from '../shared/images/logo.png';
 
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
+import Accordion from '../shared/components/accordion/Accordion';
 
 const AboutExp = () => {
+    const [meosisOpen, setMeosisOpen] = useState(false);
     const settings = {
         //dots: true,
         infinite: true,
@@ -23,65 +24,80 @@ const AboutExp = () => {
         // autoplaySpeed: 5000,
     };
 
-    const collapseVariants = {
-        opened: {
-            scaleY: 1,
-            transition: {
-                type: 'spring',
-            },
-        },
-        closed: {
-            scaleY: 0,
-            transition: {
-                type: 'tween',
-            },
-        },
-    };
-
-    const [meosisOpen, setMeosisOpen] = useState(false);
+    // const collapseVariants = {
+    //     opened: {
+    //         display: 'block',
+    //         scaleY: 1,
+    //         transition: {
+    //             type: 'spring',
+    //         },
+    //     },
+    //     closed: {
+    //         display: 'none',
+    //         scaleY: 0,
+    //         transition: {
+    //             type: 'tween',
+    //         },
+    //     },
+    // };
 
     return (
         <>
-            <h2>
-                <BusinessCenterIcon className='title-icon' />
-                Expérience Professionnelle
-            </h2>
+            <Accordion title='Meosis'>
+                <>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit.
+                    </p>
+                    <p>
+                        Illo odit commodi delectus sed earum, adipisci obcaecati
+                        excepturi expedita culpa blanditiis aliquam provident
+                        odio impedit exercitationem laudantium officiis
+                    </p>
+                </>
+            </Accordion>
+            <Accordion title='Road 2 Race'>
+                <>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit.Illo odit commodi delectus sed earum, adipisci
+                        obcaecati
+                    </p>
+                    <p>
+                        excepturi expedita culpa blanditiis aliquam provident
+                        odio impedit exercitationem laudantium officiis
+                    </p>
+                </>
+            </Accordion>
 
             <div className='exp'>
                 <div
-                    className={'exp-head ' + (meosisOpen ? 'open' : '')}
+                    className='exp-head '
                     onClick={() => setMeosisOpen((state) => !state)}
                 >
                     Meosis
                 </div>
-                <AnimatePresence>
-                    {meosisOpen && (
-                        <motion.div
-                            className='exp-content'
-                            variants={collapseVariants}
-                            initial={'closed'}
-                            animate={meosisOpen ? 'opened' : 'closed'}
-                            exit={'closed'}
-                        >
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Illo odit commodi delectus sed earum, adipisci
-                            obcaecati excepturi expedita culpa blanditiis
-                            aliquam provident odio impedit exercitationem
-                            laudantium officiis. Amet ullam inventore magni quam
-                            a, vero assumenda ut temporibus. Natus ipsa sint, et
-                            harum similique debitis qui cumque! Odio commodi
-                            consequuntur soluta. Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Illum veniam quasi
-                            accusamus maiores blanditiis. Harum mollitia rem
-                            fuga soluta porro laudantium ratione, at commodi
-                            illum itaque omnis qui nesciunt quaerat fugit rerum
-                            nulla nobis minus similique impedit sed?
-                            Perspiciatis officiis ex culpa dolorum explicabo
-                            illo! Incidunt assumenda autem eos dolores.
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                <Collapse isOpened={meosisOpen}>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Illo odit commodi delectus sed earum, adipisci obcaecati
+                    excepturi expedita culpa blanditiis aliquam provident odio
+                    impedit exercitationem laudantium officiis. Amet ullam
+                    inventore magni quam a, vero assumenda ut temporibus. Natus
+                    ipsa sint, et harum similique debitis qui cumque! Odio
+                    commodi consequuntur soluta. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Illum veniam quasi accusamus
+                    maiores blanditiis. Harum mollitia rem fuga soluta porro
+                    laudantium ratione, at commodi illum itaque omnis qui
+                    nesciunt quaerat fugit rerum nulla nobis minus similique
+                    impedit sed? Perspiciatis officiis ex culpa dolorum
+                    explicabo illo! Incidunt assumenda autem eos dolores.
+                </Collapse>
             </div>
+
+            <h2>
+                <BusinessCenterIcon className='title-icon' />
+                Expérience Professionnelle
+            </h2>
 
             <section className='about__experience'>
                 <Slider {...settings}>

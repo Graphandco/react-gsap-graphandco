@@ -1,0 +1,43 @@
+.accordion__section {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &.active {
+        background-color: #ccc;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    &__icon {
+        margin-left: auto;
+        transition: transform 0.3s ease;
+
+        &.rotate {
+            transform: rotate(90deg);
+        }
+    }
+    &__content {
+        overflow: hidden;
+        transition: max-height 0.6s ease;
+    }
+
+    &__text {
+        padding: 1rem;
+    }
+}
