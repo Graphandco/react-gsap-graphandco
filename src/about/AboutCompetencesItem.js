@@ -1,9 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-
-// const Power = styled.div`
-//     width: ${(props) => props.width}%;
-// `;
+//import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 // const Svg = styled.div`
 //     mask: url(${(props) => props.src}) no-repeat center / contain;
@@ -13,48 +10,48 @@ import styled from 'styled-components';
 //     height: 30px;
 // `;
 
-const CirclePower = styled.circle`
-    stroke-dasharray: 440;
-    stroke-dashoffset: calc(440 - (440 * ${(props) => props.power}) / 100);
-    stroke: ${(props) => props.strokeColor} !important;
-`;
 const AboutCompetencesItem = ({ competences }) => {
-    return (
-        <>
-            {/* <div className='about__competences__item'>
-                <div className='about__competences__item__title'>
-                    <Svg src={competences.image} />
-                    <span className='about__competences__item__title__name'>
-                        {competences.name}
-                    </span>
-                </div>
-                <div className='about__competences__item__power'>
-                    <Power
-                        width={competences.power}
-                        className='about__competences__item__power-grade'
-                    />
-                </div>
-            </div> */}
+    const progress = 440 - (440 * `${competences.power}`) / 100;
+    const speedProgress = Math.abs(progress - 200 / 10);
+    console.log(speedProgress);
 
-            <div className='progress-bar'>
-                <div className='percent'>
-                    <svg>
-                        <circle cx='70' cy='70' r='70'></circle>
-                        <CirclePower
-                            cx='70'
-                            cy='70'
-                            r='70'
-                            power={competences.power}
-                            strokeColor={competences.color}
-                        />
-                    </svg>
-                    <div className='number'>
-                        <span>{competences.power}%</span>
-                    </div>
+    const circleVariants = {
+        hidden: {
+            strokeDashoffset: 440,
+        },
+        visible: {
+            strokeDashoffset: progress,
+            transition: {
+                duration: 2,
+                ease: 'easeInOut',
+            },
+        },
+    };
+
+    return (
+        <div className='progress-bar'>
+            <div className='percent'>
+                <svg>
+                    <circle cx='70' cy='70' r='70'></circle>
+                    <motion.circle
+                        cx='70'
+                        cy='70'
+                        r='70'
+                        style={{
+                            strokeDasharray: 440,
+                            stroke: `${competences.color}`,
+                        }}
+                        variants={circleVariants}
+                        initial='hidden'
+                        animate='visible'
+                    ></motion.circle>
+                </svg>
+                <div className='number'>
+                    <span>{competences.power}%</span>
                 </div>
-                <div className='name'>{competences.name}</div>
             </div>
-        </>
+            <div className='name'>{competences.name}</div>
+        </div>
     );
 };
 

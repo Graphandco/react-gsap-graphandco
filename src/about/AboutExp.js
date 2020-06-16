@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import Slider from 'react-slick';
+import React from 'react';
 
-import { Collapse } from 'react-collapse';
 import Alsamanutention from '../shared/images/experience/alsamanutention.jpg';
 import Creawebdesign from '../shared/images/experience/creawebdesign.png';
 import Meosis from '../shared/images/experience/meosis.png';
