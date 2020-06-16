@@ -128,4 +128,11 @@
             font-weight: bold;
         }
     }
+
+    .name {
+        padding-top: 0.8rem;
+        text-transform: uppercase;
+        color: var(--pale-text-color);
+        letter-spacing: 5px;
+    }
 }
