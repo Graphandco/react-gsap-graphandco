@@ -24,11 +24,13 @@ const Accordion = (props) => {
                 className={'accordion ' + (active && 'active')}
                 onClick={toggleAccordion}
             >
-                <p className='accordion__title'>{props.title}</p>
+                <p className='accordion__title'>
+                    {props.image && <img src={props.image} alt='logo' />}
+                    <span>{props.title}</span>
+                </p>
                 <Chevron
                     className={'accordion__icon ' + (active && 'rotate')}
                     width={10}
-                    fill={'#777'}
                 />
             </button>
             <div

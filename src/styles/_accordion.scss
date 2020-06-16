@@ -4,11 +4,12 @@
 }
 
 .accordion {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--card-bg);
+    color: var(--main-text-color);
     cursor: pointer;
-    padding: 2rem;
+    padding: 0.5rem 2rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     border: none;
     outline: none;
@@ -16,17 +17,31 @@
 
     &:hover,
     &.active {
-        background-color: #ccc;
+        background-color: var(--card-bg-hover);
     }
 
     &__title {
-        font-weight: bold;
-        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+
+        span {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            color: var(--pale-text-color);
+        }
+
+        img {
+            height: 30px;
+            width: auto;
+            margin-right: 1rem;
+        }
     }
 
     &__icon {
-        margin-left: auto;
+        //margin-left: auto;
         transition: transform 0.3s ease;
+        fill: var(--main-text-color);
 
         &.rotate {
             transform: rotate(90deg);
@@ -35,6 +50,10 @@
     &__content {
         overflow: hidden;
         transition: max-height 0.6s ease;
+
+        h3 {
+            margin: 1rem 0;
+        }
     }
 
     &__text {

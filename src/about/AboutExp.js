@@ -12,200 +12,86 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import Accordion from '../shared/components/accordion/Accordion';
 
 const AboutExp = () => {
-    const [meosisOpen, setMeosisOpen] = useState(false);
-    const settings = {
-        //dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-        // autoplay: true,
-        // autoplaySpeed: 5000,
-    };
-
-    // const collapseVariants = {
-    //     opened: {
-    //         display: 'block',
-    //         scaleY: 1,
-    //         transition: {
-    //             type: 'spring',
-    //         },
-    //     },
-    //     closed: {
-    //         display: 'none',
-    //         scaleY: 0,
-    //         transition: {
-    //             type: 'tween',
-    //         },
-    //     },
-    // };
-
     return (
         <>
-            <Accordion title='Meosis'>
-                <>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit.
-                    </p>
-                    <p>
-                        Illo odit commodi delectus sed earum, adipisci obcaecati
-                        excepturi expedita culpa blanditiis aliquam provident
-                        odio impedit exercitationem laudantium officiis
-                    </p>
-                </>
-            </Accordion>
-            <Accordion title='Road 2 Race'>
-                <>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit.Illo odit commodi delectus sed earum, adipisci
-                        obcaecati
-                    </p>
-                    <p>
-                        excepturi expedita culpa blanditiis aliquam provident
-                        odio impedit exercitationem laudantium officiis
-                    </p>
-                </>
-            </Accordion>
-
-            <div className='exp'>
-                <div
-                    className='exp-head '
-                    onClick={() => setMeosisOpen((state) => !state)}
-                >
-                    Meosis
-                </div>
-                <Collapse isOpened={meosisOpen}>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Illo odit commodi delectus sed earum, adipisci obcaecati
-                    excepturi expedita culpa blanditiis aliquam provident odio
-                    impedit exercitationem laudantium officiis. Amet ullam
-                    inventore magni quam a, vero assumenda ut temporibus. Natus
-                    ipsa sint, et harum similique debitis qui cumque! Odio
-                    commodi consequuntur soluta. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Illum veniam quasi accusamus
-                    maiores blanditiis. Harum mollitia rem fuga soluta porro
-                    laudantium ratione, at commodi illum itaque omnis qui
-                    nesciunt quaerat fugit rerum nulla nobis minus similique
-                    impedit sed? Perspiciatis officiis ex culpa dolorum
-                    explicabo illo! Incidunt assumenda autem eos dolores.
-                </Collapse>
-            </div>
-
             <h2>
                 <BusinessCenterIcon className='title-icon' />
                 Expérience Professionnelle
             </h2>
 
             <section className='about__experience'>
-                <Slider {...settings}>
-                    <div className='about__experience__item'>
-                        <div className='about__experience__item__logo'>
-                            <img src={Meosis} alt='Meosis' />
-                        </div>
-                        <div className='about__experience__item__content'>
-                            <div className='about__experience__item__title'>
-                                2017 à aujourd'hui: <span>Meosis</span>
-                            </div>
-                            <div className='about__experience__item__desc'>
-                                <p>
-                                    Webmaster / Support : gestion du parc de
-                                    sites vitrine (Wordpress) et e-commerce
-                                    (Prestashop), résolution des bugs,
-                                    optimisation UX/UI, prise en charge des
-                                    demandes clients.
-                                </p>
-                                <p>
-                                    Chef de Projet Graphisme et Développement :
-                                    gestion de l’équipe de graphistes,
-                                    développeurs et webmasters. Étude des
-                                    nouveux cahiers des charges, gestion des
-                                    plannings et des litiges clients, étude et
-                                    devis sur les développements spécifiques,
-                                    contrôle final des sites avant mise en
-                                    ligne.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='about__experience__item'>
-                        <div className='about__experience__item__logo'>
-                            <img src={R2R} alt='Road2Race' />
-                        </div>
-                        <div className='about__experience__item__content'>
-                            <div className='about__experience__item__title'>
-                                2015 à 2019 <span>Road2Race</span>
-                            </div>
-                            <div className='about__experience__item__desc'>
-                                <p>
-                                    Associé et responsable du dévelopement du
-                                    site e-commerce dans l’univers de la moto.
-                                    Gestion via le CMS Magento, création de
-                                    fiches produits et artworks, design
-                                    graphique du site, optimisation SEO et
-                                    campagnes Adwords.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='about__experience__item'>
-                        <div className='about__experience__item__logo'>
-                            <img src={GraphAndCo} alt='Graph And Co' />
-                        </div>
-                        <div className='about__experience__item__content'>
-                            <div className='about__experience__item__title'>
-                                2014 à 2015: <span>Graph & Co</span>
-                            </div>
-                            <div className='about__experience__item__desc'>
-                                <p>
-                                    Autoentrepreneur : création de sites web,
-                                    supports visuels (logos, chartes
-                                    graphiques), retouches photographiques et
-                                    campagnes webmarketing.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='about__experience__item'>
-                        <div className='about__experience__item__logo'>
-                            <img src={Creawebdesign} alt='Creawebdesign' />
-                        </div>
-                        <div className='about__experience__item__content'>
-                            <div className='about__experience__item__title'>
-                                2009: <span>Creawebdesign</span>
-                            </div>
-                            <div className='about__experience__item__desc'>
-                                <p>
-                                    Technico-Commercial en Webmarketing. Vente
-                                    de supports de communication, aide à la
-                                    réalisation de sites web vitrines et
-                                    marchands.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='about__experience__item'>
-                        <div className='about__experience__item__logo'>
-                            <img src={Alsamanutention} alt='Alsamanutention' />
-                        </div>
-                        <div className='about__experience__item__content'>
-                            <div className='about__experience__item__title'>
-                                2008 à 2009: <span>Alsamanutention</span>
-                            </div>
-                            <div className='about__experience__item__desc'>
-                                <p>
-                                    Responsable communication et informatique,
-                                    mise en place de nouveaux outils de
-                                    communication : refonte du site web,
-                                    documentation interne et supports destinés
-                                    aux techniciens.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </Slider>
+                <Accordion title='Meosis' image={Meosis}>
+                    <>
+                        <h3>
+                            2017 à aujourd'hui: <span>Meosis</span>
+                        </h3>
+                        <p>
+                            Webmaster / Support : gestion du parc de sites
+                            vitrine (Wordpress) et e-commerce (Prestashop),
+                            résolution des bugs, optimisation UX/UI, prise en
+                            charge des demandes clients.
+                        </p>
+                        <p>
+                            Chef de Projet Graphisme et Développement : gestion
+                            de l’équipe de graphistes, développeurs et
+                            webmasters. Étude des nouveux cahiers des charges,
+                            gestion des plannings et des litiges clients, étude
+                            et devis sur les développements spécifiques,
+                            contrôle final des sites avant mise en ligne.
+                        </p>
+                    </>
+                </Accordion>
+                <Accordion title='Road 2 Race' image={R2R}>
+                    <>
+                        <h3>
+                            2015 à 2019 <span>Road2Race</span>
+                        </h3>
+                        <p>
+                            Associé et responsable du dévelopement du site
+                            e-commerce dans l’univers de la moto. Gestion via le
+                            CMS Magento, création de fiches produits et
+                            artworks, design graphique du site, optimisation SEO
+                            et campagnes Adwords.
+                        </p>
+                    </>
+                </Accordion>
+                <Accordion title='Graph & Co' image={GraphAndCo}>
+                    <>
+                        <h3>
+                            2014 à 2015: <span>Graph & Co</span>
+                        </h3>
+                        <p>
+                            Autoentrepreneur : création de sites web, supports
+                            visuels (logos, chartes graphiques), retouches
+                            photographiques et campagnes webmarketing.
+                        </p>
+                    </>
+                </Accordion>
+                <Accordion title='Creawebdesign' image={Creawebdesign}>
+                    <>
+                        <h3>
+                            2009: <span>Creawebdesign</span>
+                        </h3>
+                        <p>
+                            Technico-Commercial en Webmarketing. Vente de
+                            supports de communication, aide à la réalisation de
+                            sites web vitrines et marchands.
+                        </p>
+                    </>
+                </Accordion>
+                <Accordion title='Alsamanutention' image={Alsamanutention}>
+                    <>
+                        <h3>
+                            2008 à 2009: <span>Alsamanutention</span>
+                        </h3>
+                        <p>
+                            Responsable communication et informatique, mise en
+                            place de nouveaux outils de communication : refonte
+                            du site web, documentation interne et supports
+                            destinés aux techniciens.
+                        </p>
+                    </>
+                </Accordion>
             </section>
         </>
     );
