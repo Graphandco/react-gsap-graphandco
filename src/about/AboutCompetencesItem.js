@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useIntersection } from 'react-use';
 //import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 
 // const Svg = styled.div`
 //     mask: url(${(props) => props.src}) no-repeat center / contain;
@@ -18,11 +19,12 @@ const AboutCompetencesItem = ({ competences }) => {
     const intersection = useIntersection(sectionRef, {
         root: null,
         rootMargin: '0px',
-        threshold: 0.2,
+        threshold: .4,
     });
 
     const progress = 440 - (440 * `${competences.power}`) / 100;
     const speedProgress = `${competences.power}` / 30;
+
     //console.log(speedProgress);
 
     const circleVariants = {
@@ -40,7 +42,10 @@ const AboutCompetencesItem = ({ competences }) => {
 
     return (
         <>
+
+
             <div className='progress-bar' ref={sectionRef}>
+
                 <div className='percent'>
                     <svg>
                         <circle cx='70' cy='70' r='70'></circle>
@@ -56,14 +61,22 @@ const AboutCompetencesItem = ({ competences }) => {
                             initial='hidden'
                             animate={
                                 intersection &&
-                                intersection.intersectionRatio < 0.2
+                                intersection.intersectionRatio < .4
                                     ? 'hidden'
                                     : 'visible'
                             }
                         ></motion.circle>
                     </svg>
+                    
                     <div className='number'>
-                        <span>{competences.power}%</span>
+                        {
+                            intersection && 
+                            intersection.intersectionRatio < .4 
+                            ? ''
+                            : 
+                            <CountUp start={0} end={parseInt(competences.power)} duration={parseInt(speedProgress)} suffix="%" />
+                        }
+
                     </div>
                 </div>
                 <div className='name'>{competences.name}</div>
