@@ -19,7 +19,7 @@ const AboutCompetencesItem = ({ competences }) => {
     const intersection = useIntersection(sectionRef, {
         root: null,
         rootMargin: '0px',
-        threshold: .4,
+        threshold: 0.4,
     });
 
     const progress = 440 - (440 * `${competences.power}`) / 100;
@@ -42,10 +42,7 @@ const AboutCompetencesItem = ({ competences }) => {
 
     return (
         <>
-
-
             <div className='progress-bar' ref={sectionRef}>
-
                 <div className='percent'>
                     <svg>
                         <circle cx='70' cy='70' r='70'></circle>
@@ -61,22 +58,25 @@ const AboutCompetencesItem = ({ competences }) => {
                             initial='hidden'
                             animate={
                                 intersection &&
-                                intersection.intersectionRatio < .4
+                                intersection.intersectionRatio < 0.4
                                     ? 'hidden'
                                     : 'visible'
                             }
                         ></motion.circle>
                     </svg>
-                    
-                    <div className='number'>
-                        {
-                            intersection && 
-                            intersection.intersectionRatio < .4 
-                            ? ''
-                            : 
-                            <CountUp start={0} end={parseInt(competences.power)} duration={parseInt(speedProgress)} suffix="%" />
-                        }
 
+                    <div className='number'>
+                        {intersection &&
+                        intersection.intersectionRatio < 0.4 ? (
+                            ''
+                        ) : (
+                            <CountUp
+                                start={0}
+                                end={parseInt(competences.power)}
+                                duration={parseInt(speedProgress)}
+                                suffix='%'
+                            />
+                        )}
                     </div>
                 </div>
                 <div className='name'>{competences.name}</div>

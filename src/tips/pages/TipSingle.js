@@ -11,6 +11,7 @@ import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import Button from '@material-ui/core/Button';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import CustomButton from '../../shared/components/CustomButton';
 
 const TipSingle = ({ variant, transition }) => {
     const { id } = useParams();
@@ -66,6 +67,7 @@ const TipSingle = ({ variant, transition }) => {
                     </span>
                 </Button>
             </NavLink>
+            <CustomButton link='/tips' title='Retour' prev ml='2rem' />
 
             <div className='tip-singlecontent'>
                 <div

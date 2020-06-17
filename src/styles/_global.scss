@@ -94,3 +94,9 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+.MuiButton-root {
+    color: var(--main-text-color) !important;
+    opacity: 1 !important;
+    border: 1px solid var(--main-text-color) !important;
+}
