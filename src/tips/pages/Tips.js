@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 //import { useTrail, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import { TipContext } from '../components/TipContext';
@@ -31,7 +31,7 @@ const Tips = ({ variant, transition }) => {
         };
     };
 
-    const [tips] = useContext(TipContext);
+    const [tips, setTips] = useContext(TipContext);
     tips.sort(dynamicSort('langage'));
     //const [isLoading, setIsLoading] = useContext(TipContext);
     const [searchText, setSearchText] = useState('');

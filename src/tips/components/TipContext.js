@@ -27,7 +27,7 @@ export const TipProvider = (props) => {
     }, [setTips]);
 
     return (
-        <TipContext.Provider value={[tips, isLoading, setIsLoading]}>
+        <TipContext.Provider value={[tips, setTips, isLoading, setIsLoading]}>
             {props.children}
         </TipContext.Provider>
     );

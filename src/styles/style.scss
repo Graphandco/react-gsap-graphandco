@@ -11,6 +11,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
+    margin: auto;
 }
 
 header {
@@ -33,7 +35,7 @@ header {
     #logo {
         width: 30px;
         height: auto;
-        padding: 1rem;
+        padding: 1rem 2rem;
         position: relative;
         z-index: 2;
     }
