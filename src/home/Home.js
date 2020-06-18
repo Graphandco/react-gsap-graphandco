@@ -4,10 +4,11 @@ import { Typewriter } from 'react-typewriting-effect';
 import 'react-typewriting-effect/dist/index.css';
 
 import HomeImage from '../shared/images/bg-home.jpg';
+import CustomButton from '../shared/components/CustomButton';
 
 const Home = ({ variant, transition }) => {
     return (
-        <motion.section
+        <motion.div
             //style={pageStyle}
             initial='initial'
             animate='in'
@@ -16,24 +17,17 @@ const Home = ({ variant, transition }) => {
             transition={transition}
             className='home'
         >
-            <h1>
-                <Typewriter string='Un métier, une passion' />
-            </h1>
-
-            <div className='home-content'>
-                <img src={HomeImage} alt='Home Image' />
-                <div className='text'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Inventore atque et fuga qui, reprehenderit aliquid iste
-                    dicta ratione nulla. Dolorum et debitis voluptatibus
-                    sapiente ducimus? Incidunt nihil consectetur voluptatem
-                    neque voluptatum nemo sed, quas libero perspiciatis velit
-                    laudantium nam distinctio id earum cupiditate facere
-                    expedita exercitationem, ipsum eligendi repellendus
-                    praesentium.
-                </div>
-            </div>
-        </motion.section>
+            <section className='home__lead'>
+                <h1>
+                    <Typewriter string='Un métier, une passion' />
+                </h1>
+                <CustomButton
+                    link='/tips'
+                    title='Voir mon travail'
+                    chevronSize='12'
+                />
+            </section>
+        </motion.div>
     );
 };
 
