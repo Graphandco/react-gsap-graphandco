@@ -45,7 +45,72 @@ const TipSearch = (props) => {
                 onChange={props.searchHandle}
             />
 
-            <FormControl component='fieldset' className='tips-search-radio'>
+            <div className='filter-search'>
+                <form onChange={props.filterHandle}>
+                    <div className='filter-item'>
+                        <input
+                            type='radio'
+                            id='tous'
+                            name='filter-tips'
+                            value=''
+                        ></input>
+                        <label for='tous'>
+                            Tous
+                            <span className='tips-length'>({tips.length})</span>
+                        </label>
+                    </div>
+                    <div className='filter-item'>
+                        <input
+                            type='radio'
+                            id='php'
+                            name='filter-tips'
+                            value='php'
+                        ></input>
+                        <label for='php'>
+                            PHP
+                            <span className='tips-length'>({tips.length})</span>
+                        </label>
+                    </div>
+                    <div className='filter-item'>
+                        <input
+                            type='radio'
+                            id='javascript'
+                            name='filter-tips'
+                            value='javascript'
+                        ></input>
+                        <label for='javascript'>
+                            Javascript
+                            <span className='tips-length'>({tips.length})</span>
+                        </label>
+                    </div>
+                    <div className='filter-item'>
+                        <input
+                            type='radio'
+                            id='css'
+                            name='filter-tips'
+                            value='css'
+                        ></input>
+                        <label for='css'>
+                            CSS
+                            <span className='tips-length'>({tips.length})</span>
+                        </label>
+                    </div>
+                    <div className='filter-item'>
+                        <input
+                            type='radio'
+                            id='prestashop'
+                            name='filter-tips'
+                            value='prestashop'
+                        ></input>
+                        <label for='prestashop'>
+                            Prestashop
+                            <span className='tips-length'>({tips.length})</span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            {/* <FormControl component='fieldset' className='tips-search-radio'>
                 <RadioGroup
                     row
                     aria-label='langage'
@@ -89,7 +154,7 @@ const TipSearch = (props) => {
                     />
                     <span className='tips-length'>({prestaTips.length})</span>
                 </RadioGroup>
-            </FormControl>
+            </FormControl> */}
         </div>
     );
 };

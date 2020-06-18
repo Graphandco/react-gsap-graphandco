@@ -8,11 +8,9 @@
 @import './tips';
 
 #root {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    min-height: 100vh;
 }
 
 header {
@@ -127,7 +125,7 @@ header {
 
 main {
     //padding-top: 60px;
-    flex-grow: 1;
+    //flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -165,6 +163,7 @@ main {
 footer {
     background-color: $footer-bg;
     display: flex;
+    flex-grow: 1;
     justify-content: flex-end;
     padding: 10px 1rem;
     font-size: 0.8rem;
@@ -172,6 +171,7 @@ footer {
     .link {
         cursor: pointer;
         padding: 0 0.5rem;
+        align-self: flex-end;
     }
 }
 

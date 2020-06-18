@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router';
-import { NavLink } from 'react-router-dom';
 import Axios from 'axios';
 
 // import Loader from '../../shared/components/Loader';
@@ -9,8 +8,6 @@ import Axios from 'axios';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import Button from '@material-ui/core/Button';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import CustomButton from '../../shared/components/CustomButton';
 
 const TipSingle = ({ variant, transition }) => {
@@ -60,14 +57,14 @@ const TipSingle = ({ variant, transition }) => {
                     __html: tipTitle,
                 }}
             />
-            <NavLink to='/tips' exact activeStyle={{}}>
-                <Button variant='outlined' id='return' size='small'>
-                    <span>
-                        <ChevronLeftIcon /> <span>Retour aux tips</span>
-                    </span>
-                </Button>
-            </NavLink>
-            <CustomButton link='/tips' title='Retour' prev ml='2rem' />
+
+            <CustomButton
+                link='/tips'
+                title='Retour'
+                prev
+                ml='2rem'
+                chevronSize='12'
+            />
 
             <div className='tip-singlecontent'>
                 <div
