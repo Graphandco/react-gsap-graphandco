@@ -81,6 +81,20 @@
         //     font-size: 0.8rem;
         // }
     }
+    &-desc {
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        grid-gap: 2rem;
+
+        img {
+            width: 120px;
+            height: auto;
+            justify-self: center;
+        }
+    }
     &-list {
         padding: 2rem;
         display: grid;
@@ -320,7 +334,26 @@
 }
 
 @media (max-width: 979px) {
-    .tips-search {
-        grid-template-columns: 1fr;
+    .tips {
+        &-search {
+            grid-template-columns: 1fr;
+        }
+        &-desc {
+            img {
+                width: 100px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .tips {
+        &-desc {
+            grid-template-columns: 1fr;
+
+            img {
+                display: none;
+            }
+        }
     }
 }

@@ -68,7 +68,9 @@ const TipSearch = (props) => {
                         ></input>
                         <label for='php'>
                             PHP
-                            <span className='tips-length'>({tips.length})</span>
+                            <span className='tips-length'>
+                                ({phpTips.length})
+                            </span>
                         </label>
                     </div>
                     <div className='filter-item'>
@@ -80,7 +82,9 @@ const TipSearch = (props) => {
                         ></input>
                         <label for='javascript'>
                             Javascript
-                            <span className='tips-length'>({tips.length})</span>
+                            <span className='tips-length'>
+                                ({jsTips.length})
+                            </span>
                         </label>
                     </div>
                     <div className='filter-item'>
@@ -92,7 +96,9 @@ const TipSearch = (props) => {
                         ></input>
                         <label for='css'>
                             CSS
-                            <span className='tips-length'>({tips.length})</span>
+                            <span className='tips-length'>
+                                ({cssTips.length})
+                            </span>
                         </label>
                     </div>
                     <div className='filter-item'>
@@ -104,7 +110,9 @@ const TipSearch = (props) => {
                         ></input>
                         <label for='prestashop'>
                             Prestashop
-                            <span className='tips-length'>({tips.length})</span>
+                            <span className='tips-length'>
+                                ({prestaTips.length})
+                            </span>
                         </label>
                     </div>
                 </form>

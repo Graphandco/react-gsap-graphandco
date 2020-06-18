@@ -7,8 +7,10 @@ import { motion } from 'framer-motion';
 //import Loader from '../../shared/components/Loader';
 import TipSearch from '../components/TipSearch';
 import TipCard from '../components/TipCard';
+import QuickTip from '../../shared/images/quicktips.png';
 
 const Tips = ({ variant, transition }) => {
+    //TRI DES TIPS PAR TYPE
     const dynamicSort = (property) => {
         let sortOrder = 1;
         if (property[0] === '-') {
@@ -77,12 +79,12 @@ const Tips = ({ variant, transition }) => {
 
     const tipVariants = {
         hidden: {
-            opacity: 0,
-            y: -100,
+            //opacity: 0,
+            //y: -100,
         },
         visible: {
-            opacity: 1,
-            y: 0,
+            //opacity: 1,
+            //y: 0,
         },
     };
 
@@ -96,6 +98,17 @@ const Tips = ({ variant, transition }) => {
             transition={transition}
         >
             <h1 className='overlay-title'>Liste de tips</h1>
+            <div className='tips-desc'>
+                <div className='tip-desc-text'>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolore quo sunt, accusantium exercitationem quis sit culpa,
+                    repudiandae maiores in enim aut animi fugiat assumenda alias
+                    consectetur corrupti non beatae atque ratione. Quam sed
+                    soluta in libero maxime dolore excepturi ex accusantium
+                    exercitationem consequuntur dolores voluptate id.
+                </div>
+                <img src={QuickTip} alt='QuickTip' />
+            </div>
             <TipSearch
                 searchHandle={handleSearchInputChange}
                 filterHandle={handleRadioValueChange}
