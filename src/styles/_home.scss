@@ -68,6 +68,8 @@
             font-weight: bold;
             grid-area: title;
         }
+        .btn-wrapper {
+        }
         .custom-button {
             grid-area: button;
             justify-self: end;
@@ -117,7 +119,6 @@
                     display: none;
                 }
             }
-
             &__button {
                 padding: 0.5rem 4rem;
             }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Typewriter } from 'react-typewriting-effect';
+//import { Typewriter } from 'react-typewriting-effect';
 import 'react-typewriting-effect/dist/index.css';
 
 import HomeImage from '../shared/images/illustration.png';
@@ -18,8 +18,21 @@ const Home = ({ variant, transition }) => {
             y: 0,
             transition: {
                 type: 'spring',
-                delay: 0.4,
+                delay: 0.8,
                 stiffness: 150,
+            },
+        },
+    };
+    const imgVariants = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                type: 'tween',
+                duration: 1,
+                delay: 1.2,
             },
         },
     };
@@ -51,9 +64,17 @@ const Home = ({ variant, transition }) => {
                         <FormatQuoteIcon />
                     </span>
                 </div>
-                <div className='home__lead__image'>
+                <motion.div
+                    className='home__lead__image'
+                    initial='hidden'
+                    animate='visible'
+                    exit='hidden'
+                    variants={imgVariants}
+                    transition={transition}
+                >
                     <img className='me' src={HomeImage} alt='Illustration' />
-                </div>
+                </motion.div>
+
                 <CustomButton
                     next
                     link='/tips'
