@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-typewriting-effect';
 import 'react-typewriting-effect/dist/index.css';
 
-import HomeImage from '../shared/images/bg-home.jpg';
+//import HomeImage from '../shared/images/bg-home.jpg';
 import CustomButton from '../shared/components/CustomButton';
 
 const Home = ({ variant, transition }) => {
