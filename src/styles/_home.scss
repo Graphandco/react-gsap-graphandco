@@ -16,7 +16,7 @@
             'quote quote image image'
             'quote quote image image'
             '. . button button';
-        background-color: var(--card-bg);
+        background-color: var(--home-lead-bg);
 
         &__quote {
             grid-area: quote;
@@ -71,7 +71,7 @@
         .custom-button {
             grid-area: button;
             justify-self: end;
-            background-color: #16181f;
+            background-color: var(--home-button-bg);
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             border: none;
@@ -82,7 +82,7 @@
             border-radius: 3px 0 0 3px;
 
             &:hover {
-                background-color: #101117;
+                background-color: var(--home-button-bg-hover);
             }
         }
     }

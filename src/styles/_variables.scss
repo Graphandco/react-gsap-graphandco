@@ -1,6 +1,9 @@
 body {
     --bg-color: #1e202a;
     --nav-bg-color: #181b2c;
+    --home-lead-bg: #252a41;
+    --home-button-bg: #16181f;
+    --home-button-bg-hover: #101117;
     --pale-text-color: #8b97c6;
     --main-text-color: #e2e2e2;
     --card-bg: #252a41;
@@ -10,6 +13,9 @@ body {
 
 body.light {
     --bg-color: #f1f1f1;
+    --home-lead-bg: #98a8ea;
+    --home-button-bg: #c0c8e8;
+    --home-button-bg-hover: #dbdfef;
     --nav-bg-color: #d4d9ed;
     --main-text-color: #1e202a;
     --card-bg: #d4d9ed;

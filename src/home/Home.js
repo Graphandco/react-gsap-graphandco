@@ -30,7 +30,7 @@ const Home = ({ variant, transition }) => {
                     </span>
                 </div>
                 <div className='home__lead__image'>
-                    <img className='me' src={HomeImage} alt="Image d'accueil" />
+                    <img className='me' src={HomeImage} alt='Illustration' />
                 </div>
                 <CustomButton
                     next
