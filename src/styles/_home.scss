@@ -4,25 +4,37 @@
     align-items: center;
     // background-size: cover;
     // background-position: left;
-    padding: 2rem;
+    //padding: 2rem;
 
     &__lead {
         width: 80%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 4fr 4fr 2fr;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
             'title title title title'
             'quote quote image image'
             'quote quote image image'
             '. . button button';
-        background-color: var(--home-lead-bg);
+        position: relative;
+
+        &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--home-lead-bg);
+            z-index: -1;
+            transform-origin: left;
+        }
 
         &__quote {
             grid-area: quote;
             justify-self: center;
             align-self: center;
             padding: 1rem 2rem;
+            position: relative;
 
             span {
                 text-transform: uppercase;
@@ -52,7 +64,7 @@
             flex-direction: column;
             justify-self: center;
             grid-area: image;
-            padding: 1rem;
+            padding: 3rem 1rem;
 
             img {
                 width: 280px;
@@ -69,15 +81,19 @@
             grid-area: title;
         }
         .btn-wrapper {
+            grid-area: button;
+            display: flex;
+            align-self: flex-end;
+            justify-content: flex-end;
         }
         .custom-button {
-            grid-area: button;
             justify-self: end;
+            width: 80%;
             background-color: var(--home-button-bg);
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             border: none;
-            padding: 1rem 4rem;
+            padding: 1rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -111,16 +127,17 @@
 
             &__image {
                 align-self: center;
+                padding: 1rem;
             }
 
             &__quote {
-                padding: 2rem;
+                padding: 1rem;
                 br {
                     display: none;
                 }
             }
-            &__button {
-                padding: 0.5rem 4rem;
+            .custom-button {
+                width: 90%;
             }
         }
     }

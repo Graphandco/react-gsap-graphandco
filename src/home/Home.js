@@ -8,6 +8,18 @@ import CustomButton from '../shared/components/CustomButton';
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
 const Home = ({ variant, transition }) => {
+    const overlayVariants = {
+        hidden: {
+            scaleX: 0,
+        },
+        visible: {
+            scaleX: 1,
+            transition: {
+                type: 'spring',
+                delay: 0.5,
+            },
+        },
+    };
     const h1Variants = {
         hidden: {
             opacity: 0,
@@ -18,7 +30,7 @@ const Home = ({ variant, transition }) => {
             y: 0,
             transition: {
                 type: 'spring',
-                delay: 0.8,
+                delay: 1,
                 stiffness: 150,
             },
         },
@@ -31,8 +43,36 @@ const Home = ({ variant, transition }) => {
             opacity: 1,
             transition: {
                 type: 'tween',
-                duration: 1,
-                delay: 1.2,
+                duration: 1.2,
+                delay: 1.5,
+            },
+        },
+    };
+    const btnVariants = {
+        hidden: {
+            opacity: 0,
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                type: 'tween',
+                duration: 2,
+                delay: 1.8,
+            },
+        },
+    };
+    const quoteVariants = {
+        hidden: {
+            y: -200,
+            opacity: 0,
+        },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                delay: 3,
+                stiffness: 300,
             },
         },
     };
@@ -47,6 +87,14 @@ const Home = ({ variant, transition }) => {
             className='home'
         >
             <section className='home__lead'>
+                <motion.div
+                    className='home__lead__overlay'
+                    initial='hidden'
+                    animate='visible'
+                    exit='hidden'
+                    variants={overlayVariants}
+                    transition={transition}
+                />
                 <motion.h1
                     initial='hidden'
                     animate='visible'
@@ -58,11 +106,17 @@ const Home = ({ variant, transition }) => {
                     Graph & Co
                 </motion.h1>
                 <div className='home__lead__quote'>
-                    <span>
+                    <motion.span
+                        initial='hidden'
+                        animate='visible'
+                        exit='hidden'
+                        variants={quoteVariants}
+                        transition={transition}
+                    >
                         <FormatQuoteIcon />
                         Un métier,<br></br> une passion
                         <FormatQuoteIcon />
-                    </span>
+                    </motion.span>
                 </div>
                 <motion.div
                     className='home__lead__image'
@@ -74,13 +128,21 @@ const Home = ({ variant, transition }) => {
                 >
                     <img className='me' src={HomeImage} alt='Illustration' />
                 </motion.div>
-
-                <CustomButton
-                    next
-                    link='/tips'
-                    title='Voir mon travail'
-                    chevronSize='20'
-                />
+                <motion.div
+                    className='btn-wrapper'
+                    initial='hidden'
+                    animate='visible'
+                    exit='hidden'
+                    variants={btnVariants}
+                    transition={transition}
+                >
+                    <CustomButton
+                        next
+                        link='/tips'
+                        title='Voir mon travail'
+                        chevronSize='20'
+                    />
+                </motion.div>
             </section>
         </motion.div>
     );
