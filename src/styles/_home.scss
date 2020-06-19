@@ -9,12 +9,13 @@
     &__lead {
         width: 80%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 4fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 4fr 4fr 2fr;
         grid-template-areas:
-            'title title title'
-            'quote image image'
-            '. . button';
+            'title title title title'
+            'quote quote image image'
+            'quote quote image image'
+            '. . button button';
         background-color: var(--card-bg);
 
         &__quote {
@@ -54,26 +55,27 @@
             padding: 1rem;
 
             img {
-                width: 300px;
+                width: 280px;
             }
         }
 
         h1 {
-            margin: calc(-3rem + 2vw);
+            margin: -2rem;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
             //color: #1e202a;
-            font-size: calc(2rem + 1vw);
+            font-size: 3rem;
             font-weight: bold;
             grid-area: title;
         }
         .custom-button {
             grid-area: button;
+            justify-self: end;
             background-color: #16181f;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
             border: none;
-            padding: 1rem;
+            padding: 1rem 4rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,14 +93,25 @@
 
 @media (max-width: 768px) {
     .home {
-        padding: 0 2rem;
-        justify-content: center;
         &__lead {
-            width: auto;
-            padding: 2rem 0;
+            width: 90%;
+            grid-template-rows: 1fr 8fr 2fr 2fr;
+            grid-template-areas:
+                'title title title title'
+                'image image image image'
+                'quote quote quote quote'
+                '. button button button';
 
             h1 {
-                font-size: 2rem;
+                margin: -1.5rem auto;
+                font-size: 2.5rem;
+            }
+
+            &__quote {
+                padding: 2rem;
+                br {
+                    display: none;
+                }
             }
         }
     }

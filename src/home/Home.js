@@ -25,7 +25,7 @@ const Home = ({ variant, transition }) => {
                 <div className='home__lead__quote'>
                     <span>
                         <FormatQuoteIcon />
-                        Un métier,<br></br>une passion
+                        Un métier,<br></br> une passion
                         <FormatQuoteIcon />
                     </span>
                 </div>
