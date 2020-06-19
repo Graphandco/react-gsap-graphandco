@@ -17,7 +17,7 @@ const Home = ({ variant, transition }) => {
             transition: {
                 type: 'tween',
                 delay: 0.5,
-                duration: 0.4,
+                duration: 0.3,
                 ease: [0.17, 0.67, 0.83, 0.67],
             },
         },
@@ -65,11 +65,11 @@ const Home = ({ variant, transition }) => {
     };
     const quoteVariants = {
         hidden: {
-            y: -200,
+            x: '-200px',
             opacity: 0,
         },
         visible: {
-            y: 0,
+            x: 0,
             opacity: 1,
             transition: {
                 type: 'spring',
