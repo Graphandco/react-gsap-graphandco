@@ -9,8 +9,8 @@
     &__lead {
         width: 80%;
         display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: auto auto auto auto;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(4, auto);
         grid-template-areas:
             'title title title title'
             'quote quote image image'
@@ -127,7 +127,7 @@
 
             &__image {
                 align-self: center;
-                padding: 1rem;
+                padding: 2rem;
             }
 
             &__quote {
