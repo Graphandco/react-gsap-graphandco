@@ -15,8 +15,10 @@ const Home = ({ variant, transition }) => {
         visible: {
             scaleX: 1,
             transition: {
-                type: 'spring',
+                type: 'tween',
                 delay: 0.5,
+                duration: 0.4,
+                ease: [0.17, 0.67, 0.83, 0.67],
             },
         },
     };
