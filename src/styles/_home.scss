@@ -107,11 +107,19 @@
                 font-size: 2.5rem;
             }
 
+            &__image {
+                align-self: center;
+            }
+
             &__quote {
                 padding: 2rem;
                 br {
                     display: none;
                 }
+            }
+
+            &__button {
+                padding: 0.5rem 4rem;
             }
         }
     }
