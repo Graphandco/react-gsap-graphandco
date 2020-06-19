@@ -8,6 +8,21 @@ import CustomButton from '../shared/components/CustomButton';
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
 const Home = ({ variant, transition }) => {
+    const h1Variants = {
+        hidden: {
+            opacity: 0,
+            y: '-100px',
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: 'spring',
+                delay: 0.4,
+                stiffness: 150,
+            },
+        },
+    };
     return (
         <motion.div
             //style={pageStyle}
@@ -19,9 +34,16 @@ const Home = ({ variant, transition }) => {
             className='home'
         >
             <section className='home__lead'>
-                <h1>
-                    <Typewriter string='Graph & Co' />
-                </h1>
+                <motion.h1
+                    initial='hidden'
+                    animate='visible'
+                    exit='hidden'
+                    variants={h1Variants}
+                    transition={transition}
+                >
+                    {/* <Typewriter string='Graph & Co' /> */}
+                    Graph & Co
+                </motion.h1>
                 <div className='home__lead__quote'>
                     <span>
                         <FormatQuoteIcon />
