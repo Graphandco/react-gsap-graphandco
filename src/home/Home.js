@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-typewriting-effect';
 import 'react-typewriting-effect/dist/index.css';
 
-//import HomeImage from '../shared/images/bg-home.jpg';
+import HomeImage from '../shared/images/illustration.png';
 import CustomButton from '../shared/components/CustomButton';
+import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
 const Home = ({ variant, transition }) => {
     return (
@@ -19,12 +20,23 @@ const Home = ({ variant, transition }) => {
         >
             <section className='home__lead'>
                 <h1>
-                    <Typewriter string='Un métier, une passion' />
+                    <Typewriter string='Graph & Co' />
                 </h1>
+                <div className='home__lead__quote'>
+                    <span>
+                        <FormatQuoteIcon />
+                        Un métier,<br></br>une passion
+                        <FormatQuoteIcon />
+                    </span>
+                </div>
+                <div className='home__lead__image'>
+                    <img className='me' src={HomeImage} alt="Image d'accueil" />
+                </div>
                 <CustomButton
+                    next
                     link='/tips'
                     title='Voir mon travail'
-                    chevronSize='12'
+                    chevronSize='20'
                 />
             </section>
         </motion.div>

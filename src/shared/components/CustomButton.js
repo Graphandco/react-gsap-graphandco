@@ -7,8 +7,6 @@ import Chevron from './accordion/Chevron';
 const StyledButton = styled.button`
     padding: 0.5rem 2rem;
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
     margin-left: ${(props) => props.ml};
     margin-right: ${(props) => props.mr};
     background-color: transparent;
@@ -16,6 +14,11 @@ const StyledButton = styled.button`
     border-radius: 3px;
     color: var(--main-text-color);
     transition: 0.3s;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+    }
 
     svg {
         position: relative;
@@ -47,8 +50,8 @@ const StyledButton = styled.button`
 
 const CustomButton = (props) => {
     return (
-        <NavLink to={props.link}>
-            <StyledButton className='custom-button' ml={props.ml} mr={props.mr}>
+        <StyledButton className='custom-button' ml={props.ml} mr={props.mr}>
+            <NavLink to={props.link}>
                 {props.prev && (
                     <Chevron
                         className='prev'
@@ -66,8 +69,8 @@ const CustomButton = (props) => {
                         width={props.chevronSize}
                     />
                 )}
-            </StyledButton>
-        </NavLink>
+            </NavLink>
+        </StyledButton>
     );
 };
 
