@@ -58,6 +58,18 @@ header {
             text-decoration: none;
             position: relative;
 
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%) scaleX(0);
+                width: 50px;
+                height: 3px;
+                background-color: var(--card-bg-hover);
+                transition: 0.3s;
+            }
+
             &:after {
                 content: '';
                 position: absolute;
@@ -67,6 +79,11 @@ header {
                 width: 1px;
                 height: 15px;
                 background-color: var(--card-bg-hover);
+            }
+
+            &:hover:before,
+            &.active:before {
+                transform: translateX(-50%) scaleX(1);
             }
 
             &:last-child:after {
@@ -211,7 +228,7 @@ footer {
     .modal {
         max-width: 400px;
         padding: 40px 20px;
-        background: #333333;
+        background: var(--card-bg);
         border-radius: 10px;
         text-align: center;
 
