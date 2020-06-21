@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Chevron from './accordion/Chevron';
 
 const StyledButton = styled.button`
-    padding: 0.5rem 2rem;
+    padding: 0.3rem 1rem;
     padding: ${(props) => props.pad};
     cursor: pointer;
     margin-left: ${(props) => props.ml};

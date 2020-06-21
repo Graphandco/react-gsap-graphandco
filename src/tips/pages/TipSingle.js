@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router';
 import Axios from 'axios';
 
-import JSIcon from '../../shared/images/competences/icons/javascript.png';
-import CSSIcon from '../../shared/images/competences/icons/css.png';
-import PrestaIcon from '../../shared/images/competences/icons/prestashop.png';
-import PHPIcon from '../../shared/images/competences/icons/php.png';
-import ReactIcon from '../../shared/images/competences/icons/react.png';
+import JSIcon from '../../shared/images/competences/js.png';
+import CSSIcon from '../../shared/images/competences/css.png';
+import PrestaIcon from '../../shared/images/competences/prestashop.png';
+import PHPIcon from '../../shared/images/competences/php.png';
+import ReactIcon from '../../shared/images/competences/react.png';
 
 // import Loader from '../../shared/components/Loader';
 
@@ -72,21 +72,24 @@ const TipSingle = ({ variant, transition }) => {
             transition={transition}
             className='tip-single'
         >
-            <h1
-                dangerouslySetInnerHTML={{
-                    __html: tipTitle,
-                }}
-            />
+            <div className='tip-single__top'>
+                <h1
+                    dangerouslySetInnerHTML={{
+                        __html: tipTitle,
+                    }}
+                />
+                <div className='tip-single__top__navigate'>
+                    <CustomButton
+                        link='/tips'
+                        title='Retour'
+                        prev
+                        ml='2rem'
+                        chevronSize='12'
+                    />
+                </div>
+            </div>
 
-            <CustomButton
-                link='/tips'
-                title='Retour'
-                prev
-                ml='2rem'
-                chevronSize='12'
-            />
-
-            <div className='tip-singlecontent'>
+            <div className='tip-single__content'>
                 <div className='tip-header'>
                     <div
                         className='tip-desc'
