@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router';
 import Axios from 'axios';
 
+import JSIcon from '../../shared/images/competences/icons/javascript.png';
+import CSSIcon from '../../shared/images/competences/icons/css.png';
+import PrestaIcon from '../../shared/images/competences/icons/prestashop.png';
+import PHPIcon from '../../shared/images/competences/icons/php.png';
+import ReactIcon from '../../shared/images/competences/icons/react.png';
+
 // import Loader from '../../shared/components/Loader';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -42,6 +48,20 @@ const TipSingle = ({ variant, transition }) => {
         handleTipListing();
     }, [id]);
 
+    let langageImage;
+
+    if (tipLangage === 'react') {
+        langageImage = ReactIcon;
+    } else if (tipLangage === 'css') {
+        langageImage = CSSIcon;
+    } else if (tipLangage === 'php') {
+        langageImage = PHPIcon;
+    } else if (tipLangage === 'javascript') {
+        langageImage = JSIcon;
+    } else if (tipLangage === 'prestashop') {
+        langageImage = PrestaIcon;
+    }
+
     return (
         <motion.section
             //style={pageStyle}
@@ -67,12 +87,16 @@ const TipSingle = ({ variant, transition }) => {
             />
 
             <div className='tip-singlecontent'>
-                <div
-                    className='tip-desc'
-                    dangerouslySetInnerHTML={{
-                        __html: tipContent,
-                    }}
-                />
+                <div className='tip-header'>
+                    <div
+                        className='tip-desc'
+                        dangerouslySetInnerHTML={{
+                            __html: tipContent,
+                        }}
+                    ></div>
+                    <img src={langageImage} alt='Langage' />
+                </div>
+
                 <div className='tip-code'>
                     <SyntaxHighlighter style={atomDark} language={tipLangage}>
                         {tipCode}

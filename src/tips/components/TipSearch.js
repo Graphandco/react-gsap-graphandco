@@ -27,6 +27,9 @@ const TipSearch = (props) => {
     const prestaTips = tips.filter((tip) => {
         return tip.acf.langage.includes('prestashop');
     });
+    const reactTips = tips.filter((tip) => {
+        return tip.acf.langage.includes('react');
+    });
 
     return (
         <div className='tips-search'>
@@ -112,6 +115,20 @@ const TipSearch = (props) => {
                             Prestashop
                             <span className='tips-length'>
                                 ({prestaTips.length})
+                            </span>
+                        </label>
+                    </div>
+                    <div className='filter-item'>
+                        <input
+                            type='radio'
+                            id='react'
+                            name='filter-tips'
+                            value='react'
+                        ></input>
+                        <label htmlFor='react'>
+                            React
+                            <span className='tips-length'>
+                                ({reactTips.length})
                             </span>
                         </label>
                     </div>

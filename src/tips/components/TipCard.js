@@ -10,6 +10,7 @@ import JSIcon from '../../shared/images/competences/icons/javascript.png';
 import CSSIcon from '../../shared/images/competences/icons/css.png';
 import PrestaIcon from '../../shared/images/competences/icons/prestashop.png';
 import PHPIcon from '../../shared/images/competences/icons/php.png';
+import ReactIcon from '../../shared/images/competences/icons/react.png';
 
 // const Svg = styled.div`
 //     mask: url(${(props) => props.src}) no-repeat center / contain;
@@ -67,6 +68,10 @@ const TipCard = ({ tip }) => {
         case 'prestashop':
             //langageImage = Presta;
             icon = PrestaIcon;
+            break;
+        case 'react':
+            //langageImage = Presta;
+            icon = ReactIcon;
             break;
         default:
             //langageImage = '../../shared/images/competences/PHP.svg';
