@@ -90,9 +90,9 @@ const TipSingle = ({ variant, transition }) => {
             </div>
 
             <div className='tip-single__content'>
-                <div className='tip-header'>
+                <div className='tip-single__content__header'>
                     <div
-                        className='tip-desc'
+                        className='tip-single__content__desc'
                         dangerouslySetInnerHTML={{
                             __html: tipContent,
                         }}
