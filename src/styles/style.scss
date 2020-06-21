@@ -305,6 +305,7 @@ footer {
     header {
         nav {
             a {
+                &:before,
                 &:after {
                     content: none;
                 }
