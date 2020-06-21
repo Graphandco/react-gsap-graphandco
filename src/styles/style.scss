@@ -33,11 +33,15 @@ header {
     // }
 
     #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 30px;
         height: auto;
         padding: 1rem 2rem;
         position: relative;
         z-index: 2;
+        background-color: var(--main-text-color);
     }
     nav {
         display: flex;
@@ -50,11 +54,24 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 1.5rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            font-family: 'Poppins';
+            padding: 0 1.1rem;
             text-decoration: none;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 15px;
+                background-color: var(--card-bg-hover);
+            }
+
+            &:last-child:after {
+                content: none;
+            }
 
             span {
                 display: flex;
