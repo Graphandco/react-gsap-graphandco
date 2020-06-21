@@ -11,13 +11,13 @@ const AboutCompetences = () => {
     return (
         <>
             <motion.h2
-                initial={{ x: '-100vw', opacity: 0 }}
+                initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{
                     type: 'spring',
-                    duration: 0.5,
+                    duration: 0.3,
                     delay: 1.2,
-                    stiffness: 80,
+                    stiffness: 150,
                 }}
             >
                 <BuildIcon className='title-icon' />

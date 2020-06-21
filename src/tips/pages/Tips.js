@@ -97,15 +97,12 @@ const Tips = ({ variant, transition }) => {
             variants={variant}
             transition={transition}
         >
-            <h1 className='overlay-title'>Liste de tips</h1>
+            <h1 className='overlay-title'>Coding tips</h1>
             <div className='tips-desc'>
                 <div className='tip-desc-text'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore quo sunt, accusantium exercitationem quis sit culpa,
-                    repudiandae maiores in enim aut animi fugiat assumenda alias
-                    consectetur corrupti non beatae atque ratione. Quam sed
-                    soluta in libero maxime dolore excepturi ex accusantium
-                    exercitationem consequuntur dolores voluptate id.
+                    Il nous arrive à tous de chercher des bouts de code dont on
+                    a besoin de façon quotidienne. J'en ai rassemblé quelques
+                    uns ici que je continuerai d'alimenter au fur et à mesure.
                 </div>
                 <img src={QuickTip} alt='QuickTip' />
             </div>

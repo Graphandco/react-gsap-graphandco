@@ -52,13 +52,13 @@ const AboutDesc = () => {
         <>
             <motion.h1
                 className='overlay-title'
-                initial={{ y: '-100vh', opacity: 0 }}
+                initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
                     type: 'spring',
-                    duration: 0.5,
+                    duration: 0.3,
                     delay: 0.5,
-                    stiffness: 80,
+                    stiffness: 150,
                 }}
                 id='about'
             >
@@ -66,13 +66,13 @@ const AboutDesc = () => {
             </motion.h1>
             <section className='about__desc'>
                 <motion.p
-                    initial={{ x: '-100vw', opacity: 0 }}
+                    initial={{ x: -100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{
                         type: 'spring',
-                        duration: 0.5,
+                        duration: 0.3,
                         delay: 0.8,
-                        stiffness: 80,
+                        stiffness: 150,
                     }}
                     id='about'
                     className='about'
@@ -89,13 +89,13 @@ const AboutDesc = () => {
                 <motion.img
                     src={AboutImage}
                     alt='A propos'
-                    initial={{ x: '100vw', opacity: 0 }}
+                    initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{
                         type: 'spring',
-                        duration: 0.5,
+                        duration: 0.3,
                         delay: 1,
-                        stiffness: 80,
+                        stiffness: 150,
                     }}
                 />
             </section>
