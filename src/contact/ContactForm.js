@@ -3,7 +3,8 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Button, TextField } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
+import CustomButton from '../shared/components/CustomButton';
 
 const encode = (data) => {
     return Object.keys(data)
@@ -48,41 +49,40 @@ class ContactForm extends React.Component {
         const { name, email, message } = this.state;
         toast.configure();
         return (
-            <>
-                <form name='contact' method='post' onSubmit={this.handleSubmit}>
-                    <input type='hidden' name='form-name' value='contact' />
-                    <TextField
-                        label='Nom'
-                        type='text'
-                        name='name'
-                        value={name}
-                        onChange={this.handleChange}
-                        fullWidth
-                        className='textfield'
-                    />
-                    <TextField
-                        label='Email'
-                        type='email'
-                        name='email'
-                        value={email}
-                        onChange={this.handleChange}
-                        fullWidth
-                        className='textfield'
-                    />
-                    <TextField
-                        label='Message'
-                        multiline
-                        name='message'
-                        value={message}
-                        onChange={this.handleChange}
-                        fullWidth
-                        className='textfield'
-                    />
-                    <Button type='submit' variant='contained'>
-                        Envoyer
-                    </Button>
-                </form>
-            </>
+            <form name='contact' method='post' onSubmit={this.handleSubmit}>
+                <input type='hidden' name='form-name' value='contact' />
+                <TextField
+                    label='Nom'
+                    type='text'
+                    name='name'
+                    value={name}
+                    onChange={this.handleChange}
+                    fullWidth
+                    className='textfield'
+                />
+                <TextField
+                    label='Email'
+                    type='email'
+                    name='email'
+                    value={email}
+                    onChange={this.handleChange}
+                    fullWidth
+                    className='textfield'
+                />
+                <TextField
+                    label='Message'
+                    multiline
+                    name='message'
+                    value={message}
+                    onChange={this.handleChange}
+                    fullWidth
+                    className='textfield'
+                />
+                {/* <Button type='submit' variant='contained'>
+                    Envoyer
+                </Button> */}
+                <CustomButton title='Envoyer' padding='0' />
+            </form>
         );
     }
 }

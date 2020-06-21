@@ -54,7 +54,7 @@ const TipSearch = (props) => {
                             name='filter-tips'
                             value=''
                         ></input>
-                        <label for='tous'>
+                        <label htmlFor='tous'>
                             Tous
                             <span className='tips-length'>({tips.length})</span>
                         </label>
@@ -66,7 +66,7 @@ const TipSearch = (props) => {
                             name='filter-tips'
                             value='php'
                         ></input>
-                        <label for='php'>
+                        <label htmlFor='php'>
                             PHP
                             <span className='tips-length'>
                                 ({phpTips.length})
@@ -80,7 +80,7 @@ const TipSearch = (props) => {
                             name='filter-tips'
                             value='javascript'
                         ></input>
-                        <label for='javascript'>
+                        <label htmlFor='javascript'>
                             Javascript
                             <span className='tips-length'>
                                 ({jsTips.length})
@@ -94,7 +94,7 @@ const TipSearch = (props) => {
                             name='filter-tips'
                             value='css'
                         ></input>
-                        <label for='css'>
+                        <label htmlFor='css'>
                             CSS
                             <span className='tips-length'>
                                 ({cssTips.length})
@@ -108,7 +108,7 @@ const TipSearch = (props) => {
                             name='filter-tips'
                             value='prestashop'
                         ></input>
-                        <label for='prestashop'>
+                        <label htmlFor='prestashop'>
                             Prestashop
                             <span className='tips-length'>
                                 ({prestaTips.length})

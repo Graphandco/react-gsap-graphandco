@@ -6,10 +6,11 @@ import Chevron from './accordion/Chevron';
 
 const StyledButton = styled.button`
     padding: 0.5rem 2rem;
+    padding: ${(props) => props.pad};
     cursor: pointer;
     margin-left: ${(props) => props.ml};
     margin-right: ${(props) => props.mr};
-    background-color: transparent;
+    background-color: var(--card-bg);
     border: 1px solid var(--main-text-color);
     border-radius: 3px;
     color: var(--main-text-color);
@@ -36,9 +37,10 @@ const StyledButton = styled.button`
 
     span {
         padding: 0 0.5rem;
+        text-transform: uppercase;
     }
     &:hover {
-        background-color: var(--card-bg);
+        background-color: var(--card-bg-hover);
         .prev {
             left: -5px;
         }
@@ -49,9 +51,33 @@ const StyledButton = styled.button`
 `;
 
 const CustomButton = (props) => {
-    return (
-        <StyledButton className='custom-button' ml={props.ml} mr={props.mr}>
-            <NavLink to={props.link}>
+    if (props.link) {
+        return (
+            <StyledButton className='custom-button' ml={props.ml} mr={props.mr}>
+                <NavLink to={props.link}>
+                    {props.prev && (
+                        <Chevron
+                            className='prev'
+                            color='var(--main-text-color)'
+                            height={props.chevronSize}
+                            width={props.chevronSize}
+                        />
+                    )}
+                    <span pad={props.padding}>{props.title}</span>
+                    {props.next && (
+                        <Chevron
+                            className='next'
+                            color='var(--main-text-color)'
+                            height={props.chevronSize}
+                            width={props.chevronSize}
+                        />
+                    )}
+                </NavLink>
+            </StyledButton>
+        );
+    } else {
+        return (
+            <StyledButton className='custom-button' ml={props.ml} mr={props.mr}>
                 {props.prev && (
                     <Chevron
                         className='prev'
@@ -60,7 +86,7 @@ const CustomButton = (props) => {
                         width={props.chevronSize}
                     />
                 )}
-                <span>{props.title}</span>
+                <span pad={props.padding}>{props.title}</span>
                 {props.next && (
                     <Chevron
                         className='next'
@@ -69,9 +95,9 @@ const CustomButton = (props) => {
                         width={props.chevronSize}
                     />
                 )}
-            </NavLink>
-        </StyledButton>
-    );
+            </StyledButton>
+        );
+    }
 };
 
 export default CustomButton;

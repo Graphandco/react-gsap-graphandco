@@ -25,7 +25,7 @@ const Home = ({ variant, transition }) => {
     const h1Variants = {
         hidden: {
             opacity: 0,
-            y: '-100px',
+            y: -150,
         },
         visible: {
             opacity: 1,
@@ -33,6 +33,7 @@ const Home = ({ variant, transition }) => {
             transition: {
                 type: 'spring',
                 delay: 1,
+                duration: 0.3,
                 stiffness: 150,
             },
         },
@@ -40,32 +41,22 @@ const Home = ({ variant, transition }) => {
     const imgVariants = {
         hidden: {
             opacity: 0,
+            x: 150,
         },
         visible: {
             opacity: 1,
+            x: 0,
             transition: {
-                type: 'tween',
-                duration: 1.2,
-                delay: 1.5,
-            },
-        },
-    };
-    const btnVariants = {
-        hidden: {
-            opacity: 0,
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                type: 'tween',
-                duration: 2,
-                delay: 1.8,
+                type: 'spring',
+                stiffness: 150,
+                duration: 0.3,
+                delay: 1.3,
             },
         },
     };
     const quoteVariants = {
         hidden: {
-            x: '-200px',
+            x: -150,
             opacity: 0,
         },
         visible: {
@@ -73,8 +64,24 @@ const Home = ({ variant, transition }) => {
             opacity: 1,
             transition: {
                 type: 'spring',
-                delay: 3,
-                stiffness: 300,
+                delay: 1.5,
+                duration: 0.3,
+                stiffness: 150,
+            },
+        },
+    };
+    const btnVariants = {
+        hidden: {
+            opacity: 0,
+            y: 150,
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: 'spring',
+                delay: 2,
+                stiffness: 100,
             },
         },
     };
@@ -89,6 +96,7 @@ const Home = ({ variant, transition }) => {
             className='home'
         >
             <section className='home__lead'>
+                {/* Overlay */}
                 <motion.div
                     className='home__lead__overlay'
                     initial='hidden'
@@ -97,6 +105,7 @@ const Home = ({ variant, transition }) => {
                     variants={overlayVariants}
                     transition={transition}
                 />
+                {/* Title */}
                 <motion.h1
                     initial='hidden'
                     animate='visible'
@@ -107,19 +116,21 @@ const Home = ({ variant, transition }) => {
                     {/* <Typewriter string='Graph & Co' /> */}
                     Graph & Co
                 </motion.h1>
-                <div className='home__lead__quote'>
-                    <motion.span
-                        initial='hidden'
-                        animate='visible'
-                        exit='hidden'
-                        variants={quoteVariants}
-                        transition={transition}
-                    >
+                <motion.div
+                    className='home__lead__quote'
+                    initial='hidden'
+                    animate='visible'
+                    exit='hidden'
+                    variants={quoteVariants}
+                    transition={transition}
+                >
+                    <span>
                         <FormatQuoteIcon />
                         Un métier,<br></br> une passion
                         <FormatQuoteIcon />
-                    </motion.span>
-                </div>
+                    </span>
+                </motion.div>
+                {/* Image */}
                 <motion.div
                     className='home__lead__image'
                     initial='hidden'

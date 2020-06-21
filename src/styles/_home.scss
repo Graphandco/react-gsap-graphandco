@@ -24,7 +24,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--home-lead-bg);
+            //background-color: var(--home-lead-bg);
+            background-color: var(--card-bg);
             z-index: -1;
             transform-origin: left;
         }
@@ -37,9 +38,9 @@
             position: relative;
 
             span {
-                text-transform: uppercase;
-                font-size: 1.5rem;
+                font-size: 2rem;
                 line-height: 1.2;
+                letter-spacing: 1px;
                 position: relative;
             }
 
@@ -132,6 +133,9 @@
 
             &__quote {
                 padding: 1rem;
+                span {
+                    font-size: 1.7rem;
+                }
                 br {
                     display: none;
                 }

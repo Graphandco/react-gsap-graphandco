@@ -21,13 +21,13 @@ const Contact = ({ variant, transition }) => {
             <div id='contact-wrapper'>
                 <motion.div
                     className='infos'
-                    initial={{ x: '-100vw', opacity: 0 }}
+                    initial={{ x: -100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{
                         type: 'spring',
-                        duration: 0.5,
+                        duration: 0.3,
                         delay: 0.5,
-                        stiffness: 100,
+                        stiffness: 150,
                     }}
                 >
                     <h1 className='contact'>Contact</h1>
@@ -75,13 +75,13 @@ const Contact = ({ variant, transition }) => {
                     </p>
                 </motion.div>
                 <motion.div
-                    initial={{ x: '100vw', opacity: 0 }}
+                    initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{
                         type: 'spring',
-                        duration: 0.5,
-                        delay: 1,
-                        stiffness: 100,
+                        delay: 0.8,
+                        duration: 0.3,
+                        stiffness: 150,
                     }}
                     className='form'
                 >
