@@ -151,8 +151,8 @@ const Home = ({ variant, transition }) => {
                 >
                     <CustomButton
                         next
-                        link='/tips'
-                        title='Voir mon travail'
+                        link='/contact'
+                        title='Me contacter'
                         chevronSize='20'
                     />
                 </motion.div>
