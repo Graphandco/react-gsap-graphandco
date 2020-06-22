@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router';
 import Axios from 'axios';
 
-import JSIcon from '../../shared/images/competences/js.png';
-import CSSIcon from '../../shared/images/competences/css.png';
-import PrestaIcon from '../../shared/images/competences/prestashop.png';
-import PHPIcon from '../../shared/images/competences/php.png';
-import ReactIcon from '../../shared/images/competences/react.png';
+import JSIcon from '../../shared/images/competences/icons/javascript.png';
+import CSSIcon from '../../shared/images/competences/icons/css.png';
+import PrestaIcon from '../../shared/images/competences/icons/prestashop.png';
+import PHPIcon from '../../shared/images/competences/icons/php.png';
+import ReactIcon from '../../shared/images/competences/icons/react.png';
 
 // import Loader from '../../shared/components/Loader';
 

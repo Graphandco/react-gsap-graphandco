@@ -17,6 +17,11 @@ const About = ({ variant, transition }) => {
             id='about'
             className='about'
         >
+            {/* <nav className='about-nav'>
+                <button>A Propos</button>
+                <button>Compétences</button>
+                <button>Expérience</button>
+            </nav> */}
             <AboutDesc />
             <AboutCompetences />
             <AboutExp />
