@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import AboutDesc from './AboutDesc';
 import AboutCompetences from './AboutCompetences';
 import AboutExp from './AboutExp';
-import AboutEtudes from './AboutEtudes';
+import Parcours from './AboutParcours';
 
 const About = ({ variant, transition }) => {
     return (
@@ -25,7 +25,7 @@ const About = ({ variant, transition }) => {
             <AboutDesc />
             <AboutCompetences />
             <AboutExp />
-            <AboutEtudes />
+            <Parcours />
         </motion.div>
     );
 };

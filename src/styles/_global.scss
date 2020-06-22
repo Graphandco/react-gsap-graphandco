@@ -28,11 +28,11 @@ h4,
 h5,
 h6 {
     margin: 3rem 0;
-    font-family: $titlefont;
+    font-weight: 200;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 1.1;
     margin: 2rem 2rem;
     position: relative;
@@ -60,15 +60,16 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.1;
     padding: 1rem 2rem;
     background-color: $title-bg;
 }
 
 h3 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 400;
+    padding: 1rem;
 }
 
 a {

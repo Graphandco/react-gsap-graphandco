@@ -49,7 +49,8 @@
     &__competences {
         padding: 0 2rem;
         h3 {
-            margin-top: 3rem;
+            padding: 0;
+            margin: 3rem 0 0.8rem 0;
         }
         &__group {
             display: grid;
@@ -88,10 +89,35 @@
     }
 
     &__experience {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-        padding: 0 2rem;
+        background-color: var(--card-bg);
+        margin: 4rem 0;
+
+        h2 {
+            padding: 3rem 2rem 1rem 2rem;
+        }
+        &__accordeon {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
+            padding: 0 2rem 3rem 2rem;
+        }
+    }
+
+    &__parcours {
+        padding: 2rem;
+        &__slider {
+            .MuiSlider-markLabel {
+                color: var(--main-text-color);
+                opacity: 0.6;
+            }
+        }
+        &__content {
+            margin-top: 2rem;
+            &__year {
+                text-align: center;
+                font-size: 2rem;
+            }
+        }
     }
 }
 
