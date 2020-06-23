@@ -138,7 +138,9 @@
             grid-template-columns: 1fr;
         }
         &__experience {
-            grid-template-columns: 1fr;
+            &__accordeon {
+                grid-template-columns: 1fr;
+            }
         }
     }
 }

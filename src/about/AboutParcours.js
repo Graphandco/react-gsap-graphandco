@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Slider from '@material-ui/core/Slider';
 import SchoolIcon from '@material-ui/icons/School';
+import Years from './years/Years';
 
 const Parcours = () => {
     const steps = [
@@ -42,6 +43,17 @@ const Parcours = () => {
         return;
     };
 
+    // if (
+    //     year === 2009 ||
+    //     year === 2011 ||
+    //     year === 2013 ||
+    //     year === 2015 ||
+    //     year === 2017 ||
+    //     year === 2019
+    // ) {
+    //     setyear(year + 1);
+    // }
+
     return (
         <>
             <h2>
@@ -64,6 +76,9 @@ const Parcours = () => {
                 </div>
                 <div className='about__parcours__content'>
                     <div className='about__parcours__content__year'>{year}</div>
+                    <div className='about__parcours__content__wrapper'>
+                        <Years year={year} />
+                    </div>
                 </div>
             </div>
 
