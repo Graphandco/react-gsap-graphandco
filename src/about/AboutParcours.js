@@ -123,7 +123,7 @@ const Parcours = () => {
                                 <IndeterminateCheckBoxIcon />
                             </motion.button>
 
-                            <Input
+                            {/* <Input
                                 value={Math.floor(value)}
                                 margin='dense'
                                 onChange={handleInputChange}
@@ -135,7 +135,10 @@ const Parcours = () => {
                                 //     type: 'number',
                                 //     'aria-labelledby': 'input-slider',
                                 // }}
-                            />
+                            /> */}
+                            <motion.div className='about__parcours__slider__input__wrapper__value'>
+                                {Math.floor(value)}
+                            </motion.div>
 
                             <motion.button
                                 whileHover={{

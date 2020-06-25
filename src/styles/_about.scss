@@ -118,11 +118,17 @@
                 padding: 0;
 
                 &__wrapper {
-                    background-color: var(--card-bg);
                     display: flex;
                     align-items: center;
+                    justify-content: space-around;
                     padding: 0.5rem 1rem;
                     border-radius: 3px;
+                    width: 100%;
+
+                    &__value {
+                        font-size: 2rem;
+                        color: var(--pale-text-color);
+                    }
 
                     button {
                         background: none;
@@ -138,32 +144,26 @@
                         }
                     }
 
-                    .MuiInput-underline {
-                        &:before,
-                        &:after {
-                            content: none;
-                        }
-                    }
-                    input {
-                        color: var(--main-text-color);
-                        font-size: 2rem;
-                        text-align: center;
-                        width: 150px;
-                    }
-
                     svg {
                         cursor: pointer;
-                        font-size: 1.8rem;
-                        fill: var(--main-text-color);
+                        font-size: 2.5rem;
+                        fill: var(--pale-text-color);
                     }
                 }
             }
         }
         &__content {
-            margin-top: 2rem;
-            &__year {
-                text-align: center;
-                font-size: 2rem;
+            margin-top: 1rem;
+            &__wrapper {
+                &__year {
+                    text-align: justify;
+                    .title {
+                        text-align: center;
+                        font-size: 1.2rem;
+                        margin-bottom: 1rem;
+                        color: var(--pale-text-color);
+                    }
+                }
             }
         }
     }
@@ -194,9 +194,10 @@
             padding: 1rem 2rem 2rem 1rem;
             &__slider {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto auto;
-                column-gap: 2rem;
+                grid-auto-columns: min-content auto;
+                grid-auto-rows: 1fr 9fr;
+                //grid-template-rows: auto auto;
+                column-gap: 3rem;
                 grid-template-areas:
                     'range button'
                     'range content';
@@ -221,6 +222,7 @@
                         }
                         input {
                             font-size: 1.5rem;
+                            width: 70px;
                         }
                     }
                 }
