@@ -106,6 +106,7 @@
     &__parcours {
         padding: 2rem;
         &__slider {
+            padding: 0 1rem;
             .MuiSlider-thumb:before {
                 content: '';
                 position: absolute;
