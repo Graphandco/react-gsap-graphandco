@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
 import SchoolIcon from '@material-ui/icons/School';
 import Years from './years/Years';
 import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
@@ -42,15 +41,10 @@ const Parcours = () => {
         },
     ];
 
-    //const [year, setyear] = useState(2008);
     const [value, setValue] = useState(2008);
 
     const handleSliderChange = (e, newValue) => {
         setValue(newValue);
-    };
-
-    const handleInputChange = (event) => {
-        setValue(event.target.value === '' ? '' : Number(event.target.value));
     };
 
     const incrementValue = () => {
@@ -59,19 +53,6 @@ const Parcours = () => {
     const decrementValue = () => {
         value > 2008 && setValue(value - 1);
     };
-
-    const handleBlur = () => {
-        if (value < 0) {
-            setValue(0);
-        } else if (value > 100) {
-            setValue(100);
-        }
-    };
-
-    // const getYearValue = (value) => {
-    //     setyear(Math.floor(value));
-    //     return;
-    // };
 
     const parcours = [
         {
