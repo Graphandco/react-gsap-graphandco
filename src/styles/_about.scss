@@ -126,8 +126,10 @@
                     width: 100%;
 
                     &__value {
-                        font-size: 2rem;
-                        color: var(--pale-text-color);
+                        text-shadow: 0 0px 15px var(--pale-text-color),
+                            0 0px 0px var(--pale-text-color);
+                        color: transparent;
+                        font-size: 3rem;
                     }
 
                     button {
