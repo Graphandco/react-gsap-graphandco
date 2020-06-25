@@ -101,3 +101,9 @@ ul {
     opacity: 1 !important;
     border: 1px solid var(--main-text-color) !important;
 }
+
+@media (max-width: 768px) {
+    h2 {
+        margin: 1rem 0;
+    }
+}
