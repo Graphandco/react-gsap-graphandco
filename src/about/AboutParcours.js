@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Slider from '@material-ui/core/Slider';
 import SchoolIcon from '@material-ui/icons/School';
 import Years from './years/Years';
@@ -48,26 +48,124 @@ const Parcours = () => {
     };
 
     const incrementValue = () => {
-        value < 2020 && setValue(value + 1);
+        Math.floor(value) < 2020 && setValue(value + 1);
     };
     const decrementValue = () => {
-        value > 2008 && setValue(value - 1);
+        Math.floor(value) > 2008 && setValue(value - 1);
     };
 
     const parcours = [
         {
-            id: 1,
+            id: 0,
+            year: 2008,
             title: 'Premiers pas dans le Web',
             content:
                 'Découverte des fonctionnements de base, réalisation de mon premier site en HTML',
         },
         {
+            id: 1,
+            year: 2009,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae unde repudiandae adipisci voluptates. Voluptatibus aliquam neque consequatur deleniti, eligendi sapiente voluptatem odit ipsam facere itaque',
+        },
+        {
             id: 2,
+            year: 2010,
             title: 'Webmarketing',
             content:
                 'lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
         },
+        {
+            id: 3,
+            year: 2011,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 4,
+            year: 2012,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 5,
+            year: 2013,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 6,
+            year: 2014,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 7,
+            year: 2015,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 8,
+            year: 2016,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 9,
+            year: 2017,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 10,
+            year: 2018,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 11,
+            year: 2019,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
+        {
+            id: 12,
+            year: 2020,
+            title: 'Lorem ipsum dolor sit amet.',
+            content:
+                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+        },
     ];
+
+    const yearVariants = {
+        hidden: {
+            x: -100,
+            opacity: 0,
+        },
+        visible: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: 'spring',
+                stifness: 100,
+            },
+        },
+        exit: {
+            opacity: 0,
+            x: 100,
+        },
+    };
 
     return (
         <>
@@ -123,20 +221,66 @@ const Parcours = () => {
                             </div>
                         </div>
                         <div className='content'>
-                            {value < 2010 && (
-                                <Years
-                                    year={value}
-                                    title={parcours[0].title}
-                                    content={parcours[0].content}
-                                />
+                            {parcours.map(
+                                (item) =>
+                                    item.year === Math.floor(value) && (
+                                        <AnimatePresence
+                                            exitBeforeEnter
+                                            key={item.id}
+                                        >
+                                            <motion.div
+                                                variants={yearVariants}
+                                                initial='hidden'
+                                                animate='visible'
+                                                exit='exit'
+                                            >
+                                                <Years
+                                                    year={value}
+                                                    title={
+                                                        parcours[item.id].title
+                                                    }
+                                                    content={
+                                                        parcours[item.id]
+                                                            .content
+                                                    }
+                                                />
+                                            </motion.div>
+                                        </AnimatePresence>
+                                    )
+                            )}
+
+                            {/* {value < 2010 && (
+                                <AnimatePresence exitBeforeEnter>
+                                    <motion.div
+                                        variants={yearVariants}
+                                        initial='hidden'
+                                        animate='visible'
+                                        exit='hidden'
+                                    >
+                                        <Years
+                                            year={value}
+                                            title={parcours[0].title}
+                                            content={parcours[0].content}
+                                        />
+                                    </motion.div>
+                                </AnimatePresence>
                             )}
                             {value < 2012 && value >= 2010 && (
-                                <Years
-                                    year={value}
-                                    title={parcours[1].title}
-                                    content={parcours[1].content}
-                                />
-                            )}
+                                <AnimatePresence>
+                                    <motion.div
+                                        variants={yearVariants}
+                                        initial='hidden'
+                                        animate='visible'
+                                        exit='hidden'
+                                    >
+                                        <Years
+                                            year={value}
+                                            title={parcours[1].title}
+                                            content={parcours[1].content}
+                                        />
+                                    </motion.div>
+                                </AnimatePresence>
+                            )} */}
                         </div>
                     </div>
                 </div>
