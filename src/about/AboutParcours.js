@@ -43,15 +43,17 @@ const Parcours = () => {
 
     const [value, setValue] = useState(2008);
 
+    const roundValue = Math.floor(value);
+
     const handleSliderChange = (e, newValue) => {
         setValue(newValue);
     };
 
     const incrementValue = () => {
-        Math.floor(value) < 2020 && setValue(value + 1);
+        roundValue < 2020 && setValue(value + 1);
     };
     const decrementValue = () => {
-        Math.floor(value) > 2008 && setValue(value - 1);
+        roundValue > 2008 && setValue(value - 1);
     };
 
     const parcours = [
@@ -192,7 +194,7 @@ const Parcours = () => {
                     <div className='year-item'>
                         <div className='input'>
                             <motion.div className='value'>
-                                {Math.floor(value)}
+                                {roundValue}
                             </motion.div>
                             <div className='controls'>
                                 <motion.div
@@ -223,7 +225,7 @@ const Parcours = () => {
                         <div className='content'>
                             {parcours.map(
                                 (item) =>
-                                    item.year === Math.floor(value) && (
+                                    item.year === roundValue && (
                                         <AnimatePresence
                                             exitBeforeEnter
                                             key={item.id}
