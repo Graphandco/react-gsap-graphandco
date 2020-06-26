@@ -76,8 +76,8 @@ const Parcours = () => {
                 Mon parcours dans le web
             </h2>
 
-            <div className='about__parcours'>
-                <div className='about__parcours__slider'>
+            <div className='parcours'>
+                <div className='slider'>
                     <Slider
                         value={typeof value === 'number' ? value : 0}
                         onChange={handleSliderChange}
@@ -91,53 +91,38 @@ const Parcours = () => {
                             isTabletOrMobile ? 'vertical' : 'horizontal'
                         }
                     />
-                    <div className='about__parcours__slider__input'>
-                        <div className='about__parcours__slider__input__wrapper'>
-                            <motion.button
-                                whileHover={{
-                                    scale: 1.1,
-                                    transition: { duration: 0.3 },
-                                }}
-                                onClick={decrementValue}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <IndeterminateCheckBoxIcon />
-                            </motion.button>
-
-                            {/* <Input
-                                value={Math.floor(value)}
-                                margin='dense'
-                                onChange={handleInputChange}
-                                onBlur={handleBlur}
-                                disabled // inputProps={{
-                                //     step: 1,
-                                //     min: 2008,
-                                //     max: 2020,
-                                //     type: 'number',
-                                //     'aria-labelledby': 'input-slider',
-                                // }}
-                            /> */}
-                            <motion.div className='about__parcours__slider__input__wrapper__value'>
+                    <div className='year-item'>
+                        <div className='input'>
+                            <motion.div className='value'>
                                 {Math.floor(value)}
                             </motion.div>
+                            <div className='controls'>
+                                <motion.div
+                                    className='btn'
+                                    whileHover={{
+                                        scale: 1.1,
+                                        transition: { duration: 0.3 },
+                                    }}
+                                    onClick={decrementValue}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <IndeterminateCheckBoxIcon />
+                                </motion.div>
 
-                            <motion.button
-                                whileHover={{
-                                    scale: 1.1,
-                                    transition: { duration: 0.3 },
-                                }}
-                                onClick={incrementValue}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <AddBoxIcon />
-                            </motion.button>
+                                <motion.div
+                                    className='btn'
+                                    whileHover={{
+                                        scale: 1.1,
+                                        transition: { duration: 0.3 },
+                                    }}
+                                    onClick={incrementValue}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <AddBoxIcon />
+                                </motion.div>
+                            </div>
                         </div>
-                    </div>
-                    <div className='about__parcours__content'>
-                        {/* <div className='about__parcours__content__year'>
-                        {Math.floor(value)}
-                    </div> */}
-                        <div className='about__parcours__content__wrapper'>
+                        <div className='content'>
                             {value < 2010 && (
                                 <Years
                                     year={value}

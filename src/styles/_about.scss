@@ -103,9 +103,10 @@
         }
     }
 
-    &__parcours {
+    .parcours {
         padding: 2rem;
-        &__slider {
+        margin-bottom: 20rem;
+        .slider {
             padding: 0 1rem;
             .MuiSlider-thumb:before {
                 content: '';
@@ -122,55 +123,42 @@
                 color: var(--main-text-color);
                 opacity: 0.6;
             }
-            &__input {
+            .year-item {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 2rem;
-                padding: 0;
-
-                &__wrapper {
+                margin-top: 3rem;
+                .input {
                     display: flex;
+                    flex-direction: column;
                     align-items: center;
-                    justify-content: space-around;
-                    padding: 0.5rem 1rem;
-                    border-radius: 3px;
-                    width: 100%;
+                    padding: 0;
+                    margin-top: -2rem;
 
-                    &__value {
-                        text-shadow: 0 0px 15px var(--pale-text-color),
-                            0 0px 0px var(--pale-text-color);
-                        color: transparent;
-                        font-size: 3rem;
-                    }
-
-                    button {
-                        background: none;
-                        border: none;
-                        width: 30px;
-                        height: 30px;
+                    .controls {
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        &:focus {
-                            outline: none;
+                        justify-content: space-around;
+                        width: 100%;
+                        margin-top: -1rem;
+                        .btn {
+                            margin: 0 0.3rem;
+                            padding: 0;
+                            svg {
+                                cursor: pointer;
+                                font-size: 2.3rem;
+                                fill: var(--card-bg-hover);
+                            }
                         }
                     }
 
-                    svg {
-                        cursor: pointer;
-                        font-size: 2.5rem;
-                        fill: var(--pale-text-color);
+                    .value {
+                        font-size: 6rem;
+                        color: var(--card-bg-hover);
                     }
                 }
             }
-        }
-        &__content {
-            margin-top: 1rem;
-            &__wrapper {
-                &__year {
-                    text-align: justify;
+            .content {
+                flex-grow: 1;
+                margin-left: 2rem;
+                .year {
                     .title {
                         text-align: center;
                         font-size: 1.2rem;
@@ -204,47 +192,31 @@
                 grid-template-columns: 1fr;
             }
         }
-        &__parcours {
-            padding: 1rem 2rem 2rem 1rem;
-            &__slider {
-                display: grid;
-                grid-auto-columns: min-content auto;
-                grid-auto-rows: 1fr 9fr;
-                //grid-template-rows: auto auto;
-                column-gap: 3rem;
-                grid-template-areas:
-                    'range button'
-                    'range content';
-                margin-bottom: 3rem;
-                padding-left: 1.5rem;
+        .parcours {
+            padding: 1rem;
+            .slider {
+                display: flex;
                 .MuiSlider-vertical {
-                    min-height: 300px;
+                    min-height: 400px;
                     margin-right: 3rem;
                     grid-area: range;
                 }
-                &__input {
+                .year-item {
+                    flex-direction: column;
+                    justify-content: start;
+                    margin-left: 2rem;
                     width: 100%;
-                    align-self: baseline;
-                    margin-top: -1rem;
-                    grid-area: button;
-                    &__wrapper {
-                        padding: 0;
-                        button {
-                            width: auto;
-
-                            svg {
-                                font-size: 1.5rem;
-                            }
-                        }
-                        input {
-                            font-size: 1.5rem;
-                            width: 70px;
+                    .input {
+                        margin-top: 0;
+                        .value {
+                            font-size: 3rem;
                         }
                     }
+                    margin-top: 0;
+                    .content {
+                        margin-left: 0;
+                    }
                 }
-            }
-            &__content {
-                grid-area: content;
             }
         }
     }
