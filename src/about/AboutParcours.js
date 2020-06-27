@@ -152,21 +152,23 @@ const Parcours = () => {
 
     const yearVariants = {
         hidden: {
-            x: -100,
+            x: -300,
             opacity: 0,
         },
         visible: {
             x: 0,
             opacity: 1,
-            transition: {
-                type: 'spring',
-                stifness: 100,
-            },
         },
         exit: {
             opacity: 0,
-            x: 100,
+            x: 300,
         },
+    };
+
+    const yearTransition = {
+        type: 'tween',
+        ease: 'anticipate',
+        duration: 0.4,
     };
 
     return (
@@ -223,18 +225,17 @@ const Parcours = () => {
                             </div>
                         </div>
                         <div className='content'>
-                            {parcours.map(
-                                (item) =>
-                                    item.year === roundValue && (
-                                        <AnimatePresence
-                                            exitBeforeEnter
-                                            key={item.id}
-                                        >
+                            <AnimatePresence exitBeforeEnter>
+                                {parcours.map(
+                                    (item) =>
+                                        item.year === roundValue && (
                                             <motion.div
+                                                key={item.id}
                                                 variants={yearVariants}
                                                 initial='hidden'
                                                 animate='visible'
                                                 exit='exit'
+                                                transition={yearTransition}
                                             >
                                                 <Years
                                                     year={value}
@@ -247,42 +248,42 @@ const Parcours = () => {
                                                     }
                                                 />
                                             </motion.div>
-                                        </AnimatePresence>
-                                    )
-                            )}
+                                        )
+                                )}
 
-                            {/* {value < 2010 && (
+                                {/* {value < 2010 && (
                                 <AnimatePresence exitBeforeEnter>
-                                    <motion.div
+                                <motion.div
                                         variants={yearVariants}
                                         initial='hidden'
                                         animate='visible'
                                         exit='hidden'
-                                    >
+                                        >
                                         <Years
-                                            year={value}
-                                            title={parcours[0].title}
-                                            content={parcours[0].content}
+                                        year={value}
+                                        title={parcours[0].title}
+                                        content={parcours[0].content}
                                         />
-                                    </motion.div>
-                                </AnimatePresence>
-                            )}
-                            {value < 2012 && value >= 2010 && (
-                                <AnimatePresence>
-                                    <motion.div
-                                        variants={yearVariants}
-                                        initial='hidden'
-                                        animate='visible'
-                                        exit='hidden'
-                                    >
-                                        <Years
+                                        </motion.div>
+                                        </AnimatePresence>
+                                        )}
+                                        {value < 2012 && value >= 2010 && (
+                                            <AnimatePresence>
+                                            <motion.div
+                                            variants={yearVariants}
+                                            initial='hidden'
+                                            animate='visible'
+                                            exit='hidden'
+                                            >
+                                            <Years
                                             year={value}
                                             title={parcours[1].title}
                                             content={parcours[1].content}
-                                        />
-                                    </motion.div>
-                                </AnimatePresence>
-                            )} */}
+                                            />
+                                            </motion.div>
+                                            </AnimatePresence>
+                                        )} */}
+                            </AnimatePresence>
                         </div>
                     </div>
                 </div>
