@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import AboutDesc from './AboutDesc';
 import AboutCompetences from './AboutCompetences';
 import AboutExp from './AboutExp';
 import Parcours from './AboutParcours';
+import AboutNavigation from './AboutNavigation';
 
 const About = ({ variant, transition }) => {
+    const [aboutActive, setAboutActive] = useState('apropos');
+
     return (
         <motion.div
             initial='initial'
@@ -22,10 +25,14 @@ const About = ({ variant, transition }) => {
                 <button>Compétences</button>
                 <button>Expérience</button>
             </nav> */}
-            <AboutDesc />
-            <AboutCompetences />
-            <AboutExp />
-            <Parcours />
+            <AboutNavigation
+                aboutActive={aboutActive}
+                setAboutActive={setAboutActive}
+            />
+            {aboutActive === 'apropos' && <AboutDesc />}
+            {aboutActive === 'competences' && <AboutCompetences />}
+            {aboutActive === 'exp' && <AboutExp />}
+            {aboutActive === 'parcours' && <Parcours />}
         </motion.div>
     );
 };

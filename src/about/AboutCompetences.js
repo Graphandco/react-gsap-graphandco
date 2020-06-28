@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { AboutContext } from './AboutContext';
-import { motion } from 'framer-motion';
 
 import AboutCompetencesGroup from './AboutCompetencesGroup';
 
@@ -10,19 +9,10 @@ const AboutCompetences = () => {
     const [competences] = useContext(AboutContext);
     return (
         <>
-            <motion.h2
-                initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                    type: 'spring',
-                    duration: 0.3,
-                    delay: 1.2,
-                    stiffness: 150,
-                }}
-            >
+            <h2>
                 <BuildIcon className='title-icon' />
                 Compétences
-            </motion.h2>
+            </h2>
             <section className='about__competences'>
                 {competences.map((competence, index) => (
                     <AboutCompetencesGroup
