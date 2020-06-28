@@ -23,12 +23,12 @@ const TipSingle = ({ variant, transition }) => {
     const [tipContent, setTipContent] = useState('');
     const [tipCode, setTipCode] = useState('');
     const [tipLangage, setTipLangage] = useState('');
-    //const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     //GETTING ONE TIP
     useEffect(() => {
         const handleTipListing = async () => {
-            //setIsLoading(true);
+            setIsLoading(true);
             try {
                 const response = await Axios.get(
                     `https://www.graphandco.com/wp-json/wp/v2/coding-tips/${id}`
@@ -38,7 +38,7 @@ const TipSingle = ({ variant, transition }) => {
                 setTipContent(response.data.content.rendered);
                 setTipCode(response.data.acf.code);
                 setTipLangage(response.data.acf.langage);
-                //setIsLoading(false);
+                setIsLoading(false);
             } catch (e) {
                 console.log(
                     'Une erreur est survenue lors de la récupération des Tips'
@@ -72,40 +72,82 @@ const TipSingle = ({ variant, transition }) => {
             transition={transition}
             className='tip-single'
         >
-            <div className='tip-single__top'>
-                <h1
-                    dangerouslySetInnerHTML={{
-                        __html: tipTitle,
-                    }}
-                />
-                <div className='tip-single__top__navigate'>
-                    <CustomButton
-                        link='/tips'
-                        title='Retour'
-                        prev
-                        ml='2rem'
-                        chevronSize='12'
-                    />
-                </div>
-            </div>
-
-            <div className='tip-single__content'>
-                <div className='tip-single__content__header'>
-                    <div
-                        className='tip-single__content__desc'
-                        dangerouslySetInnerHTML={{
-                            __html: tipContent,
+            {!isLoading && (
+                <>
+                    <motion.div
+                        className='tip-single__top'
+                        initial={{ opacity: 0, y: -100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                            type: 'spring',
+                            delay: 0.3,
+                            stiffness: 150,
                         }}
-                    ></div>
-                    <img src={langageImage} alt='Langage' />
-                </div>
+                    >
+                        <h1
+                            dangerouslySetInnerHTML={{
+                                __html: tipTitle,
+                            }}
+                        />
+                        <div className='tip-single__top__navigate'>
+                            <CustomButton
+                                link='/tips'
+                                title='Retour'
+                                prev
+                                ml='2rem'
+                                chevronSize='12'
+                            />
+                        </div>
+                    </motion.div>
 
-                <div className='tip-code'>
-                    <SyntaxHighlighter style={atomDark} language={tipLangage}>
-                        {tipCode}
-                    </SyntaxHighlighter>
-                </div>
-            </div>
+                    <div className='tip-single__content'>
+                        <div className='tip-single__content__header'>
+                            <motion.div
+                                className='tip-single__content__desc'
+                                initial={{ opacity: 0, x: -100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{
+                                    type: 'spring',
+                                    delay: 0.5,
+                                    stiffness: 150,
+                                }}
+                                dangerouslySetInnerHTML={{
+                                    __html: tipContent,
+                                }}
+                            ></motion.div>
+                            <motion.img
+                                initial={{ opacity: 0, x: 100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{
+                                    type: 'spring',
+                                    delay: 0.8,
+                                    stiffness: 150,
+                                }}
+                                src={langageImage}
+                                alt='Langage'
+                            />
+                        </div>
+
+                        <motion.div
+                            initial={{ y: -100, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{
+                                type: 'spring',
+                                delay: 1,
+                                stiffness: 150,
+                            }}
+                            className='tip-code'
+                        >
+                            <SyntaxHighlighter
+                                style={atomDark}
+                                language={tipLangage}
+                            >
+                                {tipCode}
+                            </SyntaxHighlighter>
+                        </motion.div>
+                    </div>
+                </>
+            )}
         </motion.section>
     );
 };
