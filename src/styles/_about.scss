@@ -2,20 +2,23 @@
 
 .about {
     nav {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
         justify-content: center;
         align-items: center;
-        padding: 3rem 2rem;
+        margin: 5rem 2rem;
 
         .nav-item {
-            margin: 0 1rem;
             border: 1px solid var(--pale-text-color);
             border-radius: 3px;
             padding: 0.3rem 1rem;
             color: var(--pale-text-color);
+            text-align: center;
             cursor: pointer;
             transition: 0.3s;
-            &:hover {
+            &:hover,
+            &.active {
                 color: var(--card-bg);
                 background-color: var(--pale-text-color);
             }
@@ -176,6 +179,9 @@
 
 @media (max-width: 768px) {
     .about {
+        nav {
+            grid-template-columns: repeat(2, 1fr);
+        }
         img {
             max-height: 300px;
         }

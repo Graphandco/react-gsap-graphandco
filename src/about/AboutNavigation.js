@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AboutNavigation = ({ setAboutActive }) => {
+const AboutNavigation = ({ aboutActive, setAboutActive }) => {
     const changeApropos = () => {
         setAboutActive('apropos');
     };
@@ -16,16 +16,42 @@ const AboutNavigation = ({ setAboutActive }) => {
     return (
         <>
             <nav className='about-nav'>
-                <div className='nav-item' onClick={changeApropos}>
+                <div
+                    className={
+                        aboutActive === 'apropos'
+                            ? 'nav-item active '
+                            : 'nav-item'
+                    }
+                    onClick={changeApropos}
+                >
                     A Propos
                 </div>
-                <div className='nav-item' onClick={changeCompetences}>
+                <div
+                    className={
+                        aboutActive === 'competences'
+                            ? 'nav-item active '
+                            : 'nav-item'
+                    }
+                    onClick={changeCompetences}
+                >
                     Compétences
                 </div>
-                <div className='nav-item' onClick={changeExp}>
+                <div
+                    className={
+                        aboutActive === 'exp' ? 'nav-item active ' : 'nav-item'
+                    }
+                    onClick={changeExp}
+                >
                     Expérience
                 </div>
-                <div className='nav-item' onClick={changeParcours}>
+                <div
+                    className={
+                        aboutActive === 'parcours'
+                            ? 'nav-item active '
+                            : 'nav-item'
+                    }
+                    onClick={changeParcours}
+                >
                     Parcours
                 </div>
             </nav>
