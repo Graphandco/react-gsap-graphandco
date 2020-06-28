@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import TipSearch from '../components/TipSearch';
 import TipCard from '../components/TipCard';
 import QuickTip from '../../shared/images/quicktips.png';
+import TipsPagination from '../components/TipsPagination';
 
 const Tips = ({ variant, transition }) => {
     //TRI DES TIPS PAR TYPE
@@ -31,19 +32,23 @@ const Tips = ({ variant, transition }) => {
         };
     };
 
-    const [tips] = useContext(TipContext);
-    tips.sort(dynamicSort('langage'));
     //const [isLoading, setIsLoading] = useContext(TipContext);
     const [searchText, setSearchText] = useState('');
     const [radioValue, setRadioValue] = useState('');
+    const [tips] = useContext(TipContext);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [tipsPerPage, setTipsPerPage] = useState(3);
+    tips.sort(dynamicSort('langage'));
 
     //EVENT HANDLERS
     const handleSearchInputChange = (event) => {
         setSearchText(event.target.value);
+        setCurrentPage(1);
     };
 
     const handleRadioValueChange = (event) => {
         setRadioValue(event.target.value);
+        setCurrentPage(1);
     };
 
     //SETTING FILTERED TIPS
@@ -55,6 +60,14 @@ const Tips = ({ variant, transition }) => {
             tip.acf.langage.includes(radioValue)
         );
     });
+
+    //GETTING CURRENT FILTERED LIST
+    const indexOfLastTip = currentPage * tipsPerPage;
+    const indexOfFirstTip = indexOfLastTip - tipsPerPage;
+    const currentTips = filteredTips.slice(indexOfFirstTip, indexOfLastTip);
+
+    //CHANGE PAGE
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const tipsVariants = {
         hidden: {
@@ -111,7 +124,12 @@ const Tips = ({ variant, transition }) => {
                 filterHandle={handleRadioValueChange}
                 value={radioValue}
             />
-
+            <TipsPagination
+                tipsPerPage={tipsPerPage}
+                totalTips={filteredTips.length}
+                paginate={paginate}
+                currentPage={currentPage}
+            />
             <motion.div
                 className='tips-list'
                 variants={tipsVariants}
@@ -119,7 +137,7 @@ const Tips = ({ variant, transition }) => {
                 animate='visible'
                 exit='exit'
             >
-                {filteredTips.map((tip) => {
+                {currentTips.map((tip) => {
                     return (
                         <motion.div
                             className='tips__card'
