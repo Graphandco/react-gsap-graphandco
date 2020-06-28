@@ -132,6 +132,7 @@ const Tips = ({ variant, transition }) => {
                 totalTips={filteredTips.length}
                 paginate={paginate}
                 currentPage={currentPage}
+                tipsCurrentLength={filteredTips.length}
             />
 
             <motion.div
