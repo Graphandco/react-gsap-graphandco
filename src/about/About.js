@@ -41,39 +41,54 @@ const About = ({ variant, transition }) => {
             id='about'
             className='about'
         >
-            {/* <nav className='about-nav'>
-                <button>A Propos</button>
-                <button>Compétences</button>
-                <button>Expérience</button>
-            </nav> */}
             <AboutNavigation
                 aboutActive={aboutActive}
                 setAboutActive={setAboutActive}
             />
             <AnimatePresence exitBeforeEnter>
                 {aboutActive === 'apropos' && (
-                    <AboutDesc
-                        variant={aboutVariants}
+                    <motion.div
+                        initial='initial'
+                        animate='in'
+                        exit='out'
+                        variants={aboutVariants}
                         transition={aboutTransition}
-                    />
+                    >
+                        <AboutDesc />
+                    </motion.div>
                 )}
                 {aboutActive === 'competences' && (
-                    <AboutCompetences
-                        variant={aboutVariants}
+                    <motion.div
+                        initial='initial'
+                        animate='in'
+                        exit='out'
+                        variants={aboutVariants}
                         transition={aboutTransition}
-                    />
+                    >
+                        <AboutCompetences />
+                    </motion.div>
                 )}
                 {aboutActive === 'exp' && (
-                    <AboutExp
-                        variant={aboutVariants}
+                    <motion.div
+                        initial='initial'
+                        animate='in'
+                        exit='out'
+                        variants={aboutVariants}
                         transition={aboutTransition}
-                    />
+                    >
+                        <AboutExp />
+                    </motion.div>
                 )}
                 {aboutActive === 'parcours' && (
-                    <Parcours
-                        variant={aboutVariants}
+                    <motion.div
+                        initial='initial'
+                        animate='in'
+                        exit='out'
+                        variants={aboutVariants}
                         transition={aboutTransition}
-                    />
+                    >
+                        <Parcours />
+                    </motion.div>
                 )}
             </AnimatePresence>
         </motion.div>

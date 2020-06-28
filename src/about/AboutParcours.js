@@ -7,7 +7,7 @@ import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { useMediaQuery } from '@material-ui/core';
 
-const Parcours = ({ aboutVariants, aboutTransition }) => {
+const Parcours = () => {
     const isTabletOrMobile = useMediaQuery('(max-width: 768px)');
 
     const steps = [
@@ -172,13 +172,7 @@ const Parcours = ({ aboutVariants, aboutTransition }) => {
     };
 
     return (
-        <motion.div
-            initial='initial'
-            animate='in'
-            exit='out'
-            variants={aboutVariants}
-            transition={aboutTransition}
-        >
+        <>
             <h2>
                 <SchoolIcon className='title-icon' />
                 Mon parcours dans le web
@@ -256,39 +250,6 @@ const Parcours = ({ aboutVariants, aboutTransition }) => {
                                             </motion.div>
                                         )
                                 )}
-
-                                {/* {value < 2010 && (
-                                <AnimatePresence exitBeforeEnter>
-                                <motion.div
-                                        variants={yearVariants}
-                                        initial='hidden'
-                                        animate='visible'
-                                        exit='hidden'
-                                        >
-                                        <Years
-                                        year={value}
-                                        title={parcours[0].title}
-                                        content={parcours[0].content}
-                                        />
-                                        </motion.div>
-                                        </AnimatePresence>
-                                        )}
-                                        {value < 2012 && value >= 2010 && (
-                                            <AnimatePresence>
-                                            <motion.div
-                                            variants={yearVariants}
-                                            initial='hidden'
-                                            animate='visible'
-                                            exit='hidden'
-                                            >
-                                            <Years
-                                            year={value}
-                                            title={parcours[1].title}
-                                            content={parcours[1].content}
-                                            />
-                                            </motion.div>
-                                            </AnimatePresence>
-                                        )} */}
                             </AnimatePresence>
                         </div>
                     </div>
@@ -300,7 +261,7 @@ const Parcours = ({ aboutVariants, aboutTransition }) => {
                     <div className='parcours__item_image'></div>
                 </parcours__item>
             </section> */}
-        </motion.div>
+        </>
     );
 };
 
