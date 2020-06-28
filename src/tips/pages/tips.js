@@ -37,7 +37,7 @@ const Tips = ({ variant, transition }) => {
     const [radioValue, setRadioValue] = useState('');
     const [tips] = useContext(TipContext);
     const [currentPage, setCurrentPage] = useState(1);
-    const [tipsPerPage, setTipsPerPage] = useState(3);
+    const [tipsPerPage, setTipsPerPage] = useState(5);
     tips.sort(dynamicSort('langage'));
 
     //EVENT HANDLERS
@@ -124,12 +124,16 @@ const Tips = ({ variant, transition }) => {
                 filterHandle={handleRadioValueChange}
                 value={radioValue}
             />
+            {/* HIDE NAV IF JUST ONE PAGE */}
+            {/* {filteredTips.length > tipsPerPage && } */}
             <TipsPagination
                 tipsPerPage={tipsPerPage}
+                setTipsPerPage={setTipsPerPage}
                 totalTips={filteredTips.length}
                 paginate={paginate}
                 currentPage={currentPage}
             />
+
             <motion.div
                 className='tips-list'
                 variants={tipsVariants}
