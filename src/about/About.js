@@ -4,31 +4,50 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AboutDesc from './AboutDesc';
 import AboutCompetences from './AboutCompetences';
 import AboutExp from './AboutExp';
-import Parcours from './AboutParcours';
+import AboutParcours from './AboutParcours';
 import AboutNavigation from './AboutNavigation';
 
 const About = ({ variant, transition }) => {
     const [aboutActive, setAboutActive] = useState('apropos');
 
+    const aboutNavItem = [
+        {
+            name: 'A propos',
+            slug: 'apropos',
+        },
+        {
+            name: 'Compétences',
+            slug: 'competences',
+        },
+        {
+            name: 'Expérience',
+            slug: 'exp',
+        },
+        {
+            name: 'Parcours',
+            slug: 'parcours',
+        },
+    ];
+
     const aboutVariants = {
         initial: {
+            x: -300,
             opacity: 0,
-            x: '-100vw',
         },
-        in: {
-            opacity: 1,
+        visible: {
             x: 0,
+            opacity: 1,
         },
-        out: {
+        exit: {
             opacity: 0,
-            x: '100vw',
+            x: 300,
         },
     };
 
     const aboutTransition = {
         type: 'tween',
         ease: 'anticipate',
-        duration: 0.5,
+        duration: 0.4,
     };
 
     return (
@@ -44,52 +63,21 @@ const About = ({ variant, transition }) => {
             <AboutNavigation
                 aboutActive={aboutActive}
                 setAboutActive={setAboutActive}
+                aboutNavItem={aboutNavItem}
             />
             <AnimatePresence exitBeforeEnter>
-                {aboutActive === 'apropos' && (
-                    <motion.div
-                        initial='initial'
-                        animate='in'
-                        exit='out'
-                        variants={aboutVariants}
-                        transition={aboutTransition}
-                    >
-                        <AboutDesc />
-                    </motion.div>
-                )}
-                {aboutActive === 'competences' && (
-                    <motion.div
-                        initial='initial'
-                        animate='in'
-                        exit='out'
-                        variants={aboutVariants}
-                        transition={aboutTransition}
-                    >
-                        <AboutCompetences />
-                    </motion.div>
-                )}
-                {aboutActive === 'exp' && (
-                    <motion.div
-                        initial='initial'
-                        animate='in'
-                        exit='out'
-                        variants={aboutVariants}
-                        transition={aboutTransition}
-                    >
-                        <AboutExp />
-                    </motion.div>
-                )}
-                {aboutActive === 'parcours' && (
-                    <motion.div
-                        initial='initial'
-                        animate='in'
-                        exit='out'
-                        variants={aboutVariants}
-                        transition={aboutTransition}
-                    >
-                        <Parcours />
-                    </motion.div>
-                )}
+                <motion.div
+                    initial='initial'
+                    animate='visible'
+                    exit='exit'
+                    variants={aboutVariants}
+                    transition={aboutTransition}
+                >
+                    {aboutActive === 'apropos' && <AboutDesc />}
+                    {aboutActive === 'competences' && <AboutCompetences />}
+                    {aboutActive === 'exp' && <AboutExp />}
+                    {aboutActive === 'parcours' && <AboutParcours />}
+                </motion.div>
             </AnimatePresence>
         </motion.div>
     );

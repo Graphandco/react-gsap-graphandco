@@ -14,6 +14,7 @@ import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
 import Footer from './shared/components/Footer';
 import CookiesBanner from './shared/components/CookiesBanner';
+import Realisations from './realisations/Realisations';
 
 const App = () => {
     const location = useLocation();
@@ -75,6 +76,12 @@ const App = () => {
                                 </Route>
                                 <Route path='/about' exact>
                                     <About
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/realisations' exact>
+                                    <Realisations
                                         variant={pageVariants}
                                         transition={pageTransition}
                                     />

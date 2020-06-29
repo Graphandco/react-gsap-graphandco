@@ -7,7 +7,9 @@
         grid-gap: 1rem;
         justify-content: center;
         align-items: center;
-        margin: 5rem 2rem;
+        padding: 2rem 2rem;
+        margin: 3rem 0;
+        background-color: var(--card-bg);
 
         .nav-item {
             border: 1px solid var(--pale-text-color);
@@ -48,7 +50,7 @@
         img {
             justify-self: center;
             //border-radius: 59% 41% 70% 30% / 34% 64% 36% 66%;
-            border-radius: 3px;
+            //border-radius: 3px;
         }
     }
 
@@ -192,6 +194,10 @@
         &__desc {
             grid-template-columns: 1fr;
             padding: 2rem;
+
+            img {
+                border-radius: 3px;
+            }
         }
         &__etudes {
             grid-template-columns: 1fr;

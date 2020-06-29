@@ -7,7 +7,7 @@ import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox'
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { useMediaQuery } from '@material-ui/core';
 
-const Parcours = () => {
+const AboutParcours = () => {
     const isTabletOrMobile = useMediaQuery('(max-width: 768px)');
 
     const steps = [
@@ -265,4 +265,4 @@ const Parcours = () => {
     );
 };
 
-export default Parcours;
+export default AboutParcours;

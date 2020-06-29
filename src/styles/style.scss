@@ -6,6 +6,7 @@
 @import './home';
 @import './slick';
 @import './tips';
+@import './realisations';
 
 #root {
     min-height: 100vh;
@@ -220,10 +221,10 @@ footer {
 
 .backdrop {
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 60px);
     background: rgba(0, 0, 0, 0.8);
     z-index: 1;
     overflow-y: auto;
@@ -233,7 +234,9 @@ footer {
     align-items: center;
 
     .modal {
-        max-width: 400px;
+        width: 500px;
+        max-width: 80%;
+        margin-top: 1rem;
         padding: 40px 20px;
         background: var(--card-bg);
         border-radius: 10px;
