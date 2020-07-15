@@ -42,7 +42,7 @@ const AboutCompetencesItem = ({ competences }) => {
 
     return (
         <>
-            <div className='progress-bar' ref={sectionRef}>
+            <div className='gsap progress-bar' ref={sectionRef}>
                 <div className='percent'>
                     <svg>
                         <circle cx='70' cy='70' r='70'></circle>

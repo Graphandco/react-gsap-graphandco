@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import gsap from 'gsap';
 
 import Alsamanutention from '../shared/images/experience/alsamanutention.jpg';
 import Creawebdesign from '../shared/images/experience/creawebdesign.png';
@@ -10,6 +12,23 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import Accordion from '../shared/components/accordion/Accordion';
 
 const AboutExp = () => {
+    useEffect(() => {
+        let tl = gsap.timeline({
+            delay: 0.2,
+        });
+        tl.from('h2', {
+            opacity: 0,
+            y: -100,
+            ease: 'back.out(2)',
+        });
+        tl.from('.accordion__section', {
+            opacity: 0,
+            y: -100,
+            ease: 'back.out(2)',
+            stagger: 0.3,
+        });
+    }, []);
+
     return (
         <>
             <section className='about__experience'>
@@ -18,7 +37,11 @@ const AboutExp = () => {
                     Expérience Professionnelle
                 </h2>
                 <div className='about__experience__accordeon'>
-                    <Accordion title='Meosis' image={Meosis}>
+                    <Accordion
+                        title='Meosis'
+                        image={Meosis}
+                        className='accordion-item'
+                    >
                         <>
                             <h3>
                                 2017 à aujourd'hui: <span>Meosis</span>
@@ -40,6 +63,7 @@ const AboutExp = () => {
                             </p>
                         </>
                     </Accordion>
+
                     <Accordion title='Road 2 Race' image={R2R}>
                         <>
                             <h3>
@@ -54,6 +78,7 @@ const AboutExp = () => {
                             </p>
                         </>
                     </Accordion>
+
                     <Accordion title='Graph & Co' image={GraphAndCo}>
                         <>
                             <h3>
@@ -67,6 +92,7 @@ const AboutExp = () => {
                             </p>
                         </>
                     </Accordion>
+
                     <Accordion title='Creawebdesign' image={Creawebdesign}>
                         <>
                             <h3>
@@ -79,6 +105,7 @@ const AboutExp = () => {
                             </p>
                         </>
                     </Accordion>
+
                     <Accordion title='Alsamanutention' image={Alsamanutention}>
                         <>
                             <h3>
