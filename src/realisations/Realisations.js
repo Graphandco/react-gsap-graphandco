@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { IoIosAlbums } from 'react-icons/io';
 import Willow from '../shared/images/realisations/willow-tarot.jpg';
 import Toscana from '../shared/images/realisations/latoscana.jpg';
+import BreakingBad from '../shared/images/realisations/breaking-bad.jpg';
 
 const Realisations = ({ variant, transition }) => {
     const realisations = [
@@ -22,9 +23,9 @@ const Realisations = ({ variant, transition }) => {
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
         },
         {
-            name: 'La Toscana',
-            image: Toscana,
-            link: 'https://www.latoscana.fr/',
+            name: 'Breaking Bad',
+            image: BreakingBad,
+            link: 'https://breaking-bad.graphandco.com/',
             desc:
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
         },

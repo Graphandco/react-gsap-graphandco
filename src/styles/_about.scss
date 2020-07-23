@@ -184,7 +184,7 @@
 
 @media (max-width: 768px) {
     .about {
-        nav {
+        &-nav {
             grid-template-columns: repeat(2, 1fr);
         }
         img {
