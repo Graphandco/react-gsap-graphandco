@@ -5,6 +5,9 @@ import { IoIosAlbums } from 'react-icons/io';
 import Willow from '../shared/images/realisations/willow-tarot.jpg';
 import Toscana from '../shared/images/realisations/latoscana.jpg';
 import BreakingBad from '../shared/images/realisations/breaking-bad.jpg';
+import FunWithFlags from '../shared/images/realisations/fun-with-flags.jpg';
+import Burgerio from '../shared/images/realisations/burgerio.jpg';
+import Fylo from '../shared/images/realisations/fylo.jpg';
 
 const Realisations = ({ variant, transition }) => {
     const realisations = [
@@ -30,23 +33,23 @@ const Realisations = ({ variant, transition }) => {
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
         },
         {
-            name: 'La Toscana',
-            image: Toscana,
-            link: 'https://www.latoscana.fr/',
+            name: 'Fun with flags',
+            image: FunWithFlags,
+            link: 'https://funwithflags.graphandco.com/',
             desc:
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
         },
         {
-            name: 'La Toscana',
-            image: Toscana,
-            link: 'https://www.latoscana.fr/',
+            name: 'Burgerio',
+            image: Burgerio,
+            link: 'https://burgerio.graphandco.com/',
             desc:
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
         },
         {
-            name: 'La Toscana',
-            image: Toscana,
-            link: 'https://www.latoscana.fr/',
+            name: 'Fylo',
+            image: Fylo,
+            link: 'https://fylo.graphandco.com/',
             desc:
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
         },
@@ -80,13 +83,15 @@ const Realisations = ({ variant, transition }) => {
                     </div>
                     {realisations.map((realisation, index) => (
                         <div className='realisation' key={index}>
-                            <div className='name'>{realisation.name}</div>
-                            <div className='image'>
-                                <img
-                                    src={realisation.image}
-                                    alt={realisation.name}
-                                />
-                            </div>
+                            <a href={realisation.link} target='blank'>
+                                <div className='name'>{realisation.name}</div>
+                                <div className='image'>
+                                    <img
+                                        src={realisation.image}
+                                        alt={realisation.name}
+                                    />
+                                </div>
+                            </a>
                         </div>
                     ))}
                 </div>
