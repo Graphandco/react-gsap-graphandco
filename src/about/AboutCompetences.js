@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { AboutContext } from './AboutContext';
 
 import AboutCompetencesGroup from './AboutCompetencesGroup';
 
 import BuildIcon from '@material-ui/icons/Build';
+import AboutNavigation from './AboutNavigation';
 
-const AboutCompetences = () => {
+const AboutCompetences = ({ variant, transition }) => {
     const [competences] = useContext(AboutContext);
 
     useEffect(() => {
@@ -28,7 +30,16 @@ const AboutCompetences = () => {
     }, []);
 
     return (
-        <>
+        <motion.div
+            //style={pageStyle}
+            initial='initial'
+            animate='in'
+            exit='out'
+            variants={variant}
+            transition={transition}
+            className='competences'
+        >
+            <AboutNavigation />
             <h2>
                 <BuildIcon className='title-icon' />
                 Compétences
@@ -41,7 +52,7 @@ const AboutCompetences = () => {
                     />
                 ))}
             </section>
-        </>
+        </motion.div>
     );
 };
 

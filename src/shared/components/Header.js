@@ -72,13 +72,13 @@ const Header = () => {
             path: '/',
         },
         {
+            name: 'réalisations',
+            path: '/realisations',
+        },
+        {
             name: 'a propos',
             path: '/about',
         },
-        // {
-        //     name: 'réalisations',
-        //     path: '/realisations',
-        // },
         {
             name: 'tips',
             path: '/tips',

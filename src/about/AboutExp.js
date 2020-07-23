@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-
+import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
 import Alsamanutention from '../shared/images/experience/alsamanutention.jpg';
@@ -10,8 +10,9 @@ import GraphAndCo from '../shared/images/logo.png';
 
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import Accordion from '../shared/components/accordion/Accordion';
+import AboutNavigation from './AboutNavigation';
 
-const AboutExp = () => {
+const AboutExp = ({ variant, transition }) => {
     useEffect(() => {
         let tl = gsap.timeline({
             delay: 0.2,
@@ -25,12 +26,21 @@ const AboutExp = () => {
             opacity: 0,
             y: -100,
             ease: 'back.out(2)',
-            stagger: 0.3,
+            stagger: 0.2,
         });
     }, []);
 
     return (
-        <>
+        <motion.div
+            //style={pageStyle}
+            initial='initial'
+            animate='in'
+            exit='out'
+            variants={variant}
+            transition={transition}
+            className='experience'
+        >
+            <AboutNavigation />
             <section className='about__experience'>
                 <h2>
                     <BusinessCenterIcon className='title-icon' />
@@ -121,7 +131,7 @@ const AboutExp = () => {
                     </Accordion>
                 </div>
             </section>
-        </>
+        </motion.div>
     );
 };
 

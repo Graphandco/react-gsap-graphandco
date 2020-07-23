@@ -37,7 +37,7 @@ const Tips = ({ variant, transition }) => {
     const [radioValue, setRadioValue] = useState('');
     const [tips] = useContext(TipContext);
     const [currentPage, setCurrentPage] = useState(1);
-    const [tipsPerPage, setTipsPerPage] = useState(5);
+    const [tipsPerPage, setTipsPerPage] = useState(10);
     tips.sort(dynamicSort('langage'));
 
     //EVENT HANDLERS

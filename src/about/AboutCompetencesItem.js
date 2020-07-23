@@ -20,6 +20,7 @@ const AboutCompetencesItem = ({ competences }) => {
         root: null,
         rootMargin: '0px',
         threshold: 0.4,
+        once: true,
     });
 
     const progress = 440 - (440 * `${competences.power}`) / 100;

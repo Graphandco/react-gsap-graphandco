@@ -6,8 +6,9 @@ import Years from './years/Years';
 import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import { useMediaQuery } from '@material-ui/core';
+import AboutNavigation from './AboutNavigation';
 
-const AboutParcours = () => {
+const AboutParcours = ({ variant, transition }) => {
     const isTabletOrMobile = useMediaQuery('(max-width: 768px)');
 
     const steps = [
@@ -172,7 +173,16 @@ const AboutParcours = () => {
     };
 
     return (
-        <>
+        <motion.div
+            //style={pageStyle}
+            initial='initial'
+            animate='in'
+            exit='out'
+            variants={variant}
+            transition={transition}
+            className='parcours'
+        >
+            <AboutNavigation />
             <h2>
                 <SchoolIcon className='title-icon' />
                 Mon parcours dans le web
@@ -261,7 +271,7 @@ const AboutParcours = () => {
                     <div className='parcours__item_image'></div>
                 </parcours__item>
             </section> */}
-        </>
+        </motion.div>
     );
 };
 

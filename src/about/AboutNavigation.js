@@ -1,10 +1,30 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const AboutNavigation = ({ aboutActive, setAboutActive, aboutNavItem }) => {
+const AboutNavigation = () => {
+    const navLinks = [
+        {
+            name: 'A propos',
+            path: '/about',
+        },
+        {
+            name: 'Compétences',
+            path: '/competences',
+        },
+        {
+            name: 'Expérience',
+            path: '/experience',
+        },
+        {
+            name: 'Parcours',
+            path: '/parcours',
+        },
+    ];
+
     return (
         <>
             <nav className='about-nav'>
-                {aboutNavItem.map((item) => (
+                {/* {aboutNavItem.map((item) => (
                     <div
                         key={item.slug}
                         className={
@@ -16,6 +36,17 @@ const AboutNavigation = ({ aboutActive, setAboutActive, aboutNavItem }) => {
                     >
                         {item.name}
                     </div>
+                ))} */}
+                {navLinks.map((navLink) => (
+                    <NavLink
+                        to={navLink.path}
+                        key={navLink.name}
+                        exact
+                        activeStyle={{}}
+                        className='nav-item'
+                    >
+                        <span>{navLink.name}</span>
+                    </NavLink>
                 ))}
             </nav>
         </>

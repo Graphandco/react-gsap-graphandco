@@ -13,8 +13,11 @@ import Tips from './tips/pages/Tips';
 import TipSingle from './tips/pages/TipSingle';
 import Contact from './contact/Contact';
 import Footer from './shared/components/Footer';
-import CookiesBanner from './shared/components/CookiesBanner';
+// import CookiesBanner from './shared/components/CookiesBanner';
 import Realisations from './realisations/Realisations';
+import AboutCompetences from './about/AboutCompetences';
+import AboutExp from './about/AboutExp';
+import AboutParcours from './about/AboutParcours';
 
 const App = () => {
     const location = useLocation();
@@ -80,6 +83,24 @@ const App = () => {
                                         transition={pageTransition}
                                     />
                                 </Route>
+                                <Route path='/competences' exact>
+                                    <AboutCompetences
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/experience'>
+                                    <AboutExp
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
+                                <Route path='/parcours'>
+                                    <AboutParcours
+                                        variant={pageVariants}
+                                        transition={pageTransition}
+                                    />
+                                </Route>
                                 <Route path='/realisations' exact>
                                     <Realisations
                                         variant={pageVariants}
@@ -92,7 +113,7 @@ const App = () => {
                 </main>
                 {location.pathname !== '/' && <Footer />}
 
-                <CookiesBanner />
+                {/* <CookiesBanner /> */}
             </TipProvider>
         </ThemeContextProvider>
     );
