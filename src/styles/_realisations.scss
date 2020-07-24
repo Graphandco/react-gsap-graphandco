@@ -69,7 +69,8 @@
                 }
             }
         }
-        &:hover {
+        &:hover,
+        &:focus {
             .content {
                 height: calc(100% - 1rem);
             }
