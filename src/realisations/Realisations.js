@@ -15,43 +15,42 @@ const Realisations = ({ variant, transition }) => {
             name: 'Willow Tarot',
             image: Willow,
             link: 'https://willow-tarot.fr/',
-            desc:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
+            desc: 'Site Wordpress sur la taromancie et la psychologie',
         },
         {
             name: 'La Toscana',
             image: Toscana,
             link: 'https://www.latoscana.fr/',
             desc:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
+                "Réalisation sur Wordpress d'un site one-page pour une pizzeria",
         },
         {
             name: 'Breaking Bad',
             image: BreakingBad,
             link: 'https://breaking-bad.graphandco.com/',
             desc:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
+                "App codée avec React et l'API Breaking Bad pour chercher un personnage de la série ",
         },
         {
             name: 'Fun with flags',
             image: FunWithFlags,
             link: 'https://funwithflags.graphandco.com/',
             desc:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
+                "Utilisation d'une API avec React pour chercher un pays et en afficher les infos avec sa localisation",
         },
         {
             name: 'Burgerio',
             image: Burgerio,
             link: 'https://burgerio.graphandco.com/',
             desc:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
+                "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers",
         },
         {
             name: 'Fylo',
             image: Fylo,
             link: 'https://fylo.graphandco.com/',
             desc:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias dolor, temporibus porro eius magni quaerat laborum, pariatur praesentium, corporis laboriosam optio. Reiciendis, nam perspiciatis sed deleniti eaque magni sequi explicabo.',
+                "Création d'une maquette pour un service de stockage en ligne",
         },
     ];
 
@@ -83,15 +82,23 @@ const Realisations = ({ variant, transition }) => {
                     </div>
                     {realisations.map((realisation, index) => (
                         <div className='realisation' key={index}>
-                            <a href={realisation.link} target='blank'>
+                            <div className='content'>
                                 <div className='name'>{realisation.name}</div>
-                                <div className='image'>
-                                    <img
-                                        src={realisation.image}
-                                        alt={realisation.name}
-                                    />
-                                </div>
-                            </a>
+                                <div className='desc'>{realisation.desc}</div>
+                                <a
+                                    href={realisation.link}
+                                    target='blank'
+                                    title={`Voir ${realisation.name}`}
+                                >
+                                    Voir
+                                </a>
+                            </div>
+                            <div className='image'>
+                                <img
+                                    src={realisation.image}
+                                    alt={realisation.name}
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>

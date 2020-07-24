@@ -74,9 +74,9 @@ header {
                 bottom: -2px;
                 left: 50%;
                 transform: translateX(-50%) scaleX(0);
-                width: 50px;
+                width: 80%;
                 height: 2px;
-                background-color: var(--card-bg-hover);
+                background-color: var(--pale-text-color);
                 transition: 0.3s;
             }
 
@@ -88,7 +88,7 @@ header {
                 transform: translateY(-50%);
                 width: 1px;
                 height: 15px;
-                background-color: var(--card-bg-hover);
+                background-color: var(--pale-text-color);
             }
 
             &:hover:before,
