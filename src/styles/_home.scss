@@ -9,6 +9,7 @@
 
     &__lead {
         width: 80%;
+        min-height: 70vh;
         display: grid;
         grid-template-columns: repeat(4, auto);
         grid-template-rows: repeat(4, auto);
@@ -43,6 +44,7 @@
                 line-height: 1.2;
                 letter-spacing: 1px;
                 position: relative;
+                font-weight: 300;
             }
 
             svg {
@@ -79,7 +81,7 @@
             font-family: 'Montserrat', sans-serif;
             //color: #1e202a;
             font-size: 3.2rem;
-            font-weight: bold;
+            font-weight: 600;
             grid-area: title;
         }
         .btn-wrapper {

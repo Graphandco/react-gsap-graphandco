@@ -73,7 +73,7 @@ const Home = ({ variant, transition }) => {
     const btnVariants = {
         hidden: {
             opacity: 0,
-            y: 150,
+            y: -50,
         },
         visible: {
             opacity: 1,
@@ -151,8 +151,8 @@ const Home = ({ variant, transition }) => {
                 >
                     <CustomButton
                         next
-                        link='/contact'
-                        title='Me contacter'
+                        link='/realisations'
+                        title='Voir mon travail'
                         chevronSize='20'
                     />
                 </motion.div>

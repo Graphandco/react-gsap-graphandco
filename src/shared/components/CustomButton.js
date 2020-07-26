@@ -5,13 +5,14 @@ import styled from 'styled-components';
 import Chevron from './accordion/Chevron';
 
 const StyledButton = styled.button`
-    padding: 0.3rem 1rem;
+    padding: 0.6rem 1.5rem;
     padding: ${(props) => props.pad};
     cursor: pointer;
     margin-left: ${(props) => props.ml};
     margin-right: ${(props) => props.mr};
     background-color: var(--card-bg);
-    border: 1px solid var(--main-text-color);
+    // border: 1px solid var(--main-text-color);
+    border: none;
     border-radius: 3px;
     color: var(--main-text-color);
     transition: 0.3s;

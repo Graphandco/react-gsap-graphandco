@@ -20,15 +20,17 @@ body {
 body.light {
     --bg-color: #f1f1f1;
     //--home-lead-bg: #98a8ea;
-    --home-button-bg: #c0c8e8;
+    --home-button-bg: #c4d6ec;
     --home-button-bg-hover: #dbdfef;
-    --pale-text-color: #5e74ca;
+    //--pale-text-color: #5e74ca;
+    --pale-text-color: #003b82;
     --nav-bg-color: #d4d9ed;
     --main-text-color: #1e202a;
     //--card-bg: #d4d9ed;
-    --card-bg: #d4dbed;
-    --card-bg-hover: #c0caef;
-    --green: #14c314;
+    --card-bg: #abc5e4;
+    //--card-bg-hover: #d6e3f3;
+    --card-bg-hover: #71b0ff;
+    --green: #00a000;
 }
 
 .main-wrapper.light {
@@ -57,6 +59,6 @@ $footer-bg: $header-bg;
 $primary: #2c2c2c;
 $lightgrey: #dfdfdf;
 
-$mainfont: 'Questrial', sans-serif;
+$mainfont: 'Raleway', sans-serif;
 //$mainfont: ' Montserrat ', sans-serif;
-$titlefont: 'Questrial', sans-serif;
+$titlefont: 'Oswald', sans-serif;

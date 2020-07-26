@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router';
 import Axios from 'axios';
 
+//import Codepen from 'react-codepen-embed';
+
 import JSIcon from '../../shared/images/competences/icons/javascript.png';
 import CSSIcon from '../../shared/images/competences/icons/css.png';
 import PrestaIcon from '../../shared/images/competences/icons/prestashop.png';
@@ -144,6 +146,12 @@ const TipSingle = ({ variant, transition }) => {
                             >
                                 {tipCode}
                             </SyntaxHighlighter>
+                            {/* <Codepen
+                                hash='rNxQBjY'
+                                user='reggio'
+                                height='500'
+                                preview='false'
+                            /> */}
                         </motion.div>
                     </div>
                 </>
