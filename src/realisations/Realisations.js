@@ -18,6 +18,13 @@ const Realisations = ({ variant, transition }) => {
             desc: 'Site Wordpress sur la taromancie et la psychologie',
         },
         {
+            name: 'Burgerio',
+            image: Burgerio,
+            link: 'https://burgerio.graphandco.com/',
+            desc:
+                "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers",
+        },
+        {
             name: 'La Toscana',
             image: Toscana,
             link: 'https://www.latoscana.fr/',
@@ -37,13 +44,6 @@ const Realisations = ({ variant, transition }) => {
             link: 'https://funwithflags.graphandco.com/',
             desc:
                 "Utilisation d'une API avec React pour chercher un pays et en afficher les infos avec sa localisation",
-        },
-        {
-            name: 'Burgerio',
-            image: Burgerio,
-            link: 'https://burgerio.graphandco.com/',
-            desc:
-                "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers",
         },
         {
             name: 'Fylo',
