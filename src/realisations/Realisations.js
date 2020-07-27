@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { IoIosAlbums } from 'react-icons/io';
+import Portfolio from '../shared/images/realisations/portfolio.jpg';
 import Willow from '../shared/images/realisations/willow-tarot.jpg';
 import Toscana from '../shared/images/realisations/latoscana.jpg';
 import BreakingBad from '../shared/images/realisations/breaking-bad.jpg';
@@ -68,36 +68,37 @@ const Realisations = ({ variant, transition }) => {
             <section className='realisations'>
                 <div className='liste'>
                     <div className='description'>
-                        <IoIosAlbums />
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Est ab eaque natus, ullam earum maxime ratione
-                            veritatis nostrum blanditiis minima quis dolor,
-                            nihil error numquam iusto nemo? Eveniet non nemo
-                            inventore libero cumque blanditiis rerum, atque
-                            totam? Aperiam, ipsum consequatur? Ducimus
-                            asperiores nihil aut tempora vitae maiores ipsum
-                            voluptas architecto.
-                        </p>
+                        <img src={Portfolio} alt='Portfolio' />
+                        <div className='content'>
+                            <h2>Portfolio</h2>
+                            <p>
+                                Retrouvez ici l'ensemble de mes réalisations,
+                                aussi bien mes projets professionnels,
+                                personnels ou simples maquettes et exercices
+                                pratiques.
+                            </p>
+                        </div>
                     </div>
                     {realisations.map((realisation, index) => (
                         <div className='realisation' key={index}>
-                            <div className='content'>
-                                <div className='name'>{realisation.name}</div>
-                                <div className='desc'>{realisation.desc}</div>
-                                <a
-                                    href={realisation.link}
-                                    target='blank'
-                                    title={`Voir ${realisation.name}`}
-                                >
-                                    Voir
-                                </a>
-                            </div>
                             <div className='image'>
                                 <img
                                     src={realisation.image}
                                     alt={realisation.name}
                                 />
+                            </div>
+                            <div className='content'>
+                                <div className='name'>{realisation.name}</div>
+                                <div className='desc'>{realisation.desc}</div>
+                                <div className='link'>
+                                    <a
+                                        href={realisation.link}
+                                        target='blank'
+                                        title={`Voir ${realisation.name}`}
+                                    >
+                                        Voir
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}
