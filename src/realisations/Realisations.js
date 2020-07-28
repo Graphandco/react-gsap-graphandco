@@ -15,7 +15,8 @@ const Realisations = ({ variant, transition }) => {
             name: 'Willow Tarot',
             image: Willow,
             link: 'https://willow-tarot.fr/',
-            desc: 'Site Wordpress sur la taromancie et la psychologie',
+            desc:
+                "Site qui propose un accompagnement à l'aide de la taromancie",
         },
         {
             name: 'Burgerio',
