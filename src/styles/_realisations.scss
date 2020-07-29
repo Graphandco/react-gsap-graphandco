@@ -78,15 +78,16 @@
                 align-items: center;
                 justify-content: flex-end;
                 a {
-                    background-color: var(--bg-color);
+                    background-color: var(--pale-text-color);
                     font-size: 0.8rem;
                     margin-bottom: 1rem;
                     display: flex;
                     justify-content: flex-end;
-                    padding: 0.2rem 1.2rem;
+                    padding: 0.2rem 2rem;
                     transition: 0.3s;
                     border-radius: 50px;
                     display: inline-block;
+                    color: white;
 
                     &:hover {
                         background-color: var(--card-bg-hover);

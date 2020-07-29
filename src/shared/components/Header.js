@@ -28,7 +28,7 @@ const Header = () => {
             left: 0,
             transition: {
                 type: 'tween',
-                staggerChildren: 0.15,
+                staggerChildren: 0.08,
                 //delayChildren: 0.2,
             },
         },
