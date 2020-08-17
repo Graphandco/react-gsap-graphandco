@@ -68,9 +68,9 @@ const AboutParcours = ({ variant, transition }) => {
         {
             id: 1,
             year: 2009,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Découverte de Photoshop',
             content:
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae unde repudiandae adipisci voluptates. Voluptatibus aliquam neque consequatur deleniti, eligendi sapiente voluptatem odit ipsam facere itaque',
+                'Réalisation de visuels pour des forums, signatures, essais sur les retouches photos',
         },
         {
             id: 2,
@@ -103,51 +103,51 @@ const AboutParcours = ({ variant, transition }) => {
         {
             id: 6,
             year: 2014,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Autoentrepreneur',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Premiers pas comme mon propre patron ! Démarchages et réalisations de quelques sites web',
         },
         {
             id: 7,
             year: 2015,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'E-commerce',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Découverte du système de vente en ligne, création de campagnes publicitaires, rédaction de fiches produits, présence physique lors des événements',
         },
         {
             id: 8,
             year: 2016,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Associé',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Travail en équipe sur une site de vente en ligne destiné à la moto sur circuits, accessoires pilote et pièces moto',
         },
         {
             id: 9,
             year: 2017,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Agence Web',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                "Intégration d'une équipe de graphistes, développeurs et référenceurs. Assimilation des demandes liées à la maintenance d'un parc de sites en tant que webmaster ",
         },
         {
             id: 10,
             year: 2018,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Chef de projet',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                "Management de l'équipe de graphistes, développeurs et webmasters, gestion des litiges clients et des différents coûts",
         },
         {
             id: 11,
             year: 2019,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'React',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                "Découverte de ce puissant outil qu'est la librairie React, permettant des sites rapides comme l'éclair grâce à la vtualisation du DOM et le chargement javascript côté navigateur",
         },
         {
             id: 12,
             year: 2020,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Toujours plus...',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                "Création d'applications dynamiques en javascript, développements backend via NodJS, applications CRUD en full-stack",
         },
     ];
 
@@ -188,7 +188,7 @@ const AboutParcours = ({ variant, transition }) => {
                 Mon parcours dans le web
             </h2>
 
-            <div className='parcours'>
+            <section className='parcours-wrapper'>
                 <div className='slider'>
                     <Slider
                         value={typeof value === 'number' ? value : 0}
@@ -264,7 +264,7 @@ const AboutParcours = ({ variant, transition }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             {/* <section className='parcours'>
                 <parcours__item>

@@ -103,7 +103,7 @@ const Realisations = ({ variant, transition }) => {
                                     <a
                                         href={realisation.link}
                                         target='blank'
-                                        title={`Voir ${realisation.name}`}
+                                        title={`Aller sur le site ${realisation.name}`}
                                     >
                                         Voir
                                     </a>
