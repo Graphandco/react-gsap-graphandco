@@ -114,6 +114,7 @@
 .parcours-wrapper {
     padding: 2rem;
     margin-bottom: 2rem;
+    position: relative;
     .slider {
         padding: 0 1rem;
         .MuiSlider-thumb:before {
@@ -132,7 +133,7 @@
             opacity: 0.6;
         }
         .year-item {
-            display: flex;
+            //display: flex;
             margin-top: 3rem;
             .input {
                 display: flex;
@@ -145,7 +146,7 @@
                     display: flex;
                     justify-content: space-around;
                     width: 100%;
-                    margin-top: -1rem;
+                    //margin-top: -1rem;
                     .btn {
                         margin: 0 0.3rem;
                         padding: 0;
@@ -158,20 +159,28 @@
                 }
 
                 .value {
-                    font-size: 6rem;
+                    font-size: 10rem;
                     color: var(--card-bg-hover);
+                    position: absolute;
+                    opacity: 0.2;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    pointer-events: none;
                 }
             }
         }
         .content {
             flex-grow: 1;
-            margin-left: 2rem;
+            text-align: center;
+            color: var(--pale-text-color);
             .year {
                 .title {
                     text-align: center;
                     font-size: 1.2rem;
                     margin-bottom: 1rem;
-                    color: var(--pale-text-color);
+                    color: var(--main-text-color);
+                    font-weight: 600;
                 }
             }
         }
@@ -225,6 +234,9 @@
                     margin-top: 0;
                     .value {
                         font-size: 3rem;
+                        position: static;
+                        transform: none;
+                        opacity: 1;
                     }
                 }
                 margin-top: 0;

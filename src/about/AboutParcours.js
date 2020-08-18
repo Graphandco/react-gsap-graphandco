@@ -61,44 +61,44 @@ const AboutParcours = ({ variant, transition }) => {
         {
             id: 0,
             year: 2008,
-            title: 'Premiers pas dans le Web',
+            title: 'Découverte de Photoshop',
             content:
-                'Découverte des fonctionnements de base, réalisation de mon premier site en HTML',
+                'Réalisation de visuels pour des forums, signatures, essais sur les retouches photos',
         },
         {
             id: 1,
             year: 2009,
-            title: 'Découverte de Photoshop',
+            title: 'Premiers pas dans le Web',
             content:
-                'Réalisation de visuels pour des forums, signatures, essais sur les retouches photos',
+                'Découverte des fonctionnements de base, réalisation de mon premier site en HTML',
         },
         {
             id: 2,
             year: 2010,
             title: 'Webmarketing',
             content:
-                'lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Apprentissage des diverses prestations dans le web, vente de sites, visuels, campagnes évenementielles...',
         },
         {
             id: 3,
             year: 2011,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'HTML / CSS',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Optimisation des notions de structure web HTML et de la mise en forme avec les feuilles de style',
         },
         {
             id: 4,
             year: 2012,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Photographie',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Collaboration lors de séances photos, aide pour le post-traitement des fichiers raw',
         },
         {
             id: 5,
             year: 2013,
-            title: 'Lorem ipsum dolor sit amet.',
+            title: 'Wordpress',
             content:
-                'Lorem ipsum dolor, lorem25 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectussit amet consectetur adipisicing elit. Delectus doloremque sequi, nam voluptatibus perspiciatis beatae distinctio porro minus cum impedit laudantium voluptas harum expedita provident!',
+                'Premier site sur Wordpress, familiarisation avec le CMS, le système de templates et les modification PHP au niveau du code',
         },
         {
             id: 6,
@@ -119,7 +119,7 @@ const AboutParcours = ({ variant, transition }) => {
             year: 2016,
             title: 'Associé',
             content:
-                'Travail en équipe sur une site de vente en ligne destiné à la moto sur circuits, accessoires pilote et pièces moto',
+                'Travail en équipe sur un site de vente en ligne destiné à la moto sur circuits, accessoires pilote et pièces moto',
         },
         {
             id: 9,
