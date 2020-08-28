@@ -9,6 +9,7 @@ import FunWithFlags from '../shared/images/realisations/fun-with-flags.jpg';
 import Burgerio from '../shared/images/realisations/burgerio.jpg';
 import Fylo from '../shared/images/realisations/fylo.jpg';
 import GetAMovie from '../shared/images/realisations/get-a-movie.jpg';
+import CatScroll from '../shared/images/realisations/cat-scroll.jpg';
 
 const Realisations = ({ variant, transition }) => {
     const realisations = [
@@ -16,51 +17,54 @@ const Realisations = ({ variant, transition }) => {
             name: 'Willow Tarot',
             image: Willow,
             link: 'https://willow-tarot.fr/',
-            desc:
-                "Site qui propose un accompagnement à l'aide de la taromancie",
+            desc: "Site qui propose un accompagnement à l'aide de la taromancie"
         },
         {
             name: "Get'a'Movie",
             image: GetAMovie,
             link: 'https://get-a-movie.graphandco.com/',
-            desc:
-                "Application React avec l'API de IMDB pour rechercher un film",
+            desc: "Application React avec l'API de IMDB pour rechercher un film"
         },
         {
             name: 'Burgerio',
             image: Burgerio,
             link: 'https://burgerio.graphandco.com/',
             desc:
-                "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers",
+                "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers"
         },
         {
             name: 'La Toscana',
             image: Toscana,
             link: 'https://www.latoscana.fr/',
             desc:
-                "Réalisation sur Wordpress d'un site one-page pour une pizzeria",
+                "Réalisation sur Wordpress d'un site one-page pour une pizzeria"
         },
         {
             name: 'Breaking Bad',
             image: BreakingBad,
             link: 'https://breaking-bad.graphandco.com/',
             desc:
-                "App codée avec React et l'API Breaking Bad pour chercher un personnage de la série ",
+                "App codée avec React et l'API Breaking Bad pour chercher un personnage de la série "
         },
         {
             name: 'Fun with flags',
             image: FunWithFlags,
             link: 'https://funwithflags.graphandco.com/',
             desc:
-                "Utilisation d'une API avec React pour chercher un pays et en afficher les infos avec sa localisation",
+                "Utilisation d'une API avec React pour chercher un pays et en afficher les infos avec sa localisation"
         },
         {
             name: 'Fylo',
             image: Fylo,
             link: 'https://fylo.graphandco.com/',
-            desc:
-                "Création d'une maquette pour un service de stockage en ligne",
+            desc: "Création d'une maquette pour un service de stockage en ligne"
         },
+        {
+            name: 'Infinite Cat-Scroll',
+            image: CatScroll,
+            link: 'https://cat-scroll.graphandco.com/',
+            desc: 'Scroll infini avec chargement des images à la volée'
+        }
     ];
 
     return (
