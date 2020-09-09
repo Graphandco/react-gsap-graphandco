@@ -18,6 +18,7 @@ import Realisations from './realisations/Realisations';
 import AboutCompetences from './about/AboutCompetences';
 import AboutExp from './about/AboutExp';
 import AboutParcours from './about/AboutParcours';
+import AboutNavigation from './about/AboutNavigation';
 
 const App = () => {
     const location = useLocation();
@@ -25,24 +26,25 @@ const App = () => {
     const pageVariants = {
         initial: {
             opacity: 0,
-            x: '-100vw',
+            x: '-100vw'
         },
         in: {
             opacity: 1,
-            x: 0,
+            x: 0
         },
         out: {
             opacity: 0,
-            x: '100vw',
-        },
+            x: '100vw'
+        }
     };
 
     const pageTransition = {
         type: 'tween',
         ease: 'anticipate',
-        duration: 0.4,
+        duration: 0.4
     };
 
+    const about = ['/about', '/competences', '/experience', '/parcours'];
     return (
         <ThemeContextProvider>
             <TipProvider>
@@ -50,6 +52,7 @@ const App = () => {
                     <Header />
                 </header>
                 <main>
+                    {about.includes(location.pathname) && <AboutNavigation />}
                     <AboutProvider>
                         <AnimatePresence exitBeforeEnter>
                             <Switch location={location} key={location.pathname}>

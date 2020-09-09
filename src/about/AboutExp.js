@@ -10,23 +10,22 @@ import GraphAndCo from '../shared/images/logo.png';
 
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import Accordion from '../shared/components/accordion/Accordion';
-import AboutNavigation from './AboutNavigation';
 
 const AboutExp = ({ variant, transition }) => {
     useEffect(() => {
         let tl = gsap.timeline({
-            delay: 0.2,
+            delay: 0.2
         });
         tl.from('h2', {
             opacity: 0,
             y: -100,
-            ease: 'back.out(2)',
+            ease: 'back.out(2)'
         });
         tl.from('.accordion__section', {
             opacity: 0,
             y: -100,
             ease: 'back.out(2)',
-            stagger: 0.2,
+            stagger: 0.2
         });
     }, []);
 
@@ -40,7 +39,6 @@ const AboutExp = ({ variant, transition }) => {
             transition={transition}
             className='experience'
         >
-            <AboutNavigation />
             <section className='about__experience'>
                 <h2>
                     <BusinessCenterIcon className='title-icon' />

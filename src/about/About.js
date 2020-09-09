@@ -5,49 +5,48 @@ import AboutDesc from './AboutDesc';
 import AboutCompetences from './AboutCompetences';
 import AboutExp from './AboutExp';
 import AboutParcours from './AboutParcours';
-import AboutNavigation from './AboutNavigation';
 
 const About = ({ variant, transition }) => {
-    const [aboutActive, setAboutActive] = useState('apropos');
+    const [aboutActive] = useState('apropos');
 
-    const aboutNavItem = [
-        {
-            name: 'A propos',
-            slug: 'apropos',
-        },
-        {
-            name: 'Compétences',
-            slug: 'competences',
-        },
-        {
-            name: 'Expérience',
-            slug: 'exp',
-        },
-        {
-            name: 'Parcours',
-            slug: 'parcours',
-        },
-    ];
+    // const aboutNavItem = [
+    //     {
+    //         name: 'A propos',
+    //         slug: 'apropos'
+    //     },
+    //     {
+    //         name: 'Compétences',
+    //         slug: 'competences'
+    //     },
+    //     {
+    //         name: 'Expérience',
+    //         slug: 'exp'
+    //     },
+    //     {
+    //         name: 'Parcours',
+    //         slug: 'parcours'
+    //     }
+    // ];
 
     const aboutVariants = {
         initial: {
             x: -300,
-            opacity: 0,
+            opacity: 0
         },
         visible: {
             x: 0,
-            opacity: 1,
+            opacity: 1
         },
         exit: {
             opacity: 0,
-            x: 300,
-        },
+            x: 300
+        }
     };
 
     const aboutTransition = {
         type: 'tween',
         ease: 'anticipate',
-        duration: 0.4,
+        duration: 0.4
     };
 
     return (
@@ -60,11 +59,6 @@ const About = ({ variant, transition }) => {
             id='about'
             className='about'
         >
-            <AboutNavigation
-                aboutActive={aboutActive}
-                setAboutActive={setAboutActive}
-                aboutNavItem={aboutNavItem}
-            />
             <AnimatePresence exitBeforeEnter>
                 <motion.div
                     initial='initial'

@@ -28,18 +28,18 @@ const Header = () => {
             left: 0,
             transition: {
                 type: 'tween',
-                staggerChildren: 0.08,
+                staggerChildren: 0.08
                 //delayChildren: 0.2,
-            },
+            }
         },
         closed: {
             left: '-100%',
             transition: {
                 type: 'tween',
                 staggerChildren: 0.05,
-                delay: 0.2,
-            },
-        },
+                delay: 0.2
+            }
+        }
     };
 
     let navLinkVariants;
@@ -50,17 +50,17 @@ const Header = () => {
                 x: 0,
                 transition: {
                     type: 'spring',
-                    stiffness: 80,
-                },
+                    stiffness: 80
+                }
             },
             closed: {
                 opacity: 0,
                 x: -500,
                 transition: {
                     type: 'spring',
-                    stiffness: 80,
-                },
-            },
+                    stiffness: 80
+                }
+            }
         };
     } else {
         navLinkVariants = {};
@@ -69,24 +69,24 @@ const Header = () => {
     const navLinks = [
         {
             name: 'accueil',
-            path: '/',
+            path: '/'
         },
         {
             name: 'réalisations',
-            path: '/realisations',
+            path: '/realisations'
         },
         {
             name: 'a propos',
-            path: '/about',
+            path: '/about'
         },
         {
             name: 'tips',
-            path: '/tips',
+            path: '/tips'
         },
         {
             name: 'contact',
-            path: '/contact',
-        },
+            path: '/contact'
+        }
     ];
 
     return (
@@ -117,7 +117,7 @@ const Header = () => {
                 }
                 onClick={toggleOpenMenu}
             >
-                {navLinks.map((navLink) => (
+                {navLinks.map(navLink => (
                     <NavLink
                         to={navLink.path}
                         key={navLink.name}
