@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 //import { Typewriter } from 'react-typewriting-effect';
 import 'react-typewriting-effect/dist/index.css';
 
-import HomeImage from '../shared/images/illustration.png';
+import HomeImage from '../shared/images/home-illustration.svg';
 import CustomButton from '../shared/components/CustomButton';
 import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
 
 const Home = ({ variant, transition }) => {
     const overlayVariants = {
         hidden: {
-            scaleX: 0,
+            scaleX: 0
         },
         visible: {
             scaleX: 1,
@@ -18,14 +18,14 @@ const Home = ({ variant, transition }) => {
                 type: 'tween',
                 delay: 0.5,
                 duration: 0.3,
-                ease: [0.17, 0.67, 0.83, 0.67],
-            },
-        },
+                ease: [0.17, 0.67, 0.83, 0.67]
+            }
+        }
     };
     const h1Variants = {
         hidden: {
             opacity: 0,
-            y: -150,
+            y: -150
         },
         visible: {
             opacity: 1,
@@ -34,14 +34,14 @@ const Home = ({ variant, transition }) => {
                 type: 'spring',
                 delay: 1,
                 duration: 0.3,
-                stiffness: 150,
-            },
-        },
+                stiffness: 150
+            }
+        }
     };
     const imgVariants = {
         hidden: {
             opacity: 0,
-            x: 150,
+            x: 150
         },
         visible: {
             opacity: 1,
@@ -50,14 +50,14 @@ const Home = ({ variant, transition }) => {
                 type: 'spring',
                 stiffness: 150,
                 duration: 0.3,
-                delay: 1.3,
-            },
-        },
+                delay: 1.3
+            }
+        }
     };
     const quoteVariants = {
         hidden: {
             x: -150,
-            opacity: 0,
+            opacity: 0
         },
         visible: {
             x: 0,
@@ -66,14 +66,14 @@ const Home = ({ variant, transition }) => {
                 type: 'spring',
                 delay: 1.5,
                 duration: 0.3,
-                stiffness: 150,
-            },
-        },
+                stiffness: 150
+            }
+        }
     };
     const btnVariants = {
         hidden: {
             opacity: 0,
-            y: -50,
+            y: -50
         },
         visible: {
             opacity: 1,
@@ -81,9 +81,9 @@ const Home = ({ variant, transition }) => {
             transition: {
                 type: 'spring',
                 delay: 2,
-                stiffness: 100,
-            },
-        },
+                stiffness: 100
+            }
+        }
     };
     return (
         <motion.div
