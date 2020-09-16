@@ -96,9 +96,9 @@ header {
                 transform: translateX(-50%) scaleX(1);
             }
 
-            // &:last-child:after {
-            //     content: none;
-            // }
+            &:last-child:after {
+                content: none;
+            }
 
             span {
                 display: flex;
