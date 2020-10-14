@@ -9,7 +9,7 @@ import FunWithFlags from '../shared/images/realisations/fun-with-flags.jpg';
 import Burgerio from '../shared/images/realisations/burgerio.jpg';
 import Fylo from '../shared/images/realisations/fylo.jpg';
 import GetAMovie from '../shared/images/realisations/get-a-movie.jpg';
-import CatScroll from '../shared/images/realisations/cat-scroll.jpg';
+//import CatScroll from '../shared/images/realisations/cat-scroll.jpg';
 
 const Realisations = ({ variant, transition }) => {
     const realisations = [
@@ -59,12 +59,12 @@ const Realisations = ({ variant, transition }) => {
             link: 'https://fylo.graphandco.com/',
             desc: "Création d'une maquette pour un service de stockage en ligne"
         },
-        {
-            name: 'Infinite Cat-Scroll',
-            image: CatScroll,
-            link: 'https://cat-scroll.graphandco.com/',
-            desc: 'Scroll infini avec chargement des images à la volée'
-        }
+        // {
+        //     name: 'Infinite Cat-Scroll',
+        //     image: CatScroll,
+        //     link: 'https://cat-scroll.graphandco.com/',
+        //     desc: 'Scroll infini avec chargement des images à la volée'
+        // }
     ];
 
     return (
