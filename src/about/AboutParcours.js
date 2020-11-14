@@ -139,7 +139,7 @@ const AboutParcours = ({ variant, transition }) => {
             year: 2019,
             title: 'React',
             content:
-                "Découverte de ce puissant outil qu'est la librairie React, permettant des sites rapides comme l'éclair grâce à la vtualisation du DOM et le chargement javascript côté navigateur"
+                "Découverte de ce puissant outil qu'est la librairie React, permettant des sites rapides comme l'éclair grâce à la virtualisation du DOM et le chargement javascript côté navigateur"
         },
         {
             id: 12,
