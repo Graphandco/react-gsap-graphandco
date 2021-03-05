@@ -54,7 +54,7 @@ const AboutParcours = ({ variant, transition }) => {
     };
 
     const incrementValue = () => {
-        roundValue < 2020 && setValue(value + 1);
+        roundValue < 2021 && setValue(value + 1);
     };
     const decrementValue = () => {
         roundValue > 2008 && setValue(value - 1);
