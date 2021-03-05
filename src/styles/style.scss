@@ -30,17 +30,6 @@ header {
     transition: all 0.5s linear;
     max-width: calc(1200px - 4rem);
     margin: 0 auto;
-    //background-color: $header-bg;
-
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     bottom: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 4px;
-    //     background-image: url('/images/color-line.png');
-    // }
 
     #logo {
         display: flex;

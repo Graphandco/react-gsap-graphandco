@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 
 import Portfolio from '../shared/images/realisations/portfolio.jpg';
 import Willow from '../shared/images/realisations/willow-tarot.jpg';
+import TroisFP from '../shared/images/realisations/3fp.jpg';
+import Loide from '../shared/images/realisations/loide-guitare.jpg';
 import Toscana from '../shared/images/realisations/latoscana.jpg';
 import BreakingBad from '../shared/images/realisations/breaking-bad.jpg';
 import FunWithFlags from '../shared/images/realisations/fun-with-flags.jpg';
@@ -13,6 +15,27 @@ import GetAMovie from '../shared/images/realisations/get-a-movie.jpg';
 
 const Realisations = ({ variant, transition }) => {
     const realisations = [
+        {
+            name: 'Loide Guitare',
+            image: Loide,
+            link: 'https://loide-guitare.fr/',
+            desc:
+                "Création d'un site pour un créateur de guitares sur mesure"
+        },
+        {
+            name: '3 Frontières Pêche',
+            image: TroisFP,
+            link: 'https://www.latoscana.fr/',
+            desc:
+                "Création d'un site pour un créateur de guitares sur mesure"
+        },
+        {
+            name: 'La Toscana',
+            image: Toscana,
+            link: 'https://www.latoscana.fr/',
+            desc:
+                "Réalisation sur d'un site avec système de click and collect et paiement en ligne pour une pizzeria"
+        },
         {
             name: 'Willow Tarot',
             image: Willow,
@@ -31,13 +54,6 @@ const Realisations = ({ variant, transition }) => {
             link: 'https://burgerio.graphandco.com/',
             desc:
                 "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers"
-        },
-        {
-            name: 'La Toscana',
-            image: Toscana,
-            link: 'https://www.latoscana.fr/',
-            desc:
-                "Réalisation sur Wordpress d'un site one-page pour une pizzeria"
         },
         {
             name: 'Breaking Bad',

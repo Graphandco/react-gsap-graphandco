@@ -38,6 +38,10 @@ const AboutParcours = ({ variant, transition }) => {
         {
             value: 2020,
             label: '2020'
+        },
+        {
+            value: 2021,
+            label: '2021'
         }
     ];
 
@@ -144,9 +148,16 @@ const AboutParcours = ({ variant, transition }) => {
         {
             id: 12,
             year: 2020,
-            title: 'Toujours plus...',
+            title: 'CRUD / Backend',
             content:
                 "Création d'applications dynamiques en javascript, développements backend via NodJS, applications CRUD en full-stack"
+        },
+        {
+            id: 13,
+            year: 2021,
+            title: 'Elementor',
+            content:
+                "Réalisation de sites originaux et dynamiques via le theme builder Elementor"
         }
     ];
 
@@ -195,7 +206,7 @@ const AboutParcours = ({ variant, transition }) => {
                         marks={steps}
                         defaultValue={2008}
                         min={2008}
-                        max={2020}
+                        max={2021}
                         step={0.0001}
                         orientation={
                             isTabletOrMobile ? 'vertical' : 'horizontal'
